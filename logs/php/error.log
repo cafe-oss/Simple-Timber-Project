@@ -1,0 +1,25 @@
+[02-Jul-2025 12:28:42 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "sub-menu.twig" (looked into: C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev, , C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\views, C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\views) in "menu.twig" at line 20. in C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\views\menu.twig:20
+Stack trace:
+#0 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\vendor\twig\twig\src\Loader\FilesystemLoader.php(138): Twig\Loader\FilesystemLoader->findTemplate('sub-menu.twig')
+#1 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\vendor\twig\twig\src\Environment.php(317): Twig\Loader\FilesystemLoader->getCacheKey('sub-menu.twig')
+#2 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\vendor\twig\twig\src\Template.php(290): Twig\Environment->getTemplateClass('sub-menu.twig')
+#3 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\vendor\twig\twig\src\Environment.php(420) : eval()'d code(114): Twig\Template->load('sub-menu.twig', 20)
+#4 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\vendor\twig\twig\src\Template.php(402): __TwigTemplate_734ca3117bd3272a512bb7fa198725fa->doDisplay(Array, Array)
+#5 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\vendor\twig\twig\src\Environment.php(420) : eval()'d code(157): Twig\Template->yield(Array)
+#6 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\vendor\twig\twig\src\Template.php(446): __TwigTemplate_d23101908704a05e195b88fe73192f2f->block_header(Array, Array)
+#7 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\vendor\twig\twig\src\Environment.php(420) : eval()'d code(65): Twig\Template->yieldBlock('header', Array, Array)
+#8 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\vendor\twig\twig\src\Template.php(402): __TwigTemplate_d23101908704a05e195b88fe73192f2f->doDisplay(Array, Array)
+#9 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\vendor\twig\twig\src\Environment.php(420) : eval()'d code(47): Twig\Template->yield(Array, Array)
+#10 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\vendor\twig\twig\src\Template.php(402): __TwigTemplate_65292b47c0863c1dc1a58a04edbfd00b->doDisplay(Array, Array)
+#11 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\vendor\twig\twig\src\Template.php(358): Twig\Template->yield(Array, Array)
+#12 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\vendor\twig\twig\src\Template.php(373): Twig\Template->display(Array)
+#13 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\vendor\twig\twig\src\TemplateWrapper.php(51): Twig\Template->render(Array)
+#14 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\vendor\timber\timber\src\Loader.php(178): Twig\TemplateWrapper->render(Array)
+#15 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\vendor\timber\timber\src\Timber.php(1481): Timber\Loader->render('front-page.twig', Array, false, 'default')
+#16 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\vendor\timber\timber\src\Timber.php(1616): Timber\Timber::compile('front-page.twig', Array, false, 'default', true)
+#17 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\front-page.php(24): Timber\Timber::render('front-page.twig', Array)
+#18 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-includes\template-loader.php(106): include('C:\\Users\\User\\L...')
+#19 C:\Users\User\Local Sites\simple-timber-project\app\public\wp-blog-header.php(19): require_once('C:\\Users\\User\\L...')
+#20 C:\Users\User\Local Sites\simple-timber-project\app\public\index.php(17): require('C:\\Users\\User\\L...')
+#21 {main}
+  thrown in C:\Users\User\Local Sites\simple-timber-project\app\public\wp-content\themes\timber-jadev\views\menu.twig on line 20
