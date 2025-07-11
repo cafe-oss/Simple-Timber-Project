@@ -1,0 +1,42 @@
+<section>
+  <div 
+    class="section-spacing section-padding {{ rct_darkbg|default('')|e }}" 
+    style="--scheme-disabled-accent: 73 73 72;--scheme-disabled: 210 210 209;--scheme-error: 189 32 32;--scheme-approved: 94 199 98;--scheme-on-accent: 28 28 26;--scheme-accent: 17 221 196;--scheme-border: 164 164 163;--scheme-alternate-background: ;--scheme-background: 28 28 26;--scheme-text: {{ rct_darkbg ? "244 244 244" : "28 28 26" }}; --section-padding-sm: 3rem;--section-padding-md: 4rem;--section-padding-lg: 5rem">
+      <div class="wrapper sm:max-w-full sm:mt-0 sm:mb-0 flex justify-center ">
+        <div class="flex flex-col items-center w-full gap-6">
+          <animate-scroll
+            class="text-center text-body-lg text-text prose opacity-0 block animate-eased-slide-up"
+            style="animation-delay: calc(0*100ms)">
+
+            {% if rct_title %}
+              <h2 style="font-size: 32px; margin-top: 0.5em">
+                {{ rct_title|default('')|e }}
+              </h2>
+            {% endif %}
+          </animate-scroll>
+          {% if rct_button is not empty %}
+              <div class="flex flex-wrap justify-center items-center gap-6">
+                <animate-scroll 
+                  style="animation-delay: calc(1*100ms)" 
+                  class="opacity-0 block animate-eased-slide-up">
+                    <a 
+                      href="{{ rct_button.rct_button_url|default('#')|e }}" 
+                      class="link" aria-label="{{ rct_button.rct_button_arialabel|default('')|e }}" 
+                      data-marketing-cta="">
+                        {{ rct_button.rct_button_text|default('#')|e }}
+                    </a>
+                </animate-scroll>
+              </div>
+          {% endif %}
+
+          {% if rct_description %}
+              <animate-scroll 
+                class="richtext-prose text-caption flex flex-col space-y-2 [&amp;_*]:my-0 items-center text-center text-text opacity-0 block animate-eased-slide-up" 
+                style="animation-delay: calc(2*100ms)">
+                  <p><em>{{ rct_description|default('')|e }}</em></p>
+              </animate-scroll>
+          {% endif %}
+        </div>
+      </div>
+  </div>
+</section>

@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "swiper": "^11.2.10",
+    "tailwindcss": "^4.1.11"
+  },
+  "scripts": {
+    "build": "cp node_modules/swiper/swiper-element-bundle.min.js assets/js/ && cp node_modules/swiper/swiper-bundle.min.css assets/css/"
+  }
+}
