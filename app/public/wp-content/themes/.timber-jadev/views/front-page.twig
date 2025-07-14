@@ -1,0 +1,50 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="article-content">
+				{# <h1 class="article-h1">{{post.title}}</h1> #}
+				{# <div class="article-body"> #}
+					{# {{post.content}} #}
+				{# <div class="bg-background text-text section-spacing section-padding !-mt-header" style="--scheme-disabled-accent: 73 73 72; --scheme-disabled: 210 210 209; --scheme-error: 189 32 32; --scheme-approved: 94 199 98; --scheme-on-accent: 28 28 26; --scheme-accent: 17 221 196; --scheme-border: 164 164 163; --scheme-alternate-background: 28 28 26; --scheme-background: 28 28 26; --scheme-text: 244 244 244; --section-padding-sm: 0px; --section-padding-md: 0px; --section-padding-lg: 0px;"> #}
+				<div class="mx-auto sm:max-w-full sm:mt-0 sm:mb-0 relative h-no-header mt-announcement-bar sm:h-no-header sm:mt-announcement-bar">
+					<div class="wrapper-fluid z-overlay absolute max-w-[706px] bottom-[calc(50%-5rem)] md:bottom-[calc(50%-8rem)] text-left left-0 text-text">
+						<h2 class="my-2 text-heading-xl"> The Ultimate Strength Training System </h2>
+						<div class="flex flex-col gap-x-2 mt-4 sm:mt-6 justify-start items-start">
+							<button class="order-2 mt-6" type="button" aria-label="Pause the video">
+								<span class="after:w-8 after:h-8 slider-button-pause" ></span>
+							</button>
+
+							{% include "components/button.twig" with {
+								'label' : "Learn more",
+								'link': "/pages/equipment-overview",
+								'aria_label' : "Learn more about the Tonal product",
+								'add_class' : "",
+								
+							} %}
+							
+						</div>
+					</div>
+
+					<div class="relative h-full overflow-hidden">
+						<div class="absolute top-0 z-above w-full h-full"></div>
+							<div data-video-title="Tonal video" data-has-mobile-video="true" class="h-full">
+								<video
+									playsinline="playsinline" autoplay="" loop="" class="w-full h-full object-cover"
+									preload="metadata" aria-label="Tonal video showing different people working out at home"
+									poster="//tonal.com/cdn/shop/files/preview_images/5dcefcdbb82e4a76bf527dd6a8f6b51e.thumbnail.0000000000_3840x.jpg?v=1745966361"
+									muted="muted">
+									<source
+										src="//tonal.com/cdn/shop/videos/c/vp/5dcefcdbb82e4a76bf527dd6a8f6b51e/5dcefcdbb82e4a76bf527dd6a8f6b51e.HD-1080p-3.3Mbps-46772185.mp4?v=0"
+										type="video/mp4"><img alt="Tonal video showing different people working out at home"
+										src="//tonal.com/cdn/shop/files/preview_images/5dcefcdbb82e4a76bf527dd6a8f6b51e.thumbnail.0000000000_3840x.jpg?v=1745966361">
+								</video>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}

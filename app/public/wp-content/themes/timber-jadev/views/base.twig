@@ -1,0 +1,73 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+		{{ function('wp_body_open') }}
+		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
+		<header class="sticky top-0 left-0 z-header" >
+			{% block header %}
+				<div class="wrapper-fluid py-2 px-5 z-below h-nav print:hidden border-boundary absolute duration-300 transition-all translate-y-header header-default transition-all ">
+					<div class="flex items-center gap-4 justify-between max-w-nav m-auto h-full">
+
+						<div class="mr-auto sm:flex-none lg:mr-0 header-default">
+							<h1>
+								<a href="/" class="text-inherit">
+									<svg width="173" height="24" xmlns="http://www.w3.org/2000/svg">
+										<title>Tonal</title>
+										<path class="path-color" d="M16.31.19c-.268 0-.55 0-.676.268L0 16.026l7.746 7.784 7.888-7.784c.141-.142.408-.268.675-.268.268 0 .55 0 .676.268l7.888 7.784 7.746-7.784L17 .458a1.016 1.016 0 0 0-.676-.268M60.73 3.19H46.587l-.267.126V6.19l.267.142h5.437v14.336l.141.142h2.86l.267-.142V6.332h5.436l.142-.142V3.316l-.142-.126ZM82.34 2.843c-5.029 0-9.24 4.105-9.24 9.157 0 5.053 4.211 9.158 9.24 9.158 5.027 0 9.238-4.105 9.238-9.158 0-5.052-4.21-9.157-9.239-9.157Zm0 15.157c-3.27 0-5.987-2.732-5.987-6.016S79.07 5.97 82.339 5.97s5.987 2.731 5.987 6.015S85.607 18 82.339 18ZM119.583 3.119h-2.718l-.283.126v12.031l-9.648-12.03-.141-.127h-2.844l-.141.126v17.352l.141.284h2.844l.283-.284V8.582l9.647 12.157h2.86l.267-.142V3.245l-.267-.126ZM142.953 3.19h-3.127l-.267.126-7.479 17.352v.142h3.126l.142-.142 5.986-13.389 5.971 13.39.141.141H150.573v-.142l-7.479-17.352-.141-.126ZM165.788 3.19h-2.844l-.141.126v17.352l.141.142h9.773l.283-.142v-2.873l-.283-.127h-6.646V3.316l-.283-.126Z" fill="currentColor"></path></svg></a></h1></div>
+						{# <h1 class="hdr-logo" role="banner">
+							<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
+						</h1> #}
+						{% include "menu.twig" with {'items': menu.get_items} %}
+
+						<div class="flex gap-2 md:gap-4 lg:gap-6 items-center sm:basis-auto text-inherit header-default text-text">
+							<a class="hover:underline hover:decoration-1 decoration-2 underline-offset-8 uppercase text-center text-inherit" href="/pages/try-tonal">
+								Try Tonal
+							</a>
+			
+							{% include "components/button.twig" with {
+								'label' : "Shop",
+								'link': "/products/tonal-2",
+								'aria_label' : "Shop Tonal products",
+								'add_class' : "",
+								
+							} %}
+							
+							<div>
+							<button class="touch-target relative" aria-label="Translation missing: en.cart.general.title_with_count_aria" aria-haspopup="true" aria-expanded="false" data-count="0">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+									<path class="path-color" d="M17 18a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2M1 2h3.27l.94 2H20a1 1 0 0 1 1 1c0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63l-.03.12a.25.25 0 0 0 .25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1zm6 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2m9-7l2.78-5H6.14l2.36 5z"/>
+								</svg>
+							</button>
+					</div>
+				</div>
+			{% endblock %}
+		</header>
+
+		<section id="content" role="main" class="content-wrapper">
+			{% if title %}<h1>{{title}}</h1>{% endif %}
+			{# <div class="wrapper"> #}
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+			{# </div> #}
+			{% if sidebar %}
+				<aside class="layout-sidebar">
+					{{sidebar}}
+				</aside>
+			{% endif %}
+		</section>
+
+		{% block footer %}
+			<footer id="footer">
+				{% include 'footer.twig' %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+	</body>
+</html>

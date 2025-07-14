@@ -1,0 +1,33 @@
+{% set level = level ?? 1 %}
+
+{{ after_icon_class }}
+{% if menu %}
+	<div class="flex-auto order-last lg:order-none self-stretch hidden lg:block">
+		<nav id="nav-main" class="h-fulln" role="navigation" aria-label="Header Main Menu">
+			<ul  class="flex h-full items-stretch justify-center">
+				{% for item in items %}
+					{% set after_icon_class = '' %}
+
+					{% if 'menu-item-has-children' in item.classes %}
+					{% set after_icon_class = " after:icon after:w-[10px] after:h-auto after:icon-chevron after:ml-1 after:bg-current " %}
+					{% endif %}
+					<li class="{{ item.classes | join(' relative group/level1 px-3 py-4 flex place-items-center') }}">
+						<a 
+							target="{{ item.target }}"  
+							href="{{ item.link }}" 
+							class="peer flex group-hover/level{{ level }}:underline group-hover/level{{ level }}:decoration-1 decoration-2 underline-offset-8 uppercase text-inherit text-center {{ after_icon_class }} header-default  ">
+							<span> {{ item.title }}</span>
+						</a>
+						{# Render submenu if exists #}
+						{% if item.children is not empty %}
+							<div>
+								{% include "sub-menu.twig" with {'items': item.children, 'level': level + 1} %}
+							</div>
+						{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+		</nav>
+
+	</div>
+{% endif %}

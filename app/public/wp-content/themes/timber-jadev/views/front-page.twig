@@ -1,0 +1,139 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="article-content">
+				{# <h1 class="article-h1">{{post.title}}</h1> #}
+				{# <div class="article-body"> #}
+					{# {{post.content}} #}
+				{# <div class="bg-background text-text section-spacing section-padding !-mt-header" style="--scheme-disabled-accent: 73 73 72; --scheme-disabled: 210 210 209; --scheme-error: 189 32 32; --scheme-approved: 94 199 98; --scheme-on-accent: 28 28 26; --scheme-accent: 17 221 196; --scheme-border: 164 164 163; --scheme-alternate-background: 28 28 26; --scheme-background: 28 28 26; --scheme-text: 244 244 244; --section-padding-sm: 0px; --section-padding-md: 0px; --section-padding-lg: 0px;"> #}
+				<div class="mx-auto sm:max-w-full sm:mt-0 sm:mb-0 relative h-no-header mt-announcement-bar sm:h-no-header sm:mt-announcement-bar">
+					<div class="wrapper-fluid prose z-overlay absolute max-w-[706px] bottom-[calc(50%-5rem)] md:bottom-[calc(50%-8rem)] text-left left-0 text-text">
+						<h2 class="my-2 text-heading-xl"> The Ultimate Strength Training System </h2>
+						<div class="flex flex-col gap-x-2 mt-4 sm:mt-6 justify-start items-start">
+							<button class="order-2 mt-6" type="button" aria-label="Pause the video">
+								<span class="after:w-8 after:h-8 slider-button-pause" ></span>
+							</button>
+
+							{% include "components/button.twig" with {
+								'label' : "Learn more",
+								'link': "/pages/equipment-overview",
+								'aria_label' : "Learn more about the Tonal product",
+								'add_class' : "",
+							} %}
+							
+						</div>
+					</div>
+
+					<div class="relative h-full overflow-hidden">
+						<div class="absolute top-0 z-above w-full h-full"></div>
+							<div data-video-title="Tonal video" data-has-mobile-video="true" class="h-full">
+								<video
+									playsinline="playsinline" autoplay="" loop="" class="w-full h-full object-cover"
+									preload="metadata" aria-label="Tonal video showing different people working out at home"
+									poster="//tonal.com/cdn/shop/files/preview_images/5dcefcdbb82e4a76bf527dd6a8f6b51e.thumbnail.0000000000_3840x.jpg?v=1745966361"
+									muted="muted">
+									<source
+										src="//tonal.com/cdn/shop/videos/c/vp/5dcefcdbb82e4a76bf527dd6a8f6b51e/5dcefcdbb82e4a76bf527dd6a8f6b51e.HD-1080p-3.3Mbps-46772185.mp4?v=0"
+										type="video/mp4"><img alt="Tonal video showing different people working out at home"
+										src="//tonal.com/cdn/shop/files/preview_images/5dcefcdbb82e4a76bf527dd6a8f6b51e.thumbnail.0000000000_3840x.jpg?v=1745966361">
+								</video>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			{% include "components/row-content-text.twig" with {
+				'rct_title': "The expertise of a personal trainer and a full gym in your home",
+			
+			}%}
+
+			{% include "components/row-equipment-card.twig" with {
+				equipments: [
+					 {
+						'card_title': "Weight that adapts to you",
+						'card_description': "Tonal learns your strength and sets the optimal resistance for every rep, increasing in as little as
+					one-pound increments to keep you challenged as you get stronger.",
+						'card_button_title': "Explore Smart Tech",
+						'card_button_title_attribute': "Smart Technology",
+						'card_button_url': "/pages/technology",
+						'card_button_arialabel': "Explore smart technology",
+						'card_image_src': "//tonal.com/cdn/shop/files/Home-S3-WeightThatAdaptsToYou.png?v=1745885064&amp;width=1000",
+						'card_image_alt_attribute': "UI displaying showing 250lbs"
+					},
+					{
+						'card_title': "Get more out of every rep",
+						'card_description': "Science-backed workouts with real-time guidance help you train safely and maximize your effort.",
+						'card_button_title': "See the Workouts",
+						'card_button_title_attribute': "Workouts",
+						'card_button_url': "/pages/workouts",
+						'card_button_arialabel': "See the workout",
+						'card_image_src': "//tonal.com/cdn/shop/files/Home-S3-GetMoreOutOfEveryRep-mobile.png?v=1745963295&amp;width=1000",
+						'card_image_alt_attribute': "Woman doing RDLs"
+					},
+					{
+						'card_title': "Gains without the guesswork",
+						'card_description': "Tonal replaces standard gym equipment with smart tech that automatically tracks your progress and
+					unlocks insights about your strength, so you can focus on hitting your goals.",
+						'card_button_title': "Train With Tonal",
+						'card_button_title_attribute': "Personalized Training",
+						'card_button_url': "/pages/personalized-training",
+						'card_button_arialabel': "Personalized training with Tonal",
+						'card_image_src': "//tonal.com/cdn/shop/files/Home-S3-GainsWithoutTheGuesswork.png?v=1745887646&amp;width=1000",
+						'card_image_alt_attribute': "Man looking past camera doing chest press"
+					}
+				]
+			} 
+			%}
+
+			{% include "components/row-content-text.twig" with {
+				'rct_title': "Unlock a new level of training with membership",
+				'rct_button': {
+					'rct_button_text': "Learn more",
+					'rct_button_url': "/pages/membership",
+					'rct_button_arialabel': "Learn more about the Tonal membership",
+				},
+				'rct_description': "Each Tonal purchase requires a 12 month commitment of $59.95/month plus applicable sales tax",
+				'rct_darkbg': "bg-background",
+				
+			}%}
+
+			{% include "components/row-testimonial-carousel.twig" %}
+<<<<<<< HEAD
+			
+
+=======
+
+			{% include "components/row-testimonial-card.twig" with {
+				testimonials: [
+					{
+						'testimonial_image_src': "//tonal.com/cdn/shop/files/Home-S6-Quote1.png?v=1745963226&amp;width=1000",
+						'testimonial_image_alt_attribute': "SH Initials",
+						'testimonial_image_srcset_attribute': "//tonal.com/cdn/shop/files/Home-S6-Quote1.png?v=1745963226&amp;width=352 352w, //tonal.com/cdn/shop/files/Home-S6-Quote1.png?v=1745963226&amp;width=832 832w, //tonal.com/cdn/shop/files/Home-S6-Quote1.png?v=1745963226&amp;width=1000 1000w",
+						'testimonial_description': "I've been using this machine consistently since I got it. There are many excuses to not work out, so it's nice to eliminate the convenience excuse by having it in your house.",
+						'testimonial_name': "Shawn H.",
+					},
+					{
+						'testimonial_image_src': "//tonal.com/cdn/shop/files/Home-S6-Quote2.png?v=1745963226&amp;width=1000",
+						'testimonial_image_alt_attribute': "HAInitials",
+						'testimonial_image_srcset_attribute': "//tonal.com/cdn/shop/files/Home-S6-Quote2.png?v=1745963226&amp;width=352 352w, //tonal.com/cdn/shop/files/Home-S6-Quote2.png?v=1745963226&amp;width=832 832w, //tonal.com/cdn/shop/files/Home-S6-Quote2.png?v=1745963226&amp;width=1000 1000w",
+						'testimonial_description': "Tonal has been a life changer! Easily the single greatest investment I ever made.",
+						'testimonial_name': "Hank A.",
+					},
+					{
+						'testimonial_image_src': "//tonal.com/cdn/shop/files/Home-S6-Quote3.png?v=1745963226&amp;width=1000",
+						'testimonial_image_alt_attribute': "BM Initials",
+						'testimonial_image_srcset_attribute': "//tonal.com/cdn/shop/files/Home-S6-Quote3.png?v=1745963226&amp;width=352 352w, //tonal.com/cdn/shop/files/Home-S6-Quote3.png?v=1745963226&amp;width=832 832w, //tonal.com/cdn/shop/files/Home-S6-Quote3.png?v=1745963226&amp;width=1000 1000w",
+						'testimonial_description': "It has always been my goal to workout regularly with a personal trainer. With Tonal, I feel like I’ve finally got my wish. A personal trainer on demand. Tonal, where have you been all my life?",
+						'testimonial_name': "Brian M.",
+					}
+
+				]
+			}%}
+			
+>>>>>>> 5d6e91a (Testimonial Carousel and Cards)
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}

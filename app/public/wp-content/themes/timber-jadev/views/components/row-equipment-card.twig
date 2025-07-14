@@ -1,0 +1,26 @@
+<section  class="shopify-section">
+    <div style="--scheme-disabled-accent: 73 73 72; --scheme-disabled: 110 110 110; --scheme-error: 189 32 32; --scheme-approved: 94 199 98; --scheme-on-accent: 28 28 26; --scheme-accent: 17 221 196; --scheme-border: 73 73 72; --scheme-alternate-background: 246 246 241; --scheme-background: 255 255 255; --scheme-text: 28 28 26; --columns-count: ; --columns-count-lg: 3; " class="bg-background section-spacing section-padding">
+        <div class=" wrapper ">
+            <!-- <div class="pb-10 flex flex-col justify-between md:gap-x-8 w-full text-left items-start md:flex-col"> </div> -->
+            <div class="grid grid-cols-[repeat(1,_minmax(0,_1fr))] md:grid-cols-[repeat(var(--columns-count-lg),_minmax(0,_1fr))] gap-x-6 gap-y-10">
+                
+                {% for equipment in equipments %}
+                    {% include "components/equipment-card.twig" with {
+                        card_title: equipment.card_title,
+                        card_description: equipment.card_description,
+                        card_button_title: equipment.card_button_title,
+                        card_button_title_attribute: equipment.card_button_title_attribute,
+                        card_button_url: equipment.card_button_url,
+                        card_button_arialabel: equipment.card_button_arialabel,
+                        card_image_src: equipment.card_image_src,
+                        card_image_alt_attribute: equipment.card_image_alt_attribute
+                    } %}
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+
+
+</section>

@@ -1,0 +1,21 @@
+<div class="text-text flex gap-4 justify-start items-start flex-col ">
+    <a href="{{ card_button_url|default('#')|e }}" aria-label="{{ card_button_arialabel|default('')|e }}" class="w-full ">
+        <div class="relative w-auto" style="padding-bottom: 102.77078085642317%;">
+            <img src="{{ card_image_src|default('')|e }}"
+            alt="{{ card_image_alt_attribute|default('')|e }}"
+            width="1000" height="1034"
+            class="block h-full w-auto absolute top-0 object-contain rounded-general aspect-4/3 left-0">
+        </div>
+    </a>
+
+
+    <div>
+        <div class="richtext-prose text-left">
+            <h4> {{ card_title|default('Nothing Found')|e }}</h4>
+        </div>
+        <div class="richtext-prose flex flex-col space-y-2 [&amp;_*]:my-0 text-left items-start text-eyebrow">
+            <p>{{ card_description|default('Nothing Found')|e }}</p>
+            <p><a href="{{ card_button_url|default('#')|e }}" title="{{ card_button_title_attribute|default('Nothing Found')|e }}">{{ card_button_title|default('Nothinng Found')|e }}</a></p>
+        </div>
+    </div>
+</div>

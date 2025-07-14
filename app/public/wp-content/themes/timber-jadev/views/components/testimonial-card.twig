@@ -1,0 +1,11 @@
+<div class="text-text flex gap-4 justify-start items-start flex-col ">
+    <div class="w-1/4 ">
+        <div class="relative w-auto" style="padding-bottom: 100.75757575757576%;">
+            <img src="{{ testimonial_image_src|default('')|e }}" alt="{{ testimonial_image_alt_attribute|default('')|e }}" srcset="{{ testimonial_image_srcset_attribute|default('')|e }}" alt="{{ testimonial_image_alt_attribute|default('')|e }}" width="1000" height="1008" loading="lazy" class="block h-full w-auto absolute top-0 object-contain rounded-general aspect-4/3 left-0">
+        </div>
+    </div>     
+    <div>
+        <div class="richtext-prose flex flex-col space-y-2 [&amp;_*]:my-0 text-left items-start text-eyebrow"><p><strong>“{{ testimonial_description|default('')|e }}”</strong></p><p>{{ testimonial_name|default('')|e }}</p>
+        </div>
+    </div>
+</div>
