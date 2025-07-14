@@ -1,0 +1,24 @@
+<section>
+    <div style="--section-spacing-sm: 0px;--section-spacing-md: 0px;--section-spacing-lg: 0px;--section-padding-sm: 3rem;--section-padding-md: 4rem;--section-padding-lg: 5rem;--columns-count-lg: 3; --scheme-background: 28 28 26;" class="bg-background section-spacing section-padding">
+        <div class="wrapper">
+            <div class="pb-10 flex flex-col justify-between w-full text-left items-start ">
+                <div class="richtext-prose flex flex-col space-y-2 [&amp;_*]:my-0 text-text pb-4 md:pb-0 md:w-1/2">
+                    <h3>what tonal members are saying</h3>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-[repeat(1,_minmax(0,_1fr))] md:grid-cols-[repeat(var(--columns-count-lg),_minmax(0,_1fr))] gap-x-6 gap-y-10">
+                {% for testimonial in testimonials %}
+                    {% include "components/testimonial-card.twig" with {
+                        testimonial_name: testimonial.testimonial_name,
+                        testimonial_description: testimonial.testimonial_description,
+                        testimonial_image_srcset_attribute: testimonial.testimonial_image_srcset_attribute,
+                        testimonial_image_src: testimonial.testimonial_image_src,
+                        testimonial_image_alt_attribute: testimonial.testimonial_image_alt_attribute
+                    } %}
+                {% endfor %}
+                
+            </div>
+        </div>
+    </div>
+</section>

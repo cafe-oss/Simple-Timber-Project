@@ -281,6 +281,15 @@
   .w-1\/2 {
     width: calc(1/2 * 100%);
   }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+  .w-1\/4 {
+    width: calc(1/4 * 100%);
+  }
+>>>>>>> 5d6e91a (Testimonial Carousel and Cards)
+>>>>>>> testimonials
   .w-10 {
     width: calc(var(--spacing) * 10);
   }
@@ -375,9 +384,18 @@
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
+<<<<<<< HEAD
   .bg-transparent {
     background-color: transparent;
   }
+=======
+<<<<<<< HEAD
+  .bg-transparent {
+    background-color: transparent;
+  }
+=======
+>>>>>>> 5d6e91a (Testimonial Carousel and Cards)
+>>>>>>> testimonials
   .object-contain {
     object-fit: contain;
   }
@@ -650,6 +668,14 @@ html, :host {
   --section-padding-md: 2rem;
   --section-padding-sm: 1.25rem;
   --font-size-heading-ml: 2rem;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+  --right-arrow-long: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3e%3cpath fill='%23000' d='M2 13v-2h16.172l-3.95-3.95l1.414-1.414L22 12l-6.364 6.364l-1.414-1.414L17.172 13z'/%3e%3c/svg%3e");
+  --left-arrow-long: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3e%3cpath fill='%23000' d='M22 13v-2H5.828l3.95-3.95l-1.414-1.414L2 12l6.364 6.364l1.414-1.414L5.828 13z'/%3e%3c/svg%3e");
+>>>>>>> 5d6e91a (Testimonial Carousel and Cards)
+>>>>>>> testimonials
   --thick-arrow: url("data:image/svg+xml,<svg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M6.833 1.625 11 6m0 0-4.167 4.375M11 6H1' stroke='%23191919' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='currentColor'/></svg>");
   --pause: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='26' height='26' fill='none'><rect x='1' y='1' width='24' height='24' rx='12.25' stroke='currentColor' stroke-width='1'/><rect x='9' y='8' width='3' height='10' fill='currentColor'/><rect x='14' y='8' width='3' height='10' fill='currentColor'/></svg>");
 }
@@ -682,6 +708,15 @@ blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
 .h-nav {
   height: var(--nav-height, 56px);
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+.header-submenu a {
+  color: #000;
+}
+>>>>>>> 5d6e91a (Testimonial Carousel and Cards)
+>>>>>>> testimonials
 @media (min-width: 768px) {
   .sm\:h-no-header {
     height: 100vh;
@@ -832,7 +867,28 @@ blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
     background-color: color-mix( in srgb, rgb(var(--scheme-accent)) 60%, white 40% );
   }
 }
+<<<<<<< HEAD
 .slider-button-prev, .slider-button-next, .slider-button-pause, .slider-button-play {
+=======
+<<<<<<< HEAD
+.slider-button-prev, .slider-button-next, .slider-button-pause, .slider-button-play {
+=======
+@media (min-width: 768px) {
+  .slider-button-prev, .slider-button-next, .slider-button-pause, .slider-button-play {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .slider-button-prev, .slider-button-next, .slider-button-pause, .slider-button-play {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+.slider-button-prev, .slider-button-next, .slider-button-pause, .slider-button-play {
+  position: relative;
+>>>>>>> 5d6e91a (Testimonial Carousel and Cards)
+>>>>>>> testimonials
   z-index: 1;
   display: inline-flex;
   height: 2rem;
@@ -840,6 +896,10 @@ blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
   cursor: pointer;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> testimonials
 }
 .slider-button-prev, .slider-button-next {
   background-color: rgb(var(--scheme-text));
@@ -932,6 +992,31 @@ blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
     height: 2.5rem;
     width: 2.5rem;
   }
+<<<<<<< HEAD
+=======
+=======
+  transition: all 0.2s ease;
+}
+.slider-button-prev:hover, .slider-button-next:hover {
+  background-color: #e5e7eb;
+}
+.slider-button-prev::after, .slider-button-next::after {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #374151;
+  content: "";
+  mask-position: center center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+.slider-button-prev::after {
+  mask-image: var(--left-arrow-long);
+}
+.slider-button-next::after {
+  mask-image: var(--right-arrow-long);
+>>>>>>> 5d6e91a (Testimonial Carousel and Cards)
+>>>>>>> testimonials
 }
 .slider-button-disabled {
   cursor: not-allowed;
@@ -1016,6 +1101,13 @@ blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
 }
 .richtext-prose {
   font-family: GT America, Arial;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+  max-width: 55ch;
+>>>>>>> 5d6e91a (Testimonial Carousel and Cards)
+>>>>>>> testimonials
 }
 .richtext-prose :where(h3):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   color: rgb(var(--scheme-text));
@@ -1100,6 +1192,17 @@ blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
   box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 3px #0000001a, 0 1px 2px -1px #0000001a;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * (1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+>>>>>>> 5d6e91a (Testimonial Carousel and Cards)
+>>>>>>> testimonials
 @property --tw-rotate-x {
   syntax: "*";
   inherits: false;
