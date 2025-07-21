@@ -32,6 +32,7 @@ html,
   -webkit-tap-highlight-color: transparent;
 }
 :root {
+  --max-w: 1248px;
   --chevron: url('data:image/svg+xml,<svg width="14" height="8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m2 2 5 4.58L12 2" stroke="%23fff" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/></svg>');
   --scheme-accent: 17 221 196;
   --scheme-on-accent: 28 28 26;
@@ -101,6 +102,10 @@ p {
   font-family: var(--font-body);
   line-height: 120%;
   color: rgb(var(--scheme-text));
+}
+
+.max-w-nav {
+  max-width: var(--max-w);
 }
 
 .z-header {
