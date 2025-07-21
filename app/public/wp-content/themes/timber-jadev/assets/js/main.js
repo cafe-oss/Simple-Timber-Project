@@ -1,43 +1,42 @@
-$("#nav-main > ul > li").hover(
-  function () {
-    $(this).find("#header-submenu-container").css("display", "block");
-  },
-  function () {
-    $(this).find("#header-submenu-container").css("display", "none");
-  }
-);
+// Wait for the DOM to load
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector("header > div");
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> testimonials
-// Wait for DOM to be ready
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOM loaded");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 0) {
+      header.classList.add("header-sticky");
+    } else {
+      header.classList.remove("header-sticky");
+    }
+  });
+});
 
-  // Wait a bit for Swiper elements to be registered
-<<<<<<< HEAD
-=======
-=======
+let hideTimeout;
+
+jQuery(document).ready(function ($) {
+  $("#nav-main > ul > li").hover(
+    function () {
+      clearTimeout(hideTimeout);
+      const submenu = $(this).find("#header-submenu-container");
+      submenu.removeClass("hidden opacity-0").addClass("opacity-100");
+    },
+    function () {
+      const submenu = $(this).find("#header-submenu-container");
+      submenu.removeClass("opacity-100").addClass("opacity-0");
+      hideTimeout = setTimeout(() => {
+        submenu.addClass("hidden");
+      }, 300);
+    }
+  );
+});
+
 document.addEventListener("DOMContentLoaded", function () {
->>>>>>> 5d6e91a (Testimonial Carousel and Cards)
->>>>>>> testimonials
   setTimeout(function () {
     initializeSwiper();
   }, 100);
 });
 
 function initializeSwiper() {
-<<<<<<< HEAD
-  console.log("Initializing Swiper");
-
-=======
-<<<<<<< HEAD
-  console.log("Initializing Swiper");
-
-=======
->>>>>>> 5d6e91a (Testimonial Carousel and Cards)
->>>>>>> testimonials
   const swiperEl = document.querySelector("swiper-container");
 
   if (!swiperEl) {
@@ -45,31 +44,6 @@ function initializeSwiper() {
     return;
   }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> testimonials
-  console.log("Swiper element found:", swiperEl);
-
-  // Define the scale function
-  function applyScale() {
-    console.log("applyScale called");
-
-    if (!swiperEl.shadowRoot) {
-      console.log("Shadow root not available yet");
-      return;
-    }
-
-    const slides = swiperEl.shadowRoot.querySelectorAll(".swiper-slide");
-    console.log("Found slides:", slides.length);
-
-    slides.forEach((slide) => {
-      if (slide.classList.contains("swiper-slide-active")) {
-        slide.style.transform = "scale(1)";
-        console.log("check - active slide found");
-<<<<<<< HEAD
-=======
-=======
   // Define the scale function
   function applyScale() {
     if (!swiperEl.shadowRoot) {
@@ -88,8 +62,6 @@ function initializeSwiper() {
         slide.classList.contains("swiper-slide-next")
       ) {
         slide.style.transform = "scale(0.8)";
->>>>>>> 5d6e91a (Testimonial Carousel and Cards)
->>>>>>> testimonials
       } else {
         slide.style.transform = "scale(0.8)";
       }
@@ -97,30 +69,20 @@ function initializeSwiper() {
   }
 
   // Set parameters
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> testimonials
-  swiperEl.params = {
-    slidesPerView: 3,
-  };
-
-  // Add event listeners
-  swiperEl.addEventListener("init", function () {
-    console.log("Swiper initialized");
-    setTimeout(applyScale, 100);
-  });
-
-  swiperEl.addEventListener("slideChange", applyScale);
-<<<<<<< HEAD
-=======
-=======
   Object.assign(swiperEl, {
     loop: true,
     slidesPerView: 3,
     spaceBetween: 10,
     centeredSlides: true,
     initialSlide: 1,
+    breakpoints: {
+      0: {
+        slidesPerView: 1, // applies to all widths below 768px
+      },
+      768: {
+        slidesPerView: 3, // applies to 768px and up
+      },
+    },
   });
 
   swiperEl.addEventListener("swiperinit", function (e) {
@@ -156,8 +118,6 @@ function initializeSwiper() {
     console.log("Touch end event triggered");
     setTimeout(applyScale, 50);
   });
->>>>>>> 5d6e91a (Testimonial Carousel and Cards)
->>>>>>> testimonials
 
   // Initialize the swiper
   swiperEl.initialize();

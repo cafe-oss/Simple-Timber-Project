@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "GT America Expanded Bold";
+  src: url("https://db.onlinewebfonts.com/t/22b4c73e6141de7c9937f42cb58bdb4b.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "GT America Medium";
+  src: url("https://db.onlinewebfonts.com/t/bb1ecf827e7c7df1eecc6cd8567a0d73.woff2")
+    format("woff2");
+}
+
 html,
 :host {
   position: relative;
@@ -22,45 +34,38 @@ html,
 :root {
   --chevron: url('data:image/svg+xml,<svg width="14" height="8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m2 2 5 4.58L12 2" stroke="%23fff" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/></svg>');
   --scheme-accent: 17 221 196;
-  --font-size-body-md: 16px;
   --scheme-on-accent: 28 28 26;
-  --font-size-heading-xl: 48px;
   --scheme-text: 244, 244, 244;
+  --scheme-background: 255 255 255;
+  --font-body: "GT America Medium";
+  --font-heading: "GT America Expanded Bold";
+  --font-size-body-lg: 20px;
+  --font-size-body-md: 16px;
+  --font-size-body-sm: 14px;
+  --font-size-heading-xl: 48px;
+  --font-size-heading-md: 1.5rem;
+  --font-size-eyebrow: 1.125rem;
+  --font-size-heading-ml: 2rem;
   --icon-size: 1.5rem;
   --nav-height: 73px;
   --header-bg: rgba(0, 0, 0, 0);
   --header-text: rgba(255, 255, 255, 1);
   --header-bg-sticky: rgb(244, 244, 244);
   --header-text-sticky: rgb(28, 28, 26);
-  --scheme-background: 255 255 255;
-  --font-size-body-lg: 20px;
-  --font-size-heading-md: 1.5rem;
-  --font-size-eyebrow: 1.125rem;
   --theme-spacing-lg: 5rem;
   --theme-spacing-md: 4rem;
   --theme-spacing-sm: 3rem;
   --section-padding-lg: 2.5rem;
   --section-padding-md: 2rem;
   --section-padding-sm: 1.25rem;
-  --font-size-heading-ml: 2rem;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
   --right-arrow-long: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3e%3cpath fill='%23000' d='M2 13v-2h16.172l-3.95-3.95l1.414-1.414L22 12l-6.364 6.364l-1.414-1.414L17.172 13z'/%3e%3c/svg%3e");
   --left-arrow-long: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3e%3cpath fill='%23000' d='M22 13v-2H5.828l3.95-3.95l-1.414-1.414L2 12l6.364 6.364l1.414-1.414L5.828 13z'/%3e%3c/svg%3e");
->>>>>>> 5d6e91a (Testimonial Carousel and Cards)
->>>>>>> testimonials
   --thick-arrow: url("data:image/svg+xml,<svg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M6.833 1.625 11 6m0 0-4.167 4.375M11 6H1' stroke='%23191919' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='currentColor'/></svg>");
   --pause: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='26' height='26' fill='none'><rect x='1' y='1' width='24' height='24' rx='12.25' stroke='currentColor' stroke-width='1'/><rect x='9' y='8' width='3' height='10' fill='currentColor'/><rect x='14' y='8' width='3' height='10' fill='currentColor'/></svg>");
-}
-
-body,
-a,
-p {
-  font-family: GT America, Arial;
-  line-height: 120%;
-  color: rgb(var(--scheme-text));
+  --instagram: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><path fill='currentColor' fill-rule='evenodd' d='M3.39.787A2.604 2.604 0 0 0 .786 3.39v6.944a2.604 2.604 0 0 0 2.604 2.604h6.944a2.604 2.604 0 0 0 2.603-2.604V3.39A2.604 2.604 0 0 0 10.334.787zm7.693 2.607a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0m-4.22 1.388a2.08 2.08 0 1 0 0 4.16a2.08 2.08 0 0 0 0-4.16m-3.081 2.08a3.08 3.08 0 1 1 6.16 0a3.08 3.08 0 0 1-6.16 0' clip-rule='evenodd'/></svg>");
+  --facebook: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='448' height='512' viewBox='0 0 448 512'><path fill='currentColor' d='M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h98.2V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480h129c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64z'/></svg>");
+  --twitter: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='currentColor' fill-rule='evenodd' d='M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm-.334 3.5a.75.75 0 0 0-.338 1.154l5.614 7.45l-5.915 6.345l-.044.051H6.03l4.83-5.179l3.712 4.928a.75.75 0 0 0 .337.251h4.422a.75.75 0 0 0 .336-1.154l-5.614-7.45L20.017 4.5h-2.05l-4.83 5.18l-3.714-4.928a.75.75 0 0 0-.337-.252zm10.88 13.548L6.431 5.952H8.45l9.114 12.095z' clip-rule='evenodd'/></svg>");
+  --youtube: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='448' height='512' viewBox='0 0 448 512'><path fill='currentColor' d='m186.8 202.1l95.2 54.1l-95.2 54.1zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48m-42 176.3s0-59.6-7.6-88.2c-4.2-15.8-16.5-28.2-32.2-32.4C337.9 128 224 128 224 128s-113.9 0-142.2 7.7c-15.7 4.2-28 16.6-32.2 32.4c-7.6 28.5-7.6 88.2-7.6 88.2s0 59.6 7.6 88.2c4.2 15.8 16.5 27.7 32.2 31.9C110.1 384 224 384 224 384s113.9 0 142.2-7.7c15.7-4.2 28-16.1 32.2-31.9c7.6-28.5 7.6-88.1 7.6-88.1'/></svg>");
 }
 
 h1,
@@ -69,8 +74,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: GT Expanded, Arial;
-  font-weight: 900;
+  font-family: var(--font-heading), Arial;
   text-transform: uppercase;
   line-height: 90%;
 }
@@ -88,7 +92,15 @@ hr,
 figure,
 p,
 pre {
-  margin: 0;
+  /* margin: 0; */
+}
+
+body,
+a,
+p {
+  font-family: var(--font-body);
+  line-height: 120%;
+  color: rgb(var(--scheme-text));
 }
 
 .z-header {
@@ -111,16 +123,10 @@ pre {
   height: var(--nav-height, 56px);
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 .header-submenu a {
   color: #000;
 }
 
->>>>>>> 5d6e91a (Testimonial Carousel and Cards)
->>>>>>> testimonials
 @media (min-width: 768px) {
   .sm\:h-no-header {
     height: 100vh;
@@ -138,8 +144,16 @@ pre {
 
 .header-sticky {
   background-color: var(--header-bg-sticky);
+}
+
+.header-sticky,
+.header-sticky #nav-main > ul > li span {
   color: var(--header-text-sticky);
   border-color: var(--header-text-sticky);
+}
+
+.header-sticky .path-color {
+  fill: var(--header-text-sticky);
 }
 
 .mt-announcement-bar {
@@ -184,9 +198,25 @@ pre {
   }
 }
 
+.font-expanded {
+  font-family: var(--font-heading), Arial;
+}
+
 .text-body,
 .text-body-lg {
   font-size: var(--font-size-body-lg);
+}
+
+.text-body-md {
+  font-size: var(--font-size-body-md);
+}
+
+.text-body-sm {
+  font-size: var(--font-size-body-sm);
+}
+
+.text-body2 {
+  font-size: var(--font-size-body2);
 }
 
 .text-text {
@@ -203,6 +233,10 @@ pre {
 
 .path-color {
   fill: rgb(var(--scheme-text));
+}
+
+.leading-heading {
+  line-height: 90%;
 }
 
 .text-heading-xs {
@@ -273,6 +307,111 @@ pre {
   mask-size: contain;
 }
 
+.icon {
+  display: inline-block;
+  width: 1.5rem;
+  width: var(--icon-size);
+  height: 1.5rem;
+  height: var(--icon-size);
+  background-color: rgb(var(--scheme-text));
+}
+
+.icon-instagram {
+  -webkit-mask-image: var(--instagram);
+  mask-image: var(--instagram);
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.icon-facebook {
+  -webkit-mask-image: var(--facebook);
+  mask-image: var(--facebook);
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.icon-twitter {
+  -webkit-mask-image: var(--twitter);
+  mask-image: var(--twitter);
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.icon-youtube {
+  -webkit-mask-image: var(--youtube);
+  mask-image: var(--youtube);
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+input[type="search"],
+input[type="email"],
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+input[type="tel"],
+input[type="url"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+textarea,
+select {
+  border-radius: 0.5rem;
+  background-color: rgb(var(--scheme-background));
+  color: rgb(var(--scheme-text));
+}
+
+[type="text"],
+input:where(:not([type])),
+[type="email"],
+[type="url"],
+[type="password"],
+[type="number"],
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="search"],
+[type="tel"],
+[type="time"],
+[type="week"],
+[multiple],
+textarea,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  border-color: #6b7280;
+  border-width: 1px;
+  border-radius: 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-shadow: 0 0 rgba(0, 0, 0, 0);
+}
+
+input:required {
+  padding-right: 2.75rem;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -280,8 +419,9 @@ pre {
   border-width: 1px;
   border-color: rgb(var(--scheme-accent));
   background-color: rgb(var(--scheme-accent));
+  cursor: pointer;
   padding: 0.5rem 1rem;
-  font-family: GT America, Arial;
+  font-family: var(--font-body);
   font-size: var(--font-size-body-md);
   font-weight: 500;
   text-transform: uppercase;
@@ -302,120 +442,6 @@ pre {
   );
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> testimonials
-.slider-button-prev,
-.slider-button-next,
-.slider-button-pause,
-.slider-button-play {
-  z-index: 1;
-  display: inline-flex;
-  height: 2rem;
-  width: 2rem;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-}
-
-.slider-button-prev,
-.slider-button-next {
-  background-color: rgb(var(--scheme-text));
-  padding: 0.5rem;
-}
-
-.slider-button-prev:after {
-  display: inline-block;
-  width: 1.5rem;
-  width: var(--icon-size);
-  height: 1.5rem;
-  height: var(--icon-size);
-  background-color: transparent;
-  background-color: transparent;
-  content: var(--tw-content);
-  -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'><path d='M11 7L6 12L11 17' stroke='%23191919' stroke-width='1.5' stroke-miterlimit='10'/><path d='M6 12L19 12' stroke='%23191919' stroke-width='1.5' stroke-miterlimit='10'/>");
-  mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'><path d='M11 7L6 12L11 17' stroke='%23191919' stroke-width='1.5' stroke-miterlimit='10'/><path d='M6 12L19 12' stroke='%23191919' stroke-width='1.5' stroke-miterlimit='10'/>");
-  -webkit-mask-image: var(--left-arrow-long);
-  mask-image: var(--left-arrow-long);
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-}
-
-.slider-button-next:after {
-  display: inline-block;
-  width: 1.5rem;
-  width: var(--icon-size);
-  height: 1.5rem;
-  height: var(--icon-size);
-  background-color: transparent;
-  background-color: transparent;
-  content: var(--tw-content);
-  -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'><path d='M13 17L18 12L13 7' stroke='%23191919' stroke-width='1.5' stroke-miterlimit='10'/><path d='M18 12H5' stroke='%23191919' stroke-width='1.5' stroke-miterlimit='10'/>");
-  mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'><path d='M13 17L18 12L13 7' stroke='%23191919' stroke-width='1.5' stroke-miterlimit='10'/><path d='M18 12H5' stroke='%23191919' stroke-width='1.5' stroke-miterlimit='10'/>");
-  -webkit-mask-image: var(--right-arrow-long);
-  mask-image: var(--right-arrow-long);
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-}
-
-.slider-button-pause:after {
-  display: inline-block;
-  width: 1.5rem;
-  width: var(--icon-size);
-  height: 1.5rem;
-  height: var(--icon-size);
-  background-color: transparent;
-  height: 3.5rem;
-  width: 3.5rem;
-  content: var(--tw-content);
-  -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='26' height='26' fill='none'><rect x='1' y='1' width='24' height='24' rx='12.25' stroke='currentColor' stroke-width='1'/><rect x='9' y='8' width='3' height='10' fill='currentColor'/><rect x='14' y='8' width='3' height='10' fill='currentColor'/></svg>");
-  mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='26' height='26' fill='none'><rect x='1' y='1' width='24' height='24' rx='12.25' stroke='currentColor' stroke-width='1'/><rect x='9' y='8' width='3' height='10' fill='currentColor'/><rect x='14' y='8' width='3' height='10' fill='currentColor'/></svg>");
-  -webkit-mask-image: var(--pause);
-  mask-image: var(--pause);
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-}
-
-.slider-button-play:after {
-  display: inline-block;
-  width: 1.5rem;
-  width: var(--icon-size);
-  height: 1.5rem;
-  height: var(--icon-size);
-  background-color: transparent;
-  height: 3.5rem;
-  width: 3.5rem;
-  content: var(--tw-content);
-  -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" aria-hidden="true"><path fill="currentColor" d="M18.486 12.705a.34.34 0 0 1 0 .59l-7.984 4.6a.34.34 0 0 1-.51-.294L10 8.386a.34.34 0 0 1 .51-.294l7.977 4.613Z"/><circle cx="13" cy="13" r="12" stroke="currentColor"/>');
-  mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" aria-hidden="true"><path fill="currentColor" d="M18.486 12.705a.34.34 0 0 1 0 .59l-7.984 4.6a.34.34 0 0 1-.51-.294L10 8.386a.34.34 0 0 1 .51-.294l7.977 4.613Z"/><circle cx="13" cy="13" r="12" stroke="currentColor"/>');
-  -webkit-mask-image: var(--play);
-  mask-image: var(--play);
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-}
-
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 5d6e91a (Testimonial Carousel and Cards)
->>>>>>> testimonials
 @media (min-width: 768px) {
   .slider-button-prev,
   .slider-button-next,
@@ -426,10 +452,6 @@ pre {
   }
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 @media (max-width: 767px) {
   .slider-button-prev,
   .slider-button-next,
@@ -484,8 +506,6 @@ pre {
 .slider-button-pause::after {
 }
 
->>>>>>> 5d6e91a (Testimonial Carousel and Cards)
->>>>>>> testimonials
 .slider-button-disabled {
   cursor: not-allowed;
   opacity: 0.5;
@@ -588,18 +608,12 @@ pre {
 .prose {
   color: rgb(var(--scheme-text));
   max-width: 65ch;
-  font-family: GT America, Arial;
+  font-family: var(--font-body);
 }
 
 .richtext-prose {
-  font-family: GT America, Arial;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
+  font-family: var(--font-body);
   max-width: 55ch;
->>>>>>> 5d6e91a (Testimonial Carousel and Cards)
->>>>>>> testimonials
 }
 
 .richtext-prose
@@ -701,15 +715,9 @@ pre {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
     var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
 }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * (1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
->>>>>>> 5d6e91a (Testimonial Carousel and Cards)
->>>>>>> testimonials

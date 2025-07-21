@@ -14,11 +14,13 @@ if (file_exists(__DIR__ . '/vendor/autoload.php') || file_exists(__DIR__ . '/src
 }
 
 use Timber\Timber;
+use Timber\Menu;
 
 Timber::init();
 
 // Sets the directories (inside your theme) to find .twig files.
 Timber::$dirname = ['templates', 'views'];
+
 
 new StarterSite();
 
@@ -27,7 +29,6 @@ function jadev_enqueue_style()
 {
     $version = wp_get_theme()->get('Version');
     wp_enqueue_style('jadev-style', get_template_directory_uri() . '/src/output.css', array(), $version, 'all');
-    // wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
     wp_enqueue_style(
         'swiper-css',
         get_stylesheet_directory_uri() . '/assets/css/swiper-bundle.min.css',
@@ -55,8 +56,43 @@ function jadev_menu()
 {
     $locations = array(
         'primary' => "Primary Menu",
-        'footer' => "Footer Menu"
+        'about-footer' => "About Tonal Menu",
+        'support-footer' => "Support Menu",
+        'legal-footer' => "Legal Menu"
     );
     register_nav_menus($locations);
 }
 add_action('init', 'jadev_menu');
+
+add_filter('timber/context', function ($context) {
+    $locations = get_nav_menu_locations();
+
+    $context['footer_menus'] = [];
+    $context['header_menus'] = [];
+
+    if (isset($locations['primary'])) {
+        $term = wp_get_nav_menu_object($locations['primary']);
+        $context['header_menus']['Primary'] = Menu::build($term);
+    }
+
+    if (isset($locations['about-footer'])) {
+        $term = wp_get_nav_menu_object($locations['about-footer']);
+        $context['footer_menus']['About Tonal'] = Menu::build($term);
+    }
+
+    if (isset($locations['support-footer'])) {
+        $term = wp_get_nav_menu_object($locations['support-footer']);
+        $context['footer_menus']['Support'] = Menu::build($term);
+    }
+
+    if (isset($locations['legal-footer'])) {
+        $term = wp_get_nav_menu_object($locations['legal-footer']);
+        $context['footer_menus']['Legal'] = Menu::build($term);
+    }
+
+    return $context;
+});
+
+// var_dump(get_nav_menu_locations());
+// var_dump(has_nav_menu('about-footer'));
+// echo "Timber version: " . \Timber\Timber::$version;

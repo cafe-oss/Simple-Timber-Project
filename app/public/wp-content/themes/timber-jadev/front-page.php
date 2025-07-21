@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying Home page.
  *
@@ -16,9 +17,11 @@
  * @subpackage  Timber
  * @since    Timber 0.1
  */
+
 use Timber\Timber;
+
 $context = Timber::context();
 
 $timber_post     = Timber::get_post();
 $context['post'] = $timber_post;
-Timber::render( 'front-page.twig', $context );
+Timber::render('front-page.twig', $context);

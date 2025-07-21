@@ -1,1 +1,68 @@
-Copyright {{"now"|date('Y')}}
+<div class="text-text print:hidden bg-background" style="--scheme-disabled-accent: 73 73 72; --scheme-disabled: 110 110 110; --scheme-error: 189 32 32; --scheme-approved: 94 199 98; --scheme-on-accent: 28 28 26; --scheme-accent: 17 221 196; --scheme-border: 73 73 72; --scheme-alternate-background: 246 246 241; --scheme-text: 28 28 26; --scheme-background: 255 255 255;">
+    <div class="wrapper-fluid md:relative py-10 md:py-16 flex flex-col flex-wrap md:flex-row gap-y-6 md:gap-6">
+        <div class="flex-auto md:flex-[1_1_10%]">
+            <h2 class="text-body-sm mb-4">Newsletter</h2>
+            <div class="text-sm my-4">
+                <p>Get insider information about exclusive offers, events and more!</p>
+            </div>
+            <form method="post" action="/contact#NewsletterForm" id="NewsletterForm" accept-charset="UTF-8"
+                class="contact-form" novalidate=""><input type="hidden" name="form_type" value="customer"><input
+                    type="hidden" name="utf8" value="✓"><input type="hidden" name="contact[tags]"
+                    value="Newsletter">
+                <div class="flex max-md:flex-col max-md:gap-1 max-md:w-full"><label class="sr-only"
+                        for="NewsletterForm-email">Email address</label>
+                    <div class="relative"><input type="email" class="max-md:w-full" name="contact[email]"
+                            id="NewsletterForm-email" placeholder="Email address" aria-label="Email address"
+                            autocapitalize="off" required=""></div><button
+                        class="button flex-none max-md:mt-4 md:ml-4 " type="submit" name="commit"
+                        id="NewsletterForm-Commit">Subscribe</button>
+                </div>
+            </form>
+            <h2 class="text-body-sm mt-6 mb-2">Call Us</h2>
+            <h2 class="text-body-sm mt-2 mb-6">855.698.6625</h2>
+            <ul class="flex flex-wrap gap-4 mt-6">
+                <li ><a href="https://www.instagram.com/tonal" aria-label="Instagram" class="block" ><span
+                            class="icon icon-instagram" aria-hidden="" ></span></a></li>
+                <li><a href="https://www.facebook.com/TonalStrong" aria-label="Facebook" class="block"><span
+                            class="icon icon-facebook" aria-hidden=""></span></a></li>
+                <li><a href="https://twitter.com/tonal" aria-label="Twitter" class="block"><span
+                            class="icon icon-twitter" aria-hidden=""></span></a></li>
+                <li><a href="https://www.youtube.com/channel/UCbiYlM8W87Sn-bmQrgF5GLQ" aria-label="YouTube"
+                        class="block"><span class="icon icon-youtube" aria-hidden=""></span></a></li>
+            </ul>
+        </div>
+        <div class="flex-auto">
+            {% if footer_menus %}
+                <nav class="footer-{{ label|lower }}" id="Linklist-footer" aria-label="Footer menu">
+                    <ul class="md:flex md:justify-around md:items-start">
+                        {% for label, menu in footer_menus %}
+                            <li class="max-md:py-4 max-md:border-t max-md:border-boundary-border">
+                                <a href="/" class="py-4 text-body-sm font-expanded uppercase leading-heading"> {{ label }} </a>
+                                <div>
+                                    <ul id="Link-Level1-legal" class="mt-4">
+                                    {% for item in menu.get_items %}
+                                        <li class="py-3"><a href="{{ item.link }}"  class="text-body-sm">{{ item.title }}</a></li>
+                                    {% endfor %}
+                                    </ul>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            {% else %}
+                <p>⚠️ footer_menus not found</p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="max-md:px-4 md:px-12 gap-4">
+        <div class="w-full border-t border-border"></div>
+        <div class="py-10 md:flex md:justify-between md:gap-4">
+            <p class="text-body-sm">Copyright {{"now"|date('Y')}}. All rights reserved.</p>
+            <a href="https://privacy.tonal.com" class="underline text-body-sm"><span>Your Privacy Choices</span></a>
+            <a href="http://www.onlinewebfonts.com" class="underline text-body-sm">Web Fonts</a>
+        </div>
+    </div>
+</div>
+
+
+
