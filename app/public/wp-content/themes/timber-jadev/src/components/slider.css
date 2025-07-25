@@ -1,0 +1,74 @@
+@media (min-width: 768px) {
+  .slider-button-prev,
+  .slider-button-next,
+  .slider-button-pause,
+  .slider-button-play {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .slider-button-prev,
+  .slider-button-next,
+  .slider-button-pause,
+  .slider-button-play {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+.slider-button-prev,
+.slider-button-next,
+.slider-button-pause,
+.slider-button-play {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.slider-button-prev:hover,
+.slider-button-next:hover {
+  background-color: #e5e7eb;
+}
+
+/* If you want to keep the CSS mask approach, use this: */
+.slider-button-prev::after,
+.slider-button-next::after {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #374151;
+  content: "";
+  mask-position: center center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+
+.slider-button-prev::after {
+  mask-image: var(--left-arrow-long);
+}
+
+.slider-button-next::after {
+  mask-image: var(--right-arrow-long);
+}
+
+.slider-button-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.slider-thumb-active {
+  border-color: rgb(var(--scheme-accent));
+  opacity: 1;
+}
+
+.slider-slide-active.slider-slide-zoomed {
+  touch-action: none;
+}

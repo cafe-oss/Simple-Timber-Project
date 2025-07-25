@@ -1,0 +1,43 @@
+.wrapper-fluid {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 960px) {
+  .wrapper-fluid {
+    max-width: 1272px;
+  }
+}
+
+@media (min-width: 960px) {
+  .wrapper-fluid {
+    max-width: none;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper-fluid {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 960px) {
+  .wrapper {
+    max-width: 1272px;
+  }
+}

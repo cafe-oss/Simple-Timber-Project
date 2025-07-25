@@ -1,0 +1,64 @@
+.text-body,
+.text-body-lg {
+  font-size: var(--font-size-body-lg);
+}
+
+.text-body-md {
+  font-size: var(--font-size-body-md);
+}
+
+.text-body-sm {
+  font-size: var(--font-size-body-sm);
+}
+
+.text-body2 {
+  font-size: var(--font-size-body2);
+}
+
+.text-text {
+  color: rgb(var(--scheme-text));
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-eyebrow {
+  font-size: var(--font-size-eyebrow);
+}
+
+.path-color {
+  fill: rgb(var(--scheme-text));
+}
+
+.leading-heading {
+  line-height: 90%;
+}
+
+.text-heading-xs {
+  font-size: var(--font-size-heading-xs);
+}
+
+.text-heading-sm {
+  font-size: var(--font-size-heading-sm);
+}
+
+.text-heading-md {
+  font-size: var(--font-size-heading-md);
+}
+
+.text-heading-ml {
+  font-size: var(--font-size-heading-ml);
+}
+
+.text-heading-lg {
+  font-size: var(--font-size-heading-lg);
+}
+
+.text-heading-xl {
+  font-size: var(--font-size-heading-xl);
+}
+
+.font-expanded {
+  font-family: var(--font-heading), Arial;
+}

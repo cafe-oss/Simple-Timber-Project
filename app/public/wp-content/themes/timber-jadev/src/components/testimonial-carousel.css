@@ -1,0 +1,58 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: clip;
+  list-style: none;
+  padding: 0px;
+  z-index: 1;
+  display: block;
+}
+
+.swiper-horizontal {
+  touch-action: pan-y;
+}
+
+.swiper-slide {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  height: auto;
+  min-height: 295px;
+  align-items: center;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-color: rgb(var(--scheme-accent));
+  background-color: rgb(var(--scheme-background));
+  padding: 1.5rem 2rem;
+  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
+    0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 3px #0000001a,
+    0 1px 2px -1px #0000001a;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
+    var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
+}
+
+.\[\&\>swiper-slide\]\:swiper-slide > swiper-slide {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  height: auto;
+  min-height: 295px;
+  align-items: center;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-color: rgb(var(--scheme-accent));
+  background-color: rgb(var(--scheme-background));
+  padding: 1.5rem 2rem;
+  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
+    0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 3px #0000001a,
+    0 1px 2px -1px #0000001a;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
+    var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
+}
