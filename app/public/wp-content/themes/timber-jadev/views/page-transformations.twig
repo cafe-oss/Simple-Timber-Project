@@ -1,0 +1,156 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+
+		{% include "components/hero-texts.twig" with {
+			'title_row1': post.meta('title_row1'),
+			'description_row1': post.meta('description_row1'),
+		}%}
+
+		{% include "components/vertical-slider-tabs.twig" with {
+			rct_title: "Tonal member transformations*",
+			rct_description: "*Results vary for all Tonal members",
+			rct_tab_position: "left",
+			rct_darkbg: "bg-background",
+			rct_items: [
+			{
+				title: "rebuilding muscle as a busy dad",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP-Success-Stories-CB2-1.png?v=1761620747&width=3840",
+			},
+			{
+				title: "from recovery to resilience",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP-Success-Stories-CB2-2.png?v=1761620747&width=3840",
+			},
+			{
+				title: "Adapting to train harder than ever",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP-Success-Stories-CB2-3.png?v=1761620747&width=3840",
+			},
+			{
+				title: "thriving at 66 years young",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP-Success-Stories-CB2-4.png?v=1761620746&width=3840",
+			},
+			]
+		} %}
+
+		{% include "components/row-text-left.twig" with {
+			'rct_title': "every rep is an investment in the life you want",
+		}%}
+
+		{% include "components/row-banner-carousel.twig" with {
+			'banner_cards': [
+				{
+					'card_title': "more strength, less stress",
+					'card_description': "Train at home, on your time, with science-backed programs that fit into the busiest schedules and take the guesswork out of working out.",
+					'card_image_src': "//tonal.com/cdn/shop/files/Parents-S2-KeepUpWithYourKids.png?v=1749090320&width=600",
+					'card_image_alt_attribute': "Young asian woman playing with daughter in their living room",
+					'card_button': {
+						'card_button_text': "training for parents",
+						'card_button_url': "https://tonal.com/pages/success-stories-fitness-for-parents",
+					}
+				},
+				{
+					'card_title': "add life to your years",
+					'card_description': "Weight that adjusts to your pace and smart features like real-time coaching cues help you build strength safely for years to come.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SuccessStory-S2-BusyParents-4x3.png?v=1761621155&width=600",
+					'card_image_alt_attribute': "Grandparent holding grandchild",
+					'card_button': {
+						'card_button_text': "training for LONGEVITY",
+						'card_button_url': "https://tonal.com/pages/success-stories-active-aging",
+					}
+				},
+				{
+					'card_title': "smarter training. sharper results.",
+					'card_description': "Automatic progress tracking, weight that adapts to you in real-time, and expert-designed programs elevate your routine to bring out your best performance. ",
+					'card_image_src': "//tonal.com/cdn/shop/files/SuccessStory-S2-Athletes-4x3.png?v=1761621205&width=600",
+					'card_image_alt_attribute': "Man playing tennis on green court",
+					'card_button': {
+						'card_button_text': "training for athletes",
+						'card_button_url': "https://tonal.com/pages/success-stories-train-like-an-athlete",
+					}
+				},
+				{
+					'card_title': "get strong at your own pace",
+					'card_description': "Train safely during pregnancy and beyond with expert pre- and post-natal guidance that helps you build strength and feel powerful every step of the way.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SuccessStory-S2-PreAndPostNatal-4x3.png?v=1761621257&width=600",
+					'card_button': {
+						'card_button_text': "training during pregnancy",
+						'card_button_url': "https://tonal.com/pages/success-stories-pregnancy-fitness-workouts",
+					}
+				},
+				{
+					'card_title': "build muscle and confidence",
+					'card_description': "Losing weight shouldn’t mean losing muscle. Get strong in the comfort of home with expert-designed programs that keep you moving forward.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SuccessStory-S2-WeightLoss-4x3.png?v=1761621313&width=600",
+					'card_image_alt_attribute': "Man playing tennis on green court",
+					'card_button': {
+						'card_button_text': "training to maintain muscle",
+						'card_button_url': "https://tonal.com/pages/success-stories-weight-loss",
+					}
+				},
+			],
+		}%}
+
+		{% include "components/row-testimonial-card.twig" with {
+			'rct_darkbg': "bg-background",
+			'rct_title': "why members love training with tonal",
+			testimonials: [
+				{
+					'testimonial_image_src': "//tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=1000",
+					'testimonial_image_srcset_attribute': "//tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=352 352w, //tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=832 832w, //tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=1000 1000w",
+					'testimonial_description': "Tonal has completely changed my life. As a Mom to my little girl and suffering from multiple sclerosis, Tonal has given me my life back. I never know what my day will be like or how I’ll feel each morning. Having a Tonal allows me to adjust my workouts based on how I’m doing and also gives me the flexibility to work out at home. My daughter is always cheering me on and counting down the reps for me. I know in the end that being able to stay strong and healthy for myself and for her is the most important thing",
+					'testimonial_name': "Amy Stanton",
+				},
+				{
+					'testimonial_image_src': "//tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=1000",
+					'testimonial_image_srcset_attribute': "//tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=352 352w, //tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=832 832w, //tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=1000 1000w",
+					'testimonial_description': "8 months in since I started with Tonal, I’m in my best shape of my whole life. It really makes working out a lot easier, especially as a newbie. Tonal is changing my life!",
+					'testimonial_name': "Kevin Sha",
+				},
+				{
+					'testimonial_image_src': "//tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=1000",
+					'testimonial_image_srcset_attribute': "//tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=352 352w, //tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=832 832w, //tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=1000 1000w",
+					'testimonial_description': "Over the last year and change, Tonal has helped me regain my strength and confidence after having my now 2nd daughter. It’s not always easy to fit in the workouts, but if the motivation were low I’d take fun as a simplistic must, but it’s ALWAYS worth it. I’ve never been stronger, and there’s no stopping me!",
+					'testimonial_name': "Julia Burton",
+				}
+
+			]
+		}%}
+
+		{% include "components/row-equipment-card.twig" with {
+			'image_class': "w-[60px]! h-[90px]!",
+			equipments: [
+					{
+					'card_title': "book a demo today",
+					'card_description': "Experience training with Tonal in person or virtually, guided by one of our experts.",
+					'card_button_title': "BOOK ONLINE OR VIRTUAL",
+					'card_button_title_attribute': "BOOK ONLINE OR VIRTUAL",
+					'card_button_url': "https://tonal.com/pages/try-tonal",
+					'card_image_src': "//tonal.com/cdn/shop/files/ICON-laptop-inverted.svg?v=1761621556&width=1000",
+				},
+				{
+					'card_title': "shop tonal now",
+					'card_description': "Start your fitness journey today with Tonal 2.",
+					'card_button_title': "SHOP NOW",
+					'card_button_title_attribute': "SHOP NOW",
+					'card_button_url': "https://tonal.com/products/tonal-2",
+					'card_image_src': "//tonal.com/cdn/shop/files/icon-phone-inverted.svg?v=1761621556&width=1000",
+				},
+				{
+					'card_title': "Explore the Tonal app",
+					'card_description': "See how you can set, track, and crush goals on the Tonal app. Plus, browse thousands of on-demand workouts to do at home with Tonal, or on the go without it.",
+					'card_button_title': "DOWNLOAD THE APP",
+					'card_button_title_attribute': "DOWNLOAD THE APP",
+					'card_button_url': "https://tonal.com/pages/mobile",
+					'card_image_src': "//tonal.com/cdn/shop/files/ICON-mobile-inverted.svg?v=1761621550&width=1000",
+				}
+			]
+		} 
+		%}
+
+	</article>
+{% endblock %}

@@ -1,0 +1,42 @@
+<section >
+    <div 
+        class="{{ rct_darkbg ? rct_darkbg : 'bg-[rgb(244,244,244)]' }} section-padding text-text scroll-mt-20"
+        style="
+            --scheme-disabled-accent: 73 73 72; 
+            --scheme-disabled: 110 110 110; 
+            --scheme-error: 189 32 32; 
+            --scheme-approved: 94 199 98; 
+            --scheme-on-accent: 28 28 26; 
+            --scheme-accent: 17 221 196; 
+            --scheme-border: 73 73 72; 
+            --scheme-alternate-background: 246 246 241; 
+            --scheme-background: {{ rct_darkbg ? "28 28 26" : "244 244 244" }}; 
+            --scheme-text: {{ rct_darkbg ? "244 244 244" : "28 28 26" }};
+            --section-spacing-sm: 0px; 
+            --section-spacing-md: 0px; 
+            --section-spacing-lg: 0px; 
+            --section-padding-sm: 3rem; 
+            --section-padding-md: 4rem; 
+            --section-padding-lg: 5rem;
+        ">
+        <div class="wrapper ">
+            <h2 class="text-[2.5rem] my-[0.5em] max-w-[572px]">{{ rct_title|default('Frequently Asked Questions')|e }} </h2>
+            <div data-initial-content-key="">
+                {% for rct_faq in rct_faqs %}
+                    <div class="faq-item border-b border-bounderies-border py-4 text-text" tabindex="0">
+                        <h3 class="">
+                            <button type="button" class="font-bold text-body flex items-start justify-between min-h-[theme(height.icon)] w-full text-left" aria-expands aria-expanded="false">
+                                <span class="">{{ rct_faq.title|default('') }}</span>
+                            </button>
+                        </h3>
+                        <div class="faq-texts text-smaller text-left overflow-hidden transition-[max-height] duration-300 ease-in-out max-h-0">
+                            <div class="pt-4">
+                                <p>{{ rct_faq.texts|default('')|raw }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

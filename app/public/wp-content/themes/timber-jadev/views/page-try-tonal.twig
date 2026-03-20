@@ -1,0 +1,105 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+
+		{% include "components/hero-image-text.twig" with {
+			'title_row1': "Book A Demo",
+			'description_row1': "Schedule a free demo with a Tonal expert to experience the difference of personalized training.",
+			'button_text_row1': 'In-Person',
+			'button_url_row1': 'https://tonal.com/pages/try-tonal#map-locator',
+			'button_text2_row1': 'Virtually',
+			'button_url2_row1': 'https://tonal.com/pages/virtual-demo-booking',
+			'add_class': {
+				'body_position_class': "justify-center sm:justify-center items-center md:items-start ",
+				'body_layout_class': "items:center md:items-start",
+				'p_align_class': "!text-start",
+			},
+			'rct_image': {
+				'rct_image_src': "//tonal.com/cdn/shop/files/LP-TRY-TONAL-Hero-1-T-CC_2025_0725_006-Ext.png?v=1759530091&width=3840"
+			},
+			'rct_darkbg': "bg-background",
+			'rct_style': {
+				'aspect_ratio': "2.331582895723931",
+				'mobile_aspect_ratio': "0.6696428571428571",
+			},
+		}%}
+
+		{% include "components/footer-banner.twig" with {
+			'rct_image': {
+				'rct_image_url': "//tonal.com/cdn/shop/files/LP-TRY-TONAL-Banner-T-CC_2025_0725_0002.png?v=1759530401&width=3840"
+			}
+		}%}
+
+		{% include "components/row-content-text.twig" with {
+			'rct_title': "what to expect at your demo",
+			'rct_description': "Whether you’re joining us in person or virtually, a Tonal expert will walk you through the training experience and answer any of your questions.",
+			'rct_darkbg': "bg-background",
+			'add_class': "!pb-0"
+		}%}
+
+		{% include "components/row-equipment-card.twig" with {
+			'rct_darkbg': "bg-background",
+			equipments: [
+					{
+					'card_title': "tonal showroom",
+					'card_list': "<ul class='list-disc pl-[1.1rem]'><li>Plan to arrive 10 minutes early and a Tonal expert will check you in.</li><li>Before your Strength Assessment, you’ll discuss your goals with the Tonal expert to tailor the demo.</li><li>You’ll do a Strength Assessment to get your personalized weight recommendations and learn more about how Tonal can help you reach your goals.</li></ul>",
+					'card_button_title': "BOOK NOW",
+					'card_button_url': "https://tonal.com/pages/try-tonal#map-locator",
+					'card_image_src': "//tonal.com/cdn/shop/files/LP-TRY-TONAL-CB3-C1-T-CC_2025_0725_0007.png?v=1759530511&width=1000",
+				},
+				{
+					'card_title': "Virtual",
+					'card_list': "<ul class='list-disc pl-[1.1rem]'><li>You’ll receive a link for a video call with a Tonal expert in your email.</li><li>Have a camera ready either on your computer or mobile device.</li><li>The Tonal expert will walk you through how to use Tonal, explore its personalized training features, and give you the opportunity to ask questions about anything from features to installation.</li></ul>",
+					'card_button_title': "Explore the Tonal App",
+					'card_button_url': "hhttps://tonal.com/pages/virtual-demo-booking",
+					'card_image_src': "//tonal.com/cdn/shop/files/LP-TRY-TONAL-CB3-C2.png?v=1759530514&width=1000",
+				}
+			]
+		} 
+		%}
+
+		{% include "components/row-faq.twig" with {
+			'rct_faqs': [
+				{
+					'title': "How long is a Tonal demo?",
+					'texts': "Both in person and virtual demos are schedule for 30 minutes, but can extend up to 45 minutes."
+				},
+				{
+					'title': "What is the cancellation policy?",
+					'texts': "You can reschedule your demo at any time. In the meantime, keep sweating and stay strong."
+				},
+				{
+					'title': "Is there a group limit?",
+					'texts': "There is no group limit, but if you want to bring friends and family, we recommend you plan for staying a little longer than 30 minutes for both in-person and virtual demos."
+				},
+				{
+					'title': "What’s the minimum age to try Tonal?",
+					'texts': "You must be at least 18 years old to demo Tonal. By participating in a demo, you confirm that you’re in good health and accept the risks involved in using the equipment."
+				},
+			]
+		}%}
+
+		{% include "components/row-equipment-card.twig" with {
+			'rct_darkbg': "bg-background",
+			equipments: [
+					{
+					'card_title': "Train smarter with Tonal",
+					'card_description': "Tonal is all-in-one home gym equipment that tailors your training and helps you maximize your effort to break through plateaus.",
+					'card_button_title': "EXPLORE SMART TECH",
+					'card_button_url': "https://tonal.com/pages/technology",
+					'card_image_src': "//tonal.com/cdn/shop/files/LP-TRY-TONAL-CB-Equipment-S4-TrainSmarterWithTonal.png?v=1759530975&width=1000",
+				},
+				{
+					'card_title': "get it all on your wall",
+					'card_list': "No more re-racking or taking up floor space—Tonal replaces multiple traditional gym machines, including the squat rack, bench press, and more.",
+					'card_button_title': "EXPLORE EQUIPMENT",
+					'card_button_url': "https://tonal.com/pages/equipment-overview",
+					'card_image_src': "//tonal.com/cdn/shop/files/LP-TRY-TONAL-CB-Equipment-S4-LevelUpYourTrainingToday.png?v=1759530978&width=1000",
+				}
+			]
+		} 
+		%}
+
+	</article>
+{% endblock %}

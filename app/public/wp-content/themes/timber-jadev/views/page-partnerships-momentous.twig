@@ -1,0 +1,83 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+
+		{% include "components/hero-texts.twig" with {
+			'title_row1': "A SHARED COMMITMENT TO PERFORMANCE INNOVATION",
+			'description_row1': "Momentous offers smart, transparent formulas that perfectly align with Tonal's approach to training: personalized, precise, and built for the long term.",
+            'button_text_row1': "SHOP MOMENTOUS",
+            'button_url_row1': "https://crrnt.app/MOME/tonal"
+		}%}
+
+        {% include "components/footer-banner.twig" with {
+			'rct_image': {
+                'rct_image_url': "//tonal.com/cdn/shop/files/LP-Momentous-CB2-ProductLineup.png?v=1768524253&width=3840",
+			}
+		}%}
+
+        {% include "components/row-text-left.twig" with {
+			'rct_title': "save 35% on first-time Subscriptions with code: tonal",
+			'rct_description': "<ul class='list-disc pl-[1.1rem]'><li>Save 14% on one-time purchases (no subscription required)</li><li>Save 10% on all recurring subscription orders</li></ul>",
+            'rct_button': {
+				'rct_button_url': "https://crrnt.app/MOME/tonal",
+				'rct_button_text': "SAVE ON MOMENTOUS"
+			}
+		}%}
+
+        {% include 'components/row-banner-carousel.twig' with {
+            rct_title: 'CREATINE',
+            banner_cards: creatine_array
+        } %}
+
+        {% include 'components/row-banner-carousel.twig' with {
+            rct_title: 'PROTEIN',
+            banner_cards: protein_array
+        } %}
+
+        {% include 'components/row-banner-carousel.twig' with {
+            rct_title: 'supplements',
+            banner_cards: supplements_array
+        } %}
+
+        {% include "components/row-equipment-card.twig" with {
+			equipments: [
+					{
+					'card_title': "nutrient-rich protein shake recipes",
+					'card_description': "Refuel your muscles adequately with nutrient-rich protein after every workout. A simple rotation of tasty protein shake recipes can help keep your routine fresh and your progress on track.",
+					'card_button_title': "LEARN MORE",
+					'card_button_url': "https://tonal.com/blogs/all/protein-shake-recipes",
+					'card_image_src': "//tonal.com/cdn/shop/files/LP-Momentous-CB6-SusieKieckhefer_Momentous_SamBriggs-06778.png?v=1762808306&width=1000",
+				},
+				{
+					'card_title': "PROTEIN OVERNIGHT OATS RECIPE",
+					'card_description': "Overnight oats are a great source of healthy carbs. Combined with <a href='https://tonal.com/blogs/all/how-much-protein-per-day/' target='_blank'>protein</a>, they'll keep you feeling full and focused.",
+					'card_button_title': "LEARN MORE",
+					'card_button_url': "https://tonal.com/blogs/all/protein-overnight-oats-recipes",
+					'card_image_src': "//tonal.com/cdn/shop/files/LP-Momentous-CB6-tonalapril2411116.png?v=1762808306&width=1000",
+				},
+			]
+		} 
+		%}
+
+        {% include "components/row-content-text.twig" with {
+			'rct_title': "Dr. stacy sims on nutrition",
+			'rct_description': "Health and performance specialist, Dr. Stacy Sims discusses the importance of fueling workouts with proper protein and the importance of sticking to high-quality supplements.",
+		}%}
+
+        {% include "components/image-text.twig" with {
+			'rct_title': "train smarter. recover faster.",
+			'rct_description': "Tonal is all-in-one home gym equipment that tailors your training and helps you maximize your effort to break through plateaus.",
+			'rct_button': {
+				'rct_button_text': "SHOP MOMENTOUS",
+				'rct_button_url': "https://crrnt.app/MOME/tonal",
+			},
+			'rct_image': {
+				'rct_image_src': "//tonal.com/cdn/shop/files/LP-Momentous-CB7-SusieKieckhefer_Momentous_SamBriggs-06819_2.png?v=1762808306&width=2160",
+				'rct_image_srcset': "//tonal.com/cdn/shop/files/LP-Momentous-CB7-SusieKieckhefer_Momentous_SamBriggs-06819_2.png?v=1762808306&width=360 360w, //tonal.com/cdn/shop/files/LP-Momentous-CB7-SusieKieckhefer_Momentous_SamBriggs-06819_2.png?v=1762808306&width=480 480w, //tonal.com/cdn/shop/files/LP-Momentous-CB7-SusieKieckhefer_Momentous_SamBriggs-06819_2.png?v=1762808306&width=720 720w, //tonal.com/cdn/shop/files/LP-Momentous-CB7-SusieKieckhefer_Momentous_SamBriggs-06819_2.png?v=1762808306&width=960 960w, //tonal.com/cdn/shop/files/LP-Momentous-CB7-SusieKieckhefer_Momentous_SamBriggs-06819_2.png?v=1762808306&width=1200 1200w, //tonal.com/cdn/shop/files/LP-Momentous-CB7-SusieKieckhefer_Momentous_SamBriggs-06819_2.png?v=1762808306&width=1440 1440w, //tonal.com/cdn/shop/files/LP-Momentous-CB7-SusieKieckhefer_Momentous_SamBriggs-06819_2.png?v=1762808306&width=1620 1620w, //tonal.com/cdn/shop/files/LP-Momentous-CB7-SusieKieckhefer_Momentous_SamBriggs-06819_2.png?v=1762808306&width=1980 1980w, //tonal.com/cdn/shop/files/LP-Momentous-CB7-SusieKieckhefer_Momentous_SamBriggs-06819_2.png?v=1762808306&width=2160 2160w",
+			},
+			'rct_darkbg': "bg-background"
+		}%}
+
+	</article>
+{% endblock %}

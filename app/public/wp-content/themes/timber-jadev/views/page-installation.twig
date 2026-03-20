@@ -1,0 +1,97 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+
+		{% include "components/hero-texts.twig" with {
+			'title_row1': post.meta('title_row1'),
+			'description_row1': post.meta('description_row1'),
+			'button_text_row1': post.meta('button_text_row1'),
+			'button_url_row1': post.meta('button_url_row1'),
+			'rct_darkbg': "bg-background",
+		}%}
+
+		{% include "components/row-media.twig" with {
+			'title_row2': post.meta('title_row2'),
+			'description_row2': post.meta('description_row2'),
+			'video': {
+				'video_src': "//tonal.com/cdn/shop/videos/c/vp/9c82aa4648034443b0037577a1ec6492/9c82aa4648034443b0037577a1ec6492.HD-1080p-2.5Mbps-46883264.mp4?v=0",
+				'video_poster': "//tonal.com/cdn/shop/files/preview_images/9c82aa4648034443b0037577a1ec6492.thumbnail.0000000000_3840x.jpg?v=1746142254",
+			},
+			'rct_darkbg': "bg-background",
+		}%}
+
+		{% include "components/row-equipment-card.twig" with {
+			'image_class': "w-[60px]! h-[90px]!",
+			equipments: [
+					{
+					'card_title': "1. Choose your space",
+					'card_description': "Check that it meets the requirements for the Tonal setup listed below.",
+					'card_image_src': "//tonal.com/cdn/shop/files/InYourHome_Icon1.png?v=1746041187&width=1000",
+				},
+				{
+					'card_title': "2. Fill out a survey",
+					'card_description': "After purchase, confirm your space details to ensure proper installation.",
+					'card_image_src': "//tonal.com/cdn/shop/files/InYourHome_icon2.png?v=1746041204&width=1000",
+				},
+				{
+					'card_title': "3. Schedule your installation",
+					'card_description': "Schedule a time for our professional installers to get Tonal set up for you.",
+					'card_image_src': "//tonal.com/cdn/shop/files/InYourHome_Icon3.png?v=1746041225&width=1000",
+				}
+			]
+		} 
+		%}
+
+		{% include "components/image-text.twig" with {
+			'rct_title': "find the perfect spot",
+			'rct_description': "
+				<p>
+				<b>Can be installed on most walls</b><br>
+				Tonal is installed similarly to TV mount brackets and works with most wood and metal studs 16-24 inches apart.
+				<br><br>
+				<b>Minimal space is required</b><br>
+				The ideal overhead height clearance is 7’ 10” to allow Tonal’s adjustable arms to fully extend. However, Tonal can still work with a ceiling height of 7’.
+				<br><br>
+				<b>Stay connected</b><br>
+				Choose a space with continuous, reliable WiFi and a grounded, three-prong power outlet within 6 feet of the location without extension cords.
+				</p>",
+			'rct_image': {
+				'rct_image_src': "//tonal.com/cdn/shop/files/PDP-S5-TonalDeliveryandInstallation.png?v=1746229594&width=3840",
+				'rct_image_alt': "Tonal mounted to wall with lines showing necessary spacing",
+			},
+			'rct_row_reverse': true,
+			'rct_darkbg': "bg-background"
+		}%}
+
+		{% include "components/image-text.twig" with {
+			'rct_title': "WHITE GLOVE DELIVERY AND PROFESSIONAL INSTALLATION",
+			'rct_description': "There’s one less step between you and your first workout when our certified team of professional installers delivers, mounts, and sets up your Tonal for a safe and secure training experience.",
+			'rct_image': {
+				'rct_image_src': "//tonal.com/cdn/shop/files/image_with_text_img_1.png?v=1745256916&width=2160",
+				'rct_image_srcset': "//tonal.com/cdn/shop/files/image_with_text_img_1.png?v=1745256916&width=360 360w, //tonal.com/cdn/shop/files/image_with_text_img_1.png?v=1745256916&width=480 480w, //tonal.com/cdn/shop/files/image_with_text_img_1.png?v=1745256916&width=720 720w, //tonal.com/cdn/shop/files/image_with_text_img_1.png?v=1745256916&width=960 960w, //tonal.com/cdn/shop/files/image_with_text_img_1.png?v=1745256916&width=1200 1200w, //tonal.com/cdn/shop/files/image_with_text_img_1.png?v=1745256916&width=1440 1440w, //tonal.com/cdn/shop/files/image_with_text_img_1.png?v=1745256916&width=1620 1620w, //tonal.com/cdn/shop/files/image_with_text_img_1.png?v=1745256916&width=1980 1980w, //tonal.com/cdn/shop/files/image_with_text_img_1.png?v=1745256916&width=2160 2160w",
+				'rct_image_alt': "Diagram of Tonal with mounting bracket and hardware ",
+			},
+		}%}
+
+		{% include "components/row-content-text.twig" with {
+			'rct_title': "Talk to a Tonal expert",
+			'rct_description': "No more jumping from machine to machine or re-racking weights. Tonal delivers over 300 moves that challenge every muscle and build strength like never before.",
+			'rct_cta_button': {
+				'rct_cta_button_text': "Explore 300+ Movements",
+				'rct_cta_button_url': "https://tonal.com/blogs/movements",
+			},
+			'rct_darkbg': "bg-background"
+		}%}
+
+		{# Default WordPress content (from the editor) #}
+		{# {% if post.content %}
+			<section class="article-content">
+				<div class="article-body">
+					{{ post.content }}
+				</div>
+			</section>
+		{% endif %} #}
+
+	</article>
+{% endblock %}

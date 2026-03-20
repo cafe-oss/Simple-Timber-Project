@@ -1,0 +1,253 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+
+		{% include "components/hero-texts.twig" with {
+			'title_row1': post.meta('title_row1'),
+			'description_row1': post.meta('description_row1'),
+			'button_text_row1': post.meta('button_text_row1'),
+			'button_url_row1': post.meta('button_url_row1'),
+			'button_text2_row1': post.meta('button_text2_row1'),
+			'button_url2_row1': post.meta('button_url2_row1'),
+		}%}
+
+		{% include "components/vertical-slider-tabs.twig" with {
+			rct_title: "Variety to keep you motivated",
+			rct_tab_position: "left",
+			rct_items: [
+			{
+				title: "Overview",
+				description: "From strength to mobility, Tonal workouts span over 15 categories and offer thousands of on-demand classes, refreshed weekly.",
+				media_type: "video",
+				media_src: "//tonal.com/cdn/shop/videos/c/vp/f980e75cf8e94fcabc4a65c19d75db5a/f980e75cf8e94fcabc4a65c19d75db5a.HD-720p-4.5Mbps-59256184.mp4?v=0",
+			},
+			{
+				title: "Strength training",
+				description: "Workouts designed to progressively push you to get stronger, whether you’re targeting specific muscles or your whole body.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP_Pilates-CB2-Reformer-Like-Experience.png?v=1760035647&width=2160",
+			},
+			{
+				title: "Aero",
+				description: "Can’t decide between cardio and strength? Blend them in this workout designed to up your heart rate and strengthen all your major muscle groups.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/Pilates_LP_CB2-Reformer-Like_Experience_Desktop.png?v=1760035523&width=2160",
+			},
+			{
+				title: "Drop sets",
+				description: "Build muscle up to twice as fast and push through plateaus. Tonal senses when you’re fatiguing and lowers weight by the optimal amount until your muscles are maxed out.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP_Pilates-CB2-Automatic-Progress_Tracking_Desktop.png?v=1760035647&width=2160",
+			},
+			{
+				title: "High intensity",
+				description: "Dial up the intensity in these workouts that use short bursts of effort to help improve conditioning and burn calories.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/Pilates_LP_CB2-Reformer-Like_Experience_Desktop.png?v=1760035523&width=2160",
+			},
+			{
+				title: "Cardio",
+				description: "These fast-paced bodyweight burners are designed to improve your endurance, boost energy, and ignite your metabolism.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP_Pilates-CB2-Automatic-Progress_Tracking_Desktop.png?v=1760035647&width=2160",
+			},
+			{
+				title: "Yoga",
+				description: "Holistic strength is the name of the Tonal game. Push yourself with guided yoga classes designed to build strength and enhance recovery.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP_Pilates-CB2-Automatic-Progress_Tracking_Desktop.png?v=1760035647&width=2160",
+			},
+			{
+				title: "Mobility",
+				description: "Our suite of mobility workouts can help improve flexibility, increase range of motion, and reduce risk of injury, so you can train harder, longer.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP_Pilates-CB2-Automatic-Progress_Tracking_Desktop.png?v=1760035647&width=2160",
+			},
+			{
+				title: "Sport performance",
+				description: "Up your game with workouts designed to help you perform better, whether it’s running, skiing, or something else you love.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP_Pilates-CB2-Automatic-Progress_Tracking_Desktop.png?v=1760035647&width=2160",
+			},
+			{
+				title: "Active recovery",
+				description: "Our suite of mobility workouts can help improve flexibility, increase range of motion, and reduce risk of injury, so you can train harder, longer.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP_Pilates-CB2-Automatic-Progress_Tracking_Desktop.png?v=1760035647&width=2160",
+			},
+			{
+				title: "Sport performance",
+				description: "Balance your high-intensity efforts with classes that automatically reduce weight with gentle movements that help your muscles recover and get ready for your next challenge.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP_Pilates-CB2-Automatic-Progress_Tracking_Desktop.png?v=1760035647&width=2160",
+			},
+			{
+				title: "Meditation",
+				description: "Take a seat and deepen the mind-body connection with exercises centered on breathwork, visualization, and mindfulness.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP_Pilates-CB2-Automatic-Progress_Tracking_Desktop.png?v=1760035647&width=2160",
+			},
+			{
+				title: "Golf",
+				description: "Enhanced visual coaching and pro tips from the best in the game help you build more power, precision, and resilience on the course.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP_Pilates-CB2-Automatic-Progress_Tracking_Desktop.png?v=1760035647&width=2160",
+			},
+			{
+				title: "Pilates",
+				description: "A total body workout with a strong focus on core, guided by a few key principles—breath, concentration, control, precision, and flow.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP_Pilates-CB2-Automatic-Progress_Tracking_Desktop.png?v=1760035647&width=2160",
+			},
+			{
+				title: "Barre",
+				description: "Sculpt your way to dancer strong with pulse-heavy routines that help build long, lean muscles and improve overall alignment and posture.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP_Pilates-CB2-Automatic-Progress_Tracking_Desktop.png?v=1760035647&width=2160",
+			},
+			{
+				title: "Boxing",
+				description: "Classes designed to jab your way to better cardio and strength while burning calories, building coordination, and boosting confidence.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP_Pilates-CB2-Automatic-Progress_Tracking_Desktop.png?v=1760035647&width=2160",
+			},
+			{
+				title: "Pre and postnatal",
+				description: "Pre and postnatal workouts take the guesswork out of training during and after pregnancy, so you can stay strong in a safe, sustainable way.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP_Pilates-CB2-Automatic-Progress_Tracking_Desktop.png?v=1760035647&width=2160",
+			},
+			{
+				title: "Family fitness",
+				description: "Build family bonds while you build strength with kid-friendly workouts that include, skills, drills, and fun-sized classes.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP_Pilates-CB2-Automatic-Progress_Tracking_Desktop.png?v=1760035647&width=2160",
+			},
+			]
+		} %}
+
+		{% include "components/row-text-left.twig" with {
+			'rct_title': "What the press is saying",
+			'rct_description': "Whether you’re just getting started or looking to level up your game, Tonal has multi-week, science-backed programs that help you maximize progress and minimize the time spent thinking about how to hit your goals.",
+			'rct_darkbg': "bg-background",
+		}%}
+
+		{% include "components/row-banner-carousel.twig" with {
+			'rct_darkbg': "bg-background",
+			'banner_cards': [
+				{
+					'card_title': "Build muscle",
+					'card_description': "Push your limits with workouts designed to maximize effort, increase strength, and help you break through plateaus.",
+					'card_image_src': "//tonal.com/cdn/shop/files/Workouts-S2-BuildMuscle.png?v=1751480178&width=600",
+					'card_image_alt_attribute': "Man laying on bench doing bench press",
+				},
+				{
+					'card_title': "Get lean and strong",
+					'card_description': "Burn calories and build strength with high-intensity workouts that keep your heart rate up and your body moving.",
+					'card_image_src': "//tonal.com/cdn/shop/files/Workouts-S2-GetLean.png?v=1751480204&width=600",
+					'card_image_alt_attribute': "Woman doing barbell bicep curl",
+				},
+				{
+					'card_title': "Improve fitness",
+					'card_description': "Boost your overall fitness with programs that balance cardio, strength, flexibility, and coordination.",
+					'card_image_src': "//tonal.com/cdn/shop/files/Workouts-S2-ImproveFitness.png?v=1751480222&width=600",
+					'card_image_alt_attribute': "Tonal instructor looking at camera",
+				},
+				{
+					'card_title': "Increase Endurance",
+					'card_description': "Build stamina with workouts that emphasize steady effort, limited rest, and long-lasting cardiovascular gains.",
+					'card_image_src': "//tonal.com/cdn/shop/files/Workouts-S2-Endurance.png?v=1751480244&width=600",
+					'card_image_alt_attribute': "Woman bending down doing racked offset squat",
+				},
+				{
+					'card_title': "Functional Strength",
+					'card_description': "Train for real life with workouts that improve mobility, enhance stability, and strengthen your full range of motion.",
+					'card_image_src': "//tonal.com/cdn/shop/files/Workouts-S2-FunctionalStrength.png?v=1751480259&width=600",
+					'card_image_alt_attribute': "Man doing barbell pulldown",
+				},
+			],
+		}%}
+
+		{% include "components/row-text-left.twig" with {
+			'rct_title': "Customization to fit your training",
+			'rct_description': "Fitness journeys are personal, so that’s why Tonal has more tools to help you tailor your experience exactly how you want it.",
+			'rct_darkbg': "bg-background",
+		}%}
+			{# 'add_class': "!pb-0" #}
+
+
+		{% include "components/row-banner-carousel.twig" with {
+			'rct_darkbg': "bg-background",
+			'banner_cards': [
+				{
+					'card_title': "Build your own workout",
+					'card_description': "Have a routine you love? Create your own and Tonal will track it.",
+					'card_image_src': "//tonal.com/cdn/shop/files/Workouts-S3-BuildYourOwnWorkout.png?v=1751480348&width=600",
+					'card_image_alt_attribute': "Smartphone UI showing Monday’s workout plan",
+				},
+				{
+					'card_title': "Replace movements",
+					'card_description': "Feel your best with over 300 movement substitutes for any workout, any time.",
+					'card_image_src': "//tonal.com/cdn/shop/files/Workouts-S3-ReplaceMovements.png?v=1751480372&width=600",
+					'card_image_alt_attribute': "UI alert showing a live class",
+				},
+				{
+					'card_title': "Join a live class",
+					'card_description': "Get a burst of energy from a real-time class in the convenience of your home.",
+					'card_image_src': "//tonal.com/cdn/shop/files/Workouts-S3-JoinALiveClass.png?v=1751480391&width=600",
+					'card_image_alt_attribute': "UI giving the option to replace movements",
+				},
+				{
+					'card_title': "Partner up",
+					'card_description': "Get a burst of energy from a real-time class in the convenience of your home.",
+					'card_image_src': "//tonal.com/cdn/shop/files/Workouts-S3-PartnerUp.png?v=1751480410&width=600",
+					'card_image_alt_attribute': "UI showing the option to select a solo, partner, or group workout",
+				},
+			],
+		}%}
+
+		{% include "components/row-content-text.twig" with {
+			'rct_title': "Tonal membership unlocks the full workout library, refreshed weekly.",
+			'rct_description': "No more jumping from machine to machine or re-racking weights. Tonal delivers over 300 moves that challenge every muscle and build strength like never before.",
+			'rct_button': {
+				'rct_button_text': "Explore 300+ Movements",
+				'rct_buttonn_url': "https://tonal.com/blogs/movements",
+			},
+		}%}
+
+		{% include "components/row-equipment-card.twig" with {
+			'rct_darkbg': "bg-background",
+			equipments: [
+					{
+					'card_title': "Expert coaching, any time",
+					'card_description': "Whether you’re looking to train with a pro, feel empowered with positive vibes, or learn the science behind a workout, our roster of world-class coaches is here for all experience levels.",
+					'card_button_title': "Meet Our Coaches",
+					'card_button_title_attribute': "Meet Our Coaches",
+					'card_button_url': "https://tonal.com/pages/coaches",
+					'card_image_src': "//tonal.com/cdn/shop/files/TTL-Coaches-1.webp?v=1747848423&width=1000",
+					'card_image_alt_attribute': "Group of coaches walking towards camera"
+				},
+				{
+					'card_title': "Level Up with the Tonal App",
+					'card_description': "Browse an ever-growing library of workouts you can do both at home and on the go, review rich metrics about your progress, and access features like custom workouts—right at your fingertips.",
+					'card_button_title': "Explore the Tonal App",
+					'card_button_title_attribute': "Explore the Tonal App",
+					'card_button_url': "https://tonal.com/pages/mobile",
+					'card_image_src': "//tonal.com/cdn/shop/files/1._Mobile_app-hero.png?v=1747847744&width=1000",
+					'card_image_alt_attribute': "Mobile app and smart watch"
+				}
+			]
+		} 
+		%}
+
+		{% include "components/row-content-text.twig" with {
+			'rct_title': "Sign up for the latest from Tonal",
+			'rct_description': "Be the first to know about smart training updates, sales, exclusive content, and more ways to personalize your training.",
+			'add_class': "!pb-0"
+		}%}
+
+		{% include "components/footer-email.twig" %}
+
+	</article>
+{% endblock %}

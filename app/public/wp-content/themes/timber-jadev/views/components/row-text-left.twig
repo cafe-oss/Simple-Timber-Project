@@ -1,0 +1,46 @@
+<section>
+  <div
+    class="{{ rct_darkbg ? rct_darkbg : 'bg-[rgb(244,244,244)]' }} section-spacing section-padding text-text {{ add_class|default('')|e }}"
+    data-full-width="false"
+    style="
+      --scheme-disabled-accent: 73 73 72;
+      --scheme-disabled: 110 110 110;
+      --scheme-error: 189 32 32;
+      --scheme-approved: 94 199 98;
+      --scheme-on-accent: 28 28 26;
+      --scheme-accent: 17 221 196;
+      --scheme-border: 73 73 72;
+      --scheme-alternate-background: 246 246 241;
+      --scheme-background: {{ rct_darkbg ? "28 28 26" : "244 244 244" }};
+      --scheme-text: {{ rct_darkbg ? "244 244 244" : "28 28 26" }};
+      --section-padding-sm: 3rem;
+      --section-padding-md: 4rem;
+      --section-padding-lg: 5rem;
+    " >
+    <div class="wrapper flex flex-col md:gap-x-8 md:flex-row justify-between w-full" id="{{ rct_id|default('')|e }}">
+      <div class="flex flex-col items-start w-full gap-6">
+        {% if rct_title %}
+          <h2 class="text-[2.5rem] mt-[0.5em]">{{ rct_title|default('')|e }}</h2>
+        {% endif %}
+        {% if rct_description %}
+          <p>{{ rct_description|default('')|raw }}</p>
+        {% endif %}
+
+        {% if rct_button is not empty %}
+            <div class="flex flex-wrap justify-start items-center gap-6">
+              <animate-scroll 
+                style="animation-delay: calc(1*100ms)" 
+                class="opacity-0 block animate-eased-slide-up">
+                  <a 
+                    href="{{ rct_button.rct_button_url|default('#')|e }}" 
+                    class="link" aria-label="{{ rct_button.rct_button_arialabel|default('')|e }}" 
+                    data-marketing-cta="">
+                      {{ rct_button.rct_button_text|default('#')|e }}
+                  </a>
+              </animate-scroll>
+            </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

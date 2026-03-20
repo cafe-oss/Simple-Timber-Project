@@ -1,0 +1,324 @@
+@media (min-width: 768px) {
+  .slider-button-prev,
+  .slider-button-next,
+  .slider-button-pause,
+  .slider-button-play,
+  .testimonial-slider-prev,
+  .testimonial-slider-next,
+  .banner-slider-next,
+  .banner-slider-prev {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .slider-button-prev,
+  .slider-button-next,
+  .slider-button-pause,
+  .slider-button-play,
+  .testimonial-slider-prev,
+  .testimonial-slider-next,
+  .banner-slider-next,
+  .banner-slider-prev {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+.slider-button-prev,
+.slider-button-next,
+.slider-button-pause,
+.slider-button-play,
+.testimonial-slider-prev,
+.testimonial-slider-next,
+.banner-slider-next,
+.banner-slider-prev {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.slider-button-prev:hover,
+.slider-button-next:hover,
+.testimonial-slider-prev:hover,
+.testimonial-slider-next:hover,
+.banner-slider-next:hover,
+.banner-slider-prev:hover {
+  background-color: #e5e7eb;
+}
+
+/* If you want to keep the CSS mask approach, use this: */
+.slider-button-prev::after,
+.slider-button-next::after,
+.testimonial-slider-prev::after,
+.testimonial-slider-next::after,
+.banner-slider-next::after,
+.banner-slider-prev::after {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: rgb(var(--scheme-accent));
+  content: "";
+  mask-position: center center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+
+.slider-button-prev::after,
+.testimonial-slider-prev::after,
+.banner-slider-prev::after {
+  mask-image: var(--left-arrow-long);
+}
+
+.slider-button-next::after,
+.testimonial-slider-next::after,
+.banner-slider-next::after {
+  mask-image: var(--right-arrow-long);
+}
+
+.slider-button-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.slider-thumb-active {
+  border-color: rgb(var(--scheme-accent));
+  opacity: 1;
+}
+
+.slider-slide-active.slider-slide-zoomed {
+  touch-action: none;
+}
+
+/* ========================================
+   Vertical Slider Tabs Component
+   ======================================== */
+
+/* Tabs Container */
+.rct-tabs-container {
+  position: relative;
+}
+
+.rct-tabs-wrapper {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .rct-tabs-wrapper {
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+  }
+}
+
+.rct-tabs-scroll {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Tab Item Styles */
+.rct-tab-item {
+  cursor: pointer;
+  transform: scale(0.95);
+  opacity: 0.5;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rct-tab-item.rct-tab-active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.rct-tab-item:hover:not(.rct-tab-active) {
+  opacity: 0.75;
+}
+
+/* Tab Border Animation */
+.rct-tab-border {
+  border-color: rgb(var(--scheme-disabled));
+  border-image: linear-gradient(
+    rgb(var(--scheme-disabled)) 0%,
+    rgb(var(--scheme-disabled)) 100%
+  ) 1;
+}
+
+.rct-tab-active .rct-tab-border {
+  border-color: rgb(var(--scheme-text));
+  border-image: linear-gradient(
+    rgb(var(--scheme-text)) var(--border-progress, 100%),
+    rgb(var(--scheme-disabled)) 0%
+  ) 1;
+}
+
+/* Tab Button */
+.rct-tab-button {
+  color: rgb(var(--scheme-disabled));
+}
+
+.rct-tab-active .rct-tab-button {
+  color: rgb(var(--scheme-text));
+}
+
+/* Tab Content - Collapsed by default */
+.rct-tab-content {
+  max-height: 0;
+  opacity: 0;
+}
+
+.rct-tab-active .rct-tab-content {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* Mobile Media - Hidden by default */
+.rct-mobile-media {
+  max-height: 0;
+  opacity: 0;
+}
+
+.rct-tab-active .rct-mobile-media {
+  max-height: 400px;
+  opacity: 1;
+}
+
+/* Media Container */
+.rct-media-container {
+  height: 500px;
+  background-color: rgb(var(--scheme-disabled-accent));
+}
+
+/* Media Slides */
+.rct-media-slide {
+  opacity: 0;
+  transform: scale(1.1) translateY(20px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.rct-media-slide.rct-slide-active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.rct-media-slide.rct-slide-prev {
+  opacity: 0;
+  transform: scale(0.9) translateY(-100%);
+}
+
+.rct-media-slide.rct-slide-next {
+  opacity: 0;
+  transform: scale(0.9) translateY(100%);
+}
+
+/* Media Element Zoom Effect */
+.rct-media-element {
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rct-slide-active .rct-media-element {
+  animation: rctZoomIn 5s ease-out forwards;
+}
+
+@keyframes rctZoomIn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+/* Progress Fill */
+.rct-progress-fill {
+  transition: width 0.3s ease-out;
+}
+
+/* Navigation Buttons */
+.rct-slider-prev,
+.rct-slider-next {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid rgb(var(--scheme-disabled));
+  transition: all 0.3s ease;
+}
+
+.rct-slider-prev:hover,
+.rct-slider-next:hover {
+  background-color: rgb(var(--scheme-accent));
+  border-color: rgb(var(--scheme-accent));
+}
+
+.rct-slider-prev::after,
+.rct-slider-next::after {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: rgb(var(--scheme-text));
+  content: "";
+  mask-position: center center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  transition: background-color 0.3s ease;
+}
+
+.rct-slider-prev:hover::after,
+.rct-slider-next:hover::after {
+  background-color: rgb(var(--scheme-on-accent));
+}
+
+.rct-slider-prev::after {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 15l7-7 7 7'/%3E%3C/svg%3E");
+}
+
+.rct-slider-next::after {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+}
+
+.rct-slider-prev.slider-button-disabled,
+.rct-slider-next.slider-button-disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1023px) {
+  .rct-tabs-wrapper {
+    height: auto;
+    overflow: visible;
+  }
+
+  .rct-tab-item {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .rct-tab-item:not(.rct-tab-active) .rct-tab-content {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  .rct-tab-item:not(.rct-tab-active) .rct-mobile-media {
+    max-height: 0;
+    opacity: 0;
+  }
+}

@@ -1,0 +1,74 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+
+        {% include "components/hero-image-text.twig" with {
+            'title_row1': "Progress is personal",
+            'description_row1': "Your Tonal membership takes the heavy lifting out of planning your routine with personalized training around your goals, smart features to get the most out of every rep, and automatic progress tracking to visualize everything you’ve achieved.",
+            'button_text_row1': 'Shop Tonal',
+            'button_url_row1': 'https://tonal.com/pages/personalized-training#:~:text=everything%20you%E2%80%99ve%20achieved.-,SHOP%20TONAL,-1.%20CHOOSE%20GOALS',
+            'add_class': {
+                'body_position_class': "justify-center sm:justify-center items-center md:items-center ",
+                'body_layout_class': "items:center md:items-center text-center",
+                'p_align_class': "!text-center",
+            },
+            'rct_image': {
+                'rct_image_src': "//tonal.com/cdn/shop/files/PersonalizedTraining-Hero-02.png?v=1747849284&width=3840",
+                'rct_image_alt': "Woman athlete doing core work with Tonal",
+                'rct_image_class': "object-cover"
+            },
+            'rct_darkbg': "bg-background",
+            'rct_style': {
+                'aspect_ratio': "2.33",
+                'mobile_aspect_ratio': "0.67",
+            },
+        }%}
+
+        {% include "components/image-text.twig" with {
+            'rct_title': "1. Choose goals for the results you want",
+            'rct_description': "Pick between three primary goals: Build Muscle, Get Lean, or Improve Fitness, and get even more specific by selecting the results you want, like improving mobility or upping your endurance. Tonal will take it from there to tailor your training experience and recommend personalized workout plans around your preferences.",
+            'rct_image': {
+                'rct_image_src': "//tonal.com/cdn/shop/files/PersonalizedTraining-S2-ChooseGoals.png?v=1745963448&width=3840",
+                'rct_image_alt': "Phone UI showing training goals Man doing Y-pull"
+            },
+            'rct_row_reverse': true,
+            'rct_darkbg': "bg-background"
+        }%}
+
+        {% include "components/image-text.twig" with {
+            'rct_title': "2. Break through plateaus with personalization",
+            'rct_description': "Complete a brief strength assessment and Tonal will automatically set the right starting weight for you across 300+ moves. As you progress, Tonal recommends workouts based on your goals, gives you real-time coaching cues to refine your form, and adjusts the weight to your strength in one-pound increments to keep you challenged every rep of the way.",
+            'rct_image': {
+                'rct_image_src': "//tonal.com/cdn/shop/files/PersonalizedTraining-S3-BreakThroughPlateaus.png?v=1745963448&width=3840",
+                'rct_image_alt': "Man in front of Tonal system showing personalized stats"
+            },
+            'rct_button': {
+                'rct_button_text': "explore smart tech",
+                'rct_button_url': "https://tonal.com/pages/technology",
+            }
+        }%}
+
+        {% include "components/image-text.twig" with {
+            'rct_title': "3. Stay motivated with automatic progress tracking",
+            'rct_description': "Tonal sets personalized weekly targets that automatically adjust as you hit them and visualizes insights on your power, range of motion, total volume lifted, and total workouts completed—so you can see exactly how your hard work is paying off.",
+            'rct_image': {
+                'rct_image_src': "//tonal.com/cdn/shop/files/PersonalizedTraining-S4-StayMotivated.png?v=1745963447&width=3840",
+                'rct_image_alt': "Phone UI and Tonal system showing personalized stats"
+            },
+            'rct_row_reverse': true,
+            'rct_darkbg': "bg-background"
+        }%}
+
+        {% include "components/row-content-text.twig" with {
+            'rct_title': "Level up with the Tonal app",
+            'rct_description': "Set, track, and crush the goals most important to you right from the Tonal app. Plus, browse thousands of on-demand workouts to do at home or on the go.",
+            'rct_cta_button': {
+                'rct_cta_button_text': "Explore the tonal app",
+                'rct_cta_button_url': "https://tonal.com/pages/mobile",
+            },
+            'rct_darkbg': "bg-background"
+        }%}
+    </article>
+
+{% endblock %}

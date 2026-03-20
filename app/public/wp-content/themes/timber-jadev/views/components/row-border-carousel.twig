@@ -1,0 +1,97 @@
+<div>
+  <div
+    class="{{ rct_darkbg ? rct_darkbg : 'bg-[rgb(244,244,244)]' }} section-spacing section-padding text-text"
+    data-full-width="false"
+    style="
+      --scheme-disabled-accent: 73 73 72;
+      --scheme-disabled: 110 110 110;
+      --scheme-error: 189 32 32;
+      --scheme-approved: 94 199 98;
+      --scheme-on-accent: 28 28 26;
+      --scheme-accent: 17 221 196;
+      --scheme-border: 73 73 72;
+      --scheme-alternate-background: 246 246 241;
+      --scheme-background: {{ rct_darkbg ? "28 28 26" : "244 244 244" }};
+      --scheme-text: {{ rct_darkbg ? "244 244 244" : "28 28 26" }};
+      --section-padding-sm: 3rem;
+      --section-padding-md: 4rem;
+      --section-padding-lg: 5rem;
+    " >
+    <div
+      class="wrapper pb-10 flex flex-col md:gap-x-8 md:flex-row justify-between w-full" >
+      <div class="text-text pb-4 md:pb-0 md:w-1/2 richtext-prose flex flex-col items-start w-full gap-6">
+      {% if rct_title %}
+        <h2 class="text-[2.5rem] my-[0.5em] ">{{ rct_title|default('')|e }}</h2>
+      {% endif %}
+
+      {% if rct_description %}
+        <p class=" ">{{ rct_description|default('')|e }}</p>
+      {% endif %}
+      </div>
+    </div>
+    <div class="wrapper pb-20">
+      <div class="relative">
+        <swiper-container
+          class="relative z-default flex justify-center [&amp;>swiper-slide]:swiper-slide"
+          init="false"
+          data-carousel-type="testimonial">
+            {% for card in rct_cards %}
+              <swiper-slide
+                role="group"
+                class=""
+                style=" width: 404px; margin-right: 10px; transform: scale(0.8); transition: transform 0.3s ease-in-out;" >
+                <animate-scroll
+                class="h-full opacity-0 block animate-eased-slide-up"
+                style="animation-delay: calc(0s)" >
+                  <article class="h-full flex flex-col pt-4 justify-center gap-2">
+                      <div>
+                         {% if card.card_image %}
+                          <div class="w-1/2">
+                              <img
+                              src="{{ card.card_image }}"
+                              alt=""
+                              width="200"
+                              height="45"
+                              loading="lazy"
+                              class="mb-2 h-full max-h-[50px] w-auto"
+                              />
+                          </div>
+                          {% endif %}
+                          {% if card.card_title %}
+                            <h5 class="my-[.5rem] text-[1.125rem]">{{ card.card_title }}</h5>
+                          {% endif %}
+                          {% if card.card_description %}
+                            <div class="richtext-prose">
+                                <p> {{ card.card_description }} </p>
+                            </div>
+                          {% endif %}
+                      </div>
+                  </article></animate-scroll>
+              </swiper-slide>
+            {% endfor %}
+  
+          </swiper-container>
+        <div class="w-full relative -bottom-6 h-11">
+          <div class="absolute right-[20%] sm:right-[10%]">
+            <div class="absolute right-0 w-10">
+              <button
+                type="button"
+                class="testimonial-slider-prev "
+                tabindex="0"
+                aria-label="Previous slide"
+                aria-controls="swiper-wrapper-74aecf792d894dab"></button>
+            </div>
+            <div class="ml-4 absolute left-0 w-10">
+              <button
+                type="button"
+                class="testimonial-slider-next"
+                tabindex="0"
+                aria-label="Next slide"
+                aria-controls="swiper-wrapper-74aecf792d894dab"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

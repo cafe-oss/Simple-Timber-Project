@@ -1,0 +1,50 @@
+.section-spacing {
+  margin-top: calc(
+    var(--section-spacing-sm, var(--theme-spacing-sm)) - var(--theme-spacing-sm)
+  );
+  display: block;
+  width: 100%;
+}
+
+@media (min-width: 960px) {
+  .section-spacing {
+    margin-top: calc(
+      var(--section-spacing-md, var(--theme-spacing-md)) -
+        var(--theme-spacing-md)
+    );
+  }
+}
+
+@media (min-width: 1200px) {
+  .section-spacing {
+    margin-top: calc(
+      var(--section-spacing-lg, var(--theme-spacing-lg)) -
+        var(--theme-spacing-lg)
+    );
+  }
+}
+
+.section-padding {
+  padding-top: 0;
+  padding-top: var(--section-padding-sm, 0);
+  padding-bottom: 0;
+  padding-bottom: var(--section-padding-sm, 0);
+}
+
+@media (min-width: 960px) {
+  .section-padding {
+    padding-top: 0;
+    padding-top: var(--section-padding-md, 0);
+    padding-bottom: 0;
+    padding-bottom: var(--section-padding-md, 0);
+  }
+}
+
+@media (min-width: 1200px) {
+  .section-padding {
+    padding-top: 0;
+    padding-top: var(--section-padding-lg, 0);
+    padding-bottom: 0;
+    padding-bottom: var(--section-padding-lg, 0);
+  }
+}

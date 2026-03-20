@@ -1,0 +1,46 @@
+<swiper-slide
+    role="group"
+    class=""
+    style=" width: 362.462px; margin-right: 24px; transform: scale(1); transition: transform 0.3s ease-in-out; border: none; box-shadow: none; padding: 0;" >
+    <animate-scroll class="h-full opacity-0 block animate-eased-slide-up" style="animation-delay: calc(0s);">
+        <article class="h-full">
+            <div class="relative h-full flex flex-col">
+                {% if product_id %}
+                    <a href="{{ card_button.card_button_url|default('#')|e }}" aria-label="View {{ card_title|e }}" class="w-full block">
+                        <div class="absolute right-3 top-3 z-2">
+                            {% include 'components/favorite-button.twig' with {
+                                product_id: product_id,
+                                add_class: 'w-9 h-9 flex items-center justify-center rounded-full bg-white/80 hover:bg-white text-gray-500 hover:text-red-500 transition-colors shadow-sm'
+                            } %}
+                        </div>
+                    </a>
+                {% endif %}
+                <img src="{{ card_image_src|default("")|e }}" width="600" height="413" loading="lazy" class="{{ card_image_size|default('aspect-4/3')|e }} object-cover w-full" alt="{{ card_image_alt_attribute|default("")|e }}" />
+                <div class="py-6 relative h-full">
+                    <div>
+                        <h3 class="text-heading-sm mb-2 break-words transition duration-500 group-focus-within:translate-y-1 group-hover:-translate-y-1"> 
+                            {{ card_title|default("")|e }}
+                        </h3>
+                        <div class="richtext-prose mb-2 text-body2">
+                            <p>{{ card_description|default("")|e }}</p>
+                        </div>
+                        {% if card_button is not empty %}
+                            <div class="flex flex-wrap justify-start items-start gap-6">
+                                <animate-scroll 
+                                style="animation-delay: calc(1*100ms)" 
+                                class="opacity-0 block animate-eased-slide-up">
+                                    <a 
+                                    href="{{ card_button.card_button_url|default('#')|e }}" 
+                                    class="link" aria-label="{{ card_button.card_button_arialabel|default('')|e }}" 
+                                    data-marketing-cta="">
+                                        {{ card_button.card_button_text|default('#')|e }}
+                                    </a>
+                                </animate-scroll>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </article>
+    </animate-scroll>
+</swiper-slide>

@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+
+    {% include "components/footer-banner.twig" with {
+			'rct_title': "PERFORMANCE SHOP",
+			'rct_description': "Enhance your workouts with Tonal premium apparel, accessories and more.",
+            'rct_darkbg': "bg-background",
+			'rct_image': {
+				'rct_image_url': "//tonal.com/cdn/shop/files/PLP-PerformanceShop-Hero_9d810acf-d8ac-42c9-962e-4836298e04e6.png?v=1762797144&amp;width=3840",
+			}
+		}%}
+
+    {% include "components/product-grid.twig" with {
+        'products':      performance_shop,
+        'sort_id':       'performance-shop-sort',
+        'empty_message': 'No Products found.',
+    } %}
+
+</article>
+{% endblock %}

@@ -1,0 +1,162 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+
+		{% include "components/hero-image-text.twig" with {
+			'title_row1': "pilates, reformed.",
+			'description_row1': "Introducing a totally reimagined Pilates experience powered by personalized, reformer-like resistance—only on Tonal.",
+			'button_text_row1': post.meta('button_text_row1'),
+			'button_url_row1': post.meta('button_url_row1'),
+			'rct_image': {
+				'rct_image_src': "//tonal.com/cdn/shop/files/LP-Pilates-HERO-KristenMcGee-The-Hundreds.png?v=1769036634&amp;width=3840"
+			},
+			'rct_style': {
+				'aspect_ratio': "1.6271186440677967",
+				'mobile_aspect_ratio': "0.6708407871198568",
+			},
+		}%}
+
+		{% include "components/row-content-text.twig" with {
+			'rct_title': "Flow that Fits Your Goals",
+			'rct_cta_button': {
+				'rct_cta_button_text': "Learn More",
+				'rct_cta_button_url': "https://tonal.com/blogs/all/pilates-reimagined-on-tonal",
+			}
+		}%}
+
+		{% include "components/row-equipment-card.twig" with {
+			'image_class': "w-[60px]! h-[90px]!",
+			'add_class': "sm:!pb-[3rem] md:!pb-[4rem] lg:!pb-[5rem]",
+			equipments: [
+					{
+					'card_title': "LEVEL-UP mobility",
+					'card_description': "Unlock a greater range of motion and flexibility.",
+					'card_image_src': "//tonal.com/cdn/shop/files/LP-PIlates_CB1-ICON-Mobility.svg?v=1760034949&width=1000",
+				},
+				{
+					'card_title': "DEEPEN core strength",
+					'card_description': "Develop foundational stability and improve balance.",
+					'card_image_src': "//tonal.com/cdn/shop/files/LP-PIlates-CB1-ICON-Strength.svg?v=1760034949&width=1000",
+				},
+				{
+					'card_title': "ENHANCE muscle definition",
+					'card_description': "Refine and tone muscles to look and feel your best.",
+					'card_image_src': "//tonal.com/cdn/shop/files/LP-PIlates-CB1-ICON-Muscles.svg?v=1760034949&width=1000",
+				}
+			]
+		} 
+		%}
+
+		{% include "components/vertical-slider-tabs.twig" with {
+			rct_title: "ONLY ON TONAL",
+			rct_tab_position: "left",
+			rct_items: [
+			{
+				title: "Personalized Resistance",
+				description: "Power through plateaus with personalized resistance.",
+				media_type: "video",
+				media_src: "//tonal.com/cdn/shop/videos/c/vp/f980e75cf8e94fcabc4a65c19d75db5a/f980e75cf8e94fcabc4a65c19d75db5a.HD-720p-4.5Mbps-59256184.mp4?v=0",
+			},
+			{
+				title: "Reformer-Like Experience",
+				description: "10 different levels of resistance.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP_Pilates-CB2-Reformer-Like-Experience.png?v=1760035647&width=2160",
+			},
+			{
+				title: "variety of workouts",
+				description: "Deepen mobility and balance with Pilates—a perfect complement to the 3000+ workouts ranging from strength to HIIT, and more.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/Pilates_LP_CB2-Reformer-Like_Experience_Desktop.png?v=1760035523&width=2160",
+			},
+			{
+				title: "AUTOMATIC PROGRESS TRACKING",
+				description: "Understand your effort by seeing the data behind it with visualized metrics like time under tension and range of motion.",
+				media_type: "image",
+				media_src: "//tonal.com/cdn/shop/files/LP_Pilates-CB2-Automatic-Progress_Tracking_Desktop.png?v=1760035647&width=2160",
+			},
+			]
+		} %}
+
+		{% include "components/image-text.twig" with {
+			'rct_title': "MEET EXPERT COACH KRISTIN MCGEE",
+			'rct_description': "Celebrated fitness trainer Kristin McGee is a world-class expert in Pilates, yoga, strength, and empowering women of all ages. With more than two decades of experience training clients, her expert guidance will help you refine your form and get the most out of every movement.",
+			'rct_image': {
+				'rct_image_src': "//tonal.com/cdn/shop/files/LP-PIlates_CB3-250819-Kristin-2884.png?v=1760035971&width=2160",
+				'rct_image_class': "object-contain",
+			},
+			'rct_button': {
+				'rct_button_text': "More About Kristin",
+				'rct_button_url': "https://tonal.com/pages/coaches"
+			}
+		}%}
+
+		{% include "components/row-content-text.twig" with {
+			'rct_description': '<div style="padding-top: 0px; padding-bottom: 60px;">
+				<p style="font-style: italic;">
+					“Strength is the ultimate self-care. Partnering with Tonal lets me introduce a whole new way of moving, 
+					to empower women to feel supported, capable, and unstoppable.”
+				</p>
+				<h5 class="mt-[20px]">Kristin McGee</h5>
+				</div>',
+			'add_class': "!pt-0"
+		}%}
+
+		{% include "components/image-text.twig" with {
+			'rct_title': "pilates for every body",
+			'rct_description': "Discover a wide variety of full-body Pilates workouts designed to deepen mobility, strength and definition—from guided 15-minute QuickFits to deeper 45-minute slow-burn sessions.",
+			'rct_image': {
+				'rct_image_src': "//tonal.com/cdn/shop/files/LP-Pilates-CB4-IMG.png?v=1760035524&width=2160",
+				'rct_image_class': "object-contain",
+			},
+			'rct_row_reverse': true,
+			'rct_button': {
+				'rct_button_text': "Explore All Workouts",
+				'rct_button_url': "https://tonal.com/pages/workouts"
+			}
+		}%}
+
+		{% include "components/image-text.twig" with {
+			'rct_title': "PILATES LOOPS",
+			'rct_subtitle': "Comfortable. Versatile. Durable.",
+			'rct_description': "Unlock the Pilates experience and access a growing library of challenging Pilates movements.",
+			'rct_image': {
+				'rct_image_src': "//tonal.com/cdn/shop/files/LP-Pilates-CB5-250819-Loops-2884.png?v=1760036362&width=2160",
+				'rct_image_class': "object-contain",
+			},
+			'rct_button': {
+				'rct_button_text': "Shop Now",
+				'rct_button_url': "https://tonal.com/products/pilates-loops"
+			}
+		}%}
+
+		{% include "components/image-text.twig" with {
+			'rct_title': "experience pilates, reformed for yourself",
+			'rct_description': "Try Pilates on Tonal today to experience how personalized resistance can unlock mobility, core strength and muscle definition.",
+			'rct_image': {
+				'rct_image_src': "//tonal.com/cdn/shop/files/LP-Pilates-CB7-258019-Tonal_Office_2884.png?v=1760036588&width=2160",
+				'rct_image_class': "object-contain",
+			},
+			'rct_row_reverse': true,
+			'rct_button': {
+				'rct_button_text': "Find a Location Near You",
+				'rct_button_url': "https://tonal.com/pages/try-tonal"
+			}
+		}%}
+
+		{% include "components/image-text.twig" with {
+			'rct_title': "get pilates on tonal today",
+			'rct_image': {
+				'rct_image_src': "//tonal.com/cdn/shop/files/LP-Pilates-CB10-GetOnPilates-250819-Tonal_da8b3471-6153-4573-a940-449517d1233d.png?v=1760045882&width=2160",
+				'rct_image_class': "object-contain",
+			},
+			'rct_button': {
+				'rct_button_text': "Shop Tonal",
+				'rct_button_url': "https://tonal.com/products/tonal-2"
+			}
+		}%}
+
+	</article>
+
+{% endblock %}

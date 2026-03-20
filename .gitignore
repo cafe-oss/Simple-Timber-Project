@@ -1,0 +1,50 @@
+# LocalWP site infra — not part of the app
+conf/
+logs/
+
+# LocalWP hidden duplicate of app/public — skip to avoid tracking twice
+app/.public/
+
+# Credentials — never commit DB passwords or API keys
+app/public/wp-config.php
+
+# Database dump — contains API keys (Stripe, etc.) stored in wp_options
+app/sql/
+
+# Windows reserved device name (can't be tracked)
+app/public/nul
+
+# WordPress core — not custom code, reinstall via `wp core download`
+app/public/wp-admin/
+app/public/wp-includes/
+app/public/index.php
+app/public/wp-activate.php
+app/public/wp-blog-header.php
+app/public/wp-comments-post.php
+app/public/wp-config-sample.php
+app/public/wp-cron.php
+app/public/wp-links-opml.php
+app/public/wp-load.php
+app/public/wp-login.php
+app/public/wp-mail.php
+app/public/wp-settings.php
+app/public/wp-signup.php
+app/public/wp-trackback.php
+app/public/xmlrpc.php
+app/public/license.txt
+app/public/readme.html
+app/public/local-xdebuginfo.php
+
+# Uploads / media — large binaries, restore separately
+app/public/wp-content/uploads/
+
+# WordPress generated / runtime files
+app/public/wp-content/debug.log
+app/public/wp-content/cache/
+
+# Node / build artifacts
+**/node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

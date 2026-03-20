@@ -1,0 +1,36 @@
+.header-submenu a {
+  color: #000;
+}
+
+@media (min-width: 768px) {
+  .sm\:h-no-header {
+    height: 100vh;
+  }
+}
+
+.h-no-header {
+  height: 100vh;
+}
+
+.header-default {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+}
+
+.header-sticky {
+  background-color: var(--header-bg-sticky);
+}
+
+.header-sticky,
+.header-sticky #nav-main > ul > li span {
+  color: var(--header-text-sticky);
+  border-color: var(--header-text-sticky);
+}
+
+.header-sticky .path-color {
+  fill: var(--header-text-sticky);
+}
+
+.max-w-nav {
+  max-width: var(--max-w);
+}

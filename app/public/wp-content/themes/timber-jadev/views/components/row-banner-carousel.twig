@@ -1,0 +1,67 @@
+<section>
+  <div
+    class="{{ rct_darkbg ? rct_darkbg : 'bg-[rgb(244,244,244)]' }} text-text {{ extra_classes|default('')|e }}"
+    data-full-width="false"
+    style="
+      --scheme-disabled-accent: 73 73 72;
+      --scheme-disabled: 110 110 110;
+      --scheme-error: 189 32 32;
+      --scheme-approved: 94 199 98;
+      --scheme-on-accent: 28 28 26;
+      --scheme-accent: 17 221 196;
+      --scheme-border: 73 73 72;
+      --scheme-alternate-background: 246 246 241;
+      --scheme-background: {{ rct_darkbg ? "28 28 26" : "244 244 244" }};
+      --scheme-text: {{ rct_darkbg ? "244 244 244" : "28 28 26" }};
+      --section-padding-sm: 3rem;
+      --section-padding-md: 4rem;
+      --section-padding-lg: 5rem;
+    " >
+    {% if rct_title %}
+        <div
+        class="wrapper pb-10 flex flex-col md:gap-x-8 md:flex-row justify-between w-full" >
+        <div class="text-text pb-4 md:pb-0 md:w-1/2 richtext-prose">
+            <h2 class="text-[2.5rem] my-[0.5em]">{{ rct_title|default('')|e }}</h2>
+        </div>
+        </div>
+    {% endif %}
+    
+    <div class="wrapper pb-20">
+      <div class="relative">
+        <swiper-container
+          class="relative z-default flex justify-center [&amp;>swiper-slide]:swiper-slide"
+          init="false"
+          data-carousel-type="banner">
+            {% for banner_card in banner_cards %}
+                {% include "components/banner-card.twig" with {
+                    product_id: banner_card.product_id,
+                    card_title: banner_card.card_title,
+                    card_description: banner_card.card_description,
+                    card_image_src: banner_card.card_image_src,
+                    card_image_alt_attribute: banner_card.card_image_alt_attribute,
+                    card_image_size: banner_card.card_image_size,
+                    card_button: banner_card.card_button
+                } %}
+            {% endfor %}
+          </swiper-container>
+        <div class="mt-8 flex items-center gap-4">
+          <div class="banner-progress-bar rounded-full overflow-hidden" style="background-color: #e5e5e5; width: calc(100% - 100px); height: 4px;">
+            <div class="banner-progress-fill rounded-full transition-all duration-300" style="width: 20%; height: 100%; background-color: rgb(var(--scheme-accent));"></div>
+          </div>
+          <div class="flex gap-2">
+            <button
+              type="button"
+              class="banner-slider-prev"
+              tabindex="0"
+              aria-label="Previous slide"></button>
+            <button
+              type="button"
+              class="banner-slider-next"
+              tabindex="0"
+              aria-label="Next slide"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+
+    {% include "components/footer-banner.twig" with {
+			'rct_title': "tonal accessories",
+			'rct_description': "Unlock a wide variety of exercises and workouts that help you get the most out of your training.",
+			'rct_image': {
+				'rct_image_url': "//tonal.com/cdn/shop/files/PLP-Accessories-Hero-February-2026.png?v=1771351146&width=3840",
+                'rct_image_class': "object-[90%]",
+			}
+		}%}
+
+    {% include "components/product-grid.twig" with {
+        'products':      accessories,
+        'sort_id':       'accessories-sort',
+        'empty_message': 'No accessories found.',
+    } %}
+
+</article>
+{% endblock %}

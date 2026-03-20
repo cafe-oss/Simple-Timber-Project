@@ -1,0 +1,48 @@
+<section>
+    <div style="
+        --scheme-disabled-accent: 73 73 72;
+        --scheme-disabled: 110 110 110;
+        --scheme-error: 189 32 32;
+        --scheme-approved: 94 199 98;
+        --scheme-on-accent: 28 28 26;
+        --scheme-accent: 17 221 196;
+        --scheme-border: 73 73 72;
+        --scheme-alternate-background: 246 246 241;
+        --scheme-background: {{ rct_darkbg ? "28 28 26" : "244 244 244" }};
+        --scheme-text: {{ rct_darkbg ? "244 244 244" : "28 28 26" }};
+        --section-padding-sm: 0px;
+        --section-padding-md: 0px;
+        --section-padding-lg: 0px;
+        --aspect-ratio: {{ rct_style.aspect_ratio|default('')|e }};
+        --mobile-aspect-ratio: {{ rct_style.aspect_ratio|default('')|e }};
+        " class="section-spacing section-padding {{ rct_darkbg ? rct_darkbg : 'bg-[rgb(244,244,244)]' }} text-text {{ add_class|default('')|e }}">
+        <div class="relative h-full w-full sm:aspect-[var(--aspect-ratio)] max-sm:aspect-[var(--mobile-aspect-ratio)]">
+        <a href="#">
+            <div class="absolute top-0 z-above w-full h-full"></div>
+            <div data-id="image-banner-wrapper" class="absolute top-0 w-full h-full">
+            <picture>
+                {# <source media="(max-width: 959px)" srcset="//tonal.com/cdn/shop/files/LP-Pilates-Hero-258019-Tonal-Mobile-The_Hundreds_2884.png?v=1760034632&amp;width=1918" width="1918" height="2859"> #}
+                {# <source media="(min-width: 960px)" srcset="//tonal.com/cdn/shop/files/LP-Pilates-HERO-KristenMcGee-The-Hundreds.png?v=1769036634&amp;width=3840" width="3840" height="2360"> #}
+                <img src="{{ rct_image.rct_image_src|default('')|e }}" alt="" width="3840" height="2360" loading="lazy" alt="{{ rct_image_alt|default('')|e }}" class="w-full h-full {{rct_image.rct_image_class|default('object-contain')|e }} sm:px-0 px-0" decoding="sync">
+            </picture>
+            </div>
+        </a> 
+        {# <div class="relative p-6 md:p-10 lp-l:p-16 z-above flex flex-col h-full justify-center sm:justify-start max-sm:justify-start sm:text-center sm:items-center items-center"> #}
+        <div class="relative p-6 md:p-10 lp-l:p-16 z-above flex flex-col h-full {{ add_class.body_position_class|default('justify-center sm:justify-start max-sm:justify-start sm:text-center sm:items-center items-center')|e }}">
+            <div class="max-w-[600px] w-full flex flex-col {{ add_class.body_layout_class|default('items-center')|e }}  w-full gap-6">
+                <h1 class="my-2 text-heading-xl" >{{ title_row1|default('')|e }}</h1>
+                {% if description_row1 %}
+                    <p class="{{ add_class.p_align_class|default('')|e }}">{{ description_row1|default('')|e }}</p>
+                {% endif %}
+                {% if button_text_row1 and button_url_row1 %}
+                    <a href="{{ button_url_row1|default('')|e }}" class="button text-center " aria-label="">
+                        {{ button_text_row1|default('')|e }}
+                    </a>
+                {% endif %}
+                
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+

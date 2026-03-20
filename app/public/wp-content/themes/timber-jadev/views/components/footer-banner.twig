@@ -1,0 +1,58 @@
+<section>
+  <div style="
+    --scheme-disabled-accent: 73 73 72;
+    --scheme-disabled: 210 210 209;
+    --scheme-error: 189 32 32;
+    --scheme-approved: 94 199 98;
+    --scheme-on-accent: 28 28 26; 
+    --scheme-accent: 244 244 244;
+    --scheme-border: 244 244 244;
+    --scheme-alternate-background: 73 73 72;
+    --scheme-background: {{ rct_darkbg ? "28 28 26" : "244 244 244" }};
+    --scheme-text: {{ rct_darkbg ? "244 244 244" : "28 28 26" }}; 
+    --aspect-ratio:2.8125; 
+    --mobile-aspect-ratio:0.6696428571428571;
+  " 
+  class="section-spacing bg-background text-text relative h-full w-full sm:aspect-[var(--aspect-ratio)] max-sm:aspect-[var(--mobile-aspect-ratio)]">
+    <div class="relative h-full w-full sm:aspect-[var(--aspect-ratio)] max-sm:aspect-[var(--mobile-aspect-ratio)]">
+      <div style="background: " class="absolute top-0 z-above w-full h-full"></div>
+
+      <div class="absolute top-0 w-full h-full">
+          <picture>
+            {# <source media="(max-width: 959px)" srcset="//tonal.com/cdn/shop/files/PLP-PerformanceShop-Hero-Mobile_0b195491-fdf6-411f-b903-4a37b9431bda.png?v=1762797143&amp;width=1918" width="1918" height="2864"> #}
+            {# <source media="(min-width: 960px)" srcset="//tonal.com/cdn/shop/files/PLP-PerformanceShop-Hero_9d810acf-d8ac-42c9-962e-4836298e04e6.png?v=1762797144&amp;width=3840" width="3840" height="1365"> #}
+            {# <img src="//tonal.com/cdn/shop/files/PLP-PerformanceShop-Hero_9d810acf-d8ac-42c9-962e-4836298e04e6.png?v=1762797144&amp;width=3840" alt="" width="3840" height="1365" loading="lazy" class="w-full h-full object-cover sm:px-0 px-0" decoding="sync"> #}
+            <img src="{{rct_image.rct_image_url}}" alt="" width="3840" height="1365" loading="lazy" class="w-full h-full object-cover sm:px-0 px-0 {{ rct_image.rct_image_class }}" decoding="sync">
+          </picture>
+
+      </div>
+      <div class=" relative p-6 md:p-10 lp-l:p-16 z-above flex flex-col h-full justify-center sm:justify-center max-sm:justify-start sm:text-left sm:items-start text-left items-start ">
+        <div class="max-w-[600px] w-full">
+          {% if rct_title %}
+            <animate-scroll class="prose custom-color [&amp;_*]:my-2 mt-2 break-words opacity-0 block animate-eased-slide-up" style="animation-delay: calc(0*100ms);">
+              <h2 class="text-[2.5rem] mt-[0.5em]"> {{ rct_title }}</h2>
+            </animate-scroll>
+          {% endif %}
+          {% if rct_description %}
+            <animate-scroll class="text-body-lg text-text prose opacity-0 block animate-eased-slide-up" style="animation-delay: calc(1*100ms)">
+              <p>{{ rct_description }}</p>
+            </animate-scroll>
+          {% endif %}
+          {% if rct_button_text and rct_button_url %}
+            <div class="flex flex-wrap items-center gap-6  text-left items-start">
+              <animate-scroll class="block mt-4 sm:mt-6 opacity-0 animate-eased-slide-up" style="animation-delay: calc(2*100ms)">
+                <a href="{{ rct_button_url }}" class="button " data-marketing-cta="">{{ rct_button_text }}</a>
+              </animate-scroll>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# <style>
+  .prose.custom-color > * {
+    color: var(--scheme-text);
+  }
+</style> #}

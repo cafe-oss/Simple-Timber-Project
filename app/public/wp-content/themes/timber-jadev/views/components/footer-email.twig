@@ -1,0 +1,45 @@
+<section 
+    class="text-center sm:text-center text-body-lg text-text opacity-0 block animate-eased-slide-up w-full {{ rct_darkbg ? rct_darkbg : 'bg-[rgb(244,244,244)]' }}"
+    style="
+      --scheme-disabled-accent: 73 73 72;
+      --scheme-disabled: 110 110 110;
+      --scheme-error: 189 32 32;
+      --scheme-approved: 94 199 98;
+      --scheme-on-accent: 28 28 26;
+      --scheme-accent: 17 221 196;
+      --scheme-border: 73 73 72;
+      --scheme-alternate-background: 246 246 241;
+      --scheme-background: {{ rct_darkbg ? "28 28 26" : "244 244 244" }};
+      --scheme-text: {{ rct_darkbg ? "244 244 244" : "28 28 26" }};
+      --section-padding-sm: 3rem;
+      --section-padding-md: 4rem;
+      --section-padding-lg: 5rem;
+    ">
+  <form 
+    aria-live="polite" 
+    novalidate="" 
+    class="max-w-[19rem] mx-auto flex w-full bg-no-repeat bg-center flex-1 rounded-[2px] border-none py-[10px] px-[5px] "
+    >
+    <div class="flex flex-col w-full m-0 p-0 min-h-[120px] justify-center">
+      <div class="flex items-stretch relative" >
+        <div data-testid="form-component" class="flex justify-center py-[10px] px-[6px] relative flex-1">
+            <span>STAY UP TO DATE</span>
+        </div>
+      </div>
+      <div  class="flex items-stretch relative" >
+        <div data-testid="form-component" class="flex justify-center py-[10px] px-[6px] relative flex-1" >
+          <div class="flex flex-grow flex-col self-end" >
+            {# <label id="label-email" for="email" class="pb-[6px]">Email</label> #}
+            <input id="email" type="email" autocomplete="email" name="email" tabindex="0" placeholder="Email Address" aria-required="true" aria-invalid="false" options="[object Object]" class="box-border rounded-[4px] pl-[16px] h-[38px] text-left ">
+          </div>
+        </div>
+      </div>
+      <div data-testid="form-row" class="flex items-stretch relatvie">
+        <div data-testid="form-component" class="flex justify-center pt-[20px] px-[6px] pb-[10px] relative mx-auto flex-1">
+          <button type="button" tabindex="0" class="button flex-none max-md:mt-4 md:ml-4" >SUBMIT</button>
+        </div>
+      </div>
+    </div>
+    <input type="submit" tabindex="-1" value="Submit" style="display: none;">
+  </form>
+</section>

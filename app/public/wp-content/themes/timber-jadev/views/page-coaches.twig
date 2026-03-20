@@ -1,0 +1,129 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+
+        <section>
+
+            {% include "components/hero-texts.twig" with {
+                'title_row1': "Expert guidance. Endless possibilities.",
+                'description_row1': "Our roster of coaches features expert personal trainers, fitness legends, and even all-pro athletes who are all dedicated to help you unlock your true potential.",
+            }%}
+
+            <div 
+                style="
+                    --section-spacing-sm: 0px;
+                    --section-spacing-md: 0px;
+                    --section-spacing-lg: 0px;
+                    --section-padding-sm: 3rem;
+                    --section-padding-md: 4rem;
+                    --section-padding-lg: 5rem;
+                    --columns-count-lg: 3; 
+                    --scheme-background: 244 244 244; 
+                    --scheme-text: 28 28 26;
+                " 
+                class="bg-[rgb(244,244,244)] section-padding">
+                <div class="wrapper">
+                    <div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-10 mt-10">
+                        {% for coach in coaches %}
+                            <article class="overflow-hidden">
+                                <div class="relative aspect-[64/75] flex flex-col" style="background: linear-gradient(315deg, rgb(149, 205, 208) 25%, rgb(52, 127, 128) 110%);">
+                                    <h2 class="block relative text-[2.5rem] mt-[0.5em] px-6 pt-4 h-full">{{ coach.title|replace({ "\xC2\xA0" : "<br>"}) }}</h2>
+                                    {% if coach.image %}
+                                        <img src="{{ coach.image }}" alt="{{ coach.title }}" class="w-full aspect-square object-cover flex-grow absolute bottom-0">
+                                    {% endif %}
+
+                                    {% if coach.meta('isguest') == 'yes' %}
+                                        <div class="text-body-sm bg-white text-[rgb(28,28,26)] absolute min-w-2 font-semibold left-0 bottom-[10px] mx-6 mb-8 px-6 py-0.5 bg-surface-alternate border-border rounded-full"> GUEST </div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="flex flex-col gap-[0.2rem] mt-4 text-body-md md:text-body text-[rgb(28,28,26)]">
+                                    <strong>Coaching Style</strong>
+                                    <span>{{ coach.coaching_style }}</span>
+                                    <div class="text-text mb-3">
+                                        <button
+                                            type="button"
+                                            class="link cursor-pointer"
+                                            data-coach-title="{{ coach.title }}"
+                                            data-coach-image="{{ coach.image }}"
+                                            data-coach-style="{{ coach.coaching_style }}"
+                                            data-coach-content="{{ coach.content|striptags|e('html_attr') }}"
+                                            data-coach-social="{{ coach.meta('instagram') }}"
+                                            data-coach-is-guest="{{ coach.meta('isguest') }}"
+                                            onclick="openCoachModal(this)">
+                                            Learn More
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                            </article>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <dialog id="coach-modal" class="backdrop:bg-black/50 bg-white rounded-lg p-0 max-w-[800px] max-h-max m-auto" onclick="if(event.target===this)this.close()">
+            <div class="p-6 flex w-full relative gap-4">
+                <button type="button" onclick="this.closest('dialog').close()" class="absolute top-1 right-1 leading-none cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32"><path style="fill:rgb(var(--scheme-accent))" d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14s14-6.2 14-14S23.8 2 16 2m0 26C9.4 28 4 22.6 4 16S9.4 4 16 4s12 5.4 12 12s-5.4 12-12 12"/><path style="fill:rgb(var(--scheme-accent))" fill="currentColor" d="M21.4 23L16 17.6L10.6 23L9 21.4l5.4-5.4L9 10.6L10.6 9l5.4 5.4L21.4 9l1.6 1.6l-5.4 5.4l5.4 5.4z"/></svg></button>
+                <div class="flex flex-row lg:flex-col gap-4 items-start text-[rgb(28,28,26)] max-w-[400px]">
+                    <h3 id="coach-modal-title" class="text-2xl font-bold"></h3>
+                    <div id="coach-modal-content" ></div>
+                    <span class="text-[rgb(28,28,26)]"><strong>Coaching Style:</strong> <span id="coach-modal-style"></span></span>
+                    <span class="text-[rgb(28,28,26)]"><strong>Social:</strong> <span id="coach-modal-social"></span></span>
+                </div>
+                <div class="relative">
+                    <img id="coach-modal-image" src="" alt="" class="max-w-[400px] object-contain rounded hidden" style="background: linear-gradient(315deg, rgb(149, 205, 208) 25%, rgb(52, 127, 128) 110%);">
+                    <div id="coach-modal-is-guest" class="hidden text-body-sm bg-white text-[rgb(28,28,26)] absolute min-w-2 font-semibold left-0 bottom-[10px] mx-6 mb-8 px-6 py-0.5 bg-surface-alternate border-border rounded-full" > GUEST </div>
+                </div>
+            </div>
+        </dialog>
+
+        {% include "components/image-text.twig" with {
+            'rct_title': "Working out with Tonal",
+            'rct_description': "Every facet of a Tonal workout is tailored to you. No matter your goal, Tonal’s workouts can help.",
+            'rct_image': {
+                'rct_image_src': "//tonal.com/cdn/shop/files/PDP-Tonal-2-Fermat-PDP.jpg?v=1765919368&width=2160",
+            },
+            'rct_button': {
+                'rct_button_text': "Explore Workouts",
+                'rct_button_url': "https://tonal.com/pages/workouts",
+            }
+        }%}
+
+		{% include "components/row-equipment-card.twig" with {
+			'image_class': "w-[60px]! h-[90px]!",
+			'rct_darkbg': "bg-background",
+			equipments: [
+					{
+					'card_title': "book a demo today",
+					'card_description': "Experience training with Tonal in person or virtually, guided by one of our experts.",
+					'card_button_title': "BOOK ONLINE OR VIRTUAL",
+					'card_button_title_attribute': "BOOK ONLINE OR VIRTUAL",
+					'card_button_url': "https://tonal.com/pages/try-tonal",
+					'card_image_src': "//tonal.com/cdn/shop/files/ICON_Laptop.svg?v=1769110328&width=1000",
+				},
+				{
+					'card_title': "shop tonal now",
+					'card_description': "Start your fitness journey today with Tonal 2.",
+					'card_button_title': "SHOP NOW",
+					'card_button_title_attribute': "SHOP NOW",
+					'card_button_url': "https://tonal.com/products/tonal-2",
+					'card_image_src': "//tonal.com/cdn/shop/files/ICON-Book-Tonal-Now.svg?v=1761607886&width=1000",
+				},
+				{
+					'card_title': "Explore the Tonal app",
+					'card_description': "See how you can set, track, and crush goals on the Tonal app. Plus, browse thousands of on-demand workouts to do at home with Tonal, or on the go without it.",
+					'card_button_title': "DOWNLOAD THE APP",
+					'card_button_title_attribute': "DOWNLOAD THE APP",
+					'card_button_url': "https://tonal.com/pages/mobile",
+					'card_image_src': "//tonal.com/cdn/shop/files/ICON-mobile.svg?v=1761607885&width=1000",
+				}
+			]
+		} 
+		%}
+
+	</article>
+
+{% endblock %}

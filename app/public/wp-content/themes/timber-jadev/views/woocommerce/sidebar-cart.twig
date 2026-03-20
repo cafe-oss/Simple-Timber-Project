@@ -1,0 +1,35 @@
+{# ─── Sidebar Cart Drawer ─────────────────────────────────────────────────── #}
+
+{# Overlay – click to close #}
+<div id="sidebar-cart-overlay"
+     class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-[9998]"
+     aria-hidden="true"></div>
+
+{# Drawer #}
+<aside id="sidebar-cart"
+       class="fixed top-0 right-0 h-full w-full max-w-[400px] bg-white z-[9999] translate-x-full transition-transform duration-300 ease-in-out flex flex-col shadow-2xl"
+       role="dialog"
+       aria-modal="true"
+       aria-label="Shopping cart"
+       aria-hidden="true">
+
+    {# ── Header ──────────────────────────────────────────────────────────── #}
+    <div class="flex items-center justify-between px-5 py-4 border-b border-boundary flex-shrink-0">
+        <h2 class="text-[2.5rem] font-semibold uppercase tracking-wider text-[rgb(28,28,26)]">
+            Cart&ensp;<span class="cart-count-bubble">{{ cart_count }}</span>
+        </h2>
+        <button id="sidebar-cart-close"
+                class="touch-target flex items-center justify-center hover:opacity-60 transition-opacity text-[rgb(28,28,26)]"
+                aria-label="Close cart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+    </div>
+
+    {# ── Body – replaced by WooCommerce fragment on cart changes ─────────── #}
+    {{ sidebar_cart_html|raw }}
+
+</aside>

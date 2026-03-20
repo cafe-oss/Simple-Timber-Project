@@ -1,0 +1,201 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+<article class="product-single section-spacing section-padding {{ rct_darkbg ? rct_darkbg : 'bg-[rgb(244,244,244)]' }} {{ add_class|default('')|e }}"  
+    style="
+      --scheme-disabled-accent: 73 73 72;
+      --scheme-disabled: 210 210 209;
+      --scheme-error: 189 32 32;
+      --scheme-approved: 94 199 98;
+      --scheme-on-accent: 28 28 26;
+      --scheme-accent: 17 221 196;
+      --scheme-border: 164 164 163;
+      --scheme-alternate-background: ;
+      --scheme-background: {{ rct_darkbg ? "28 28 26" : "244 244 244" }}; 
+      --scheme-text: {{ rct_darkbg ? "244 244 244" : "28 28 26" }}; 
+      --section-padding-sm: 3rem;
+      --section-padding-md: 4rem;
+      --section-padding-lg: 5rem
+    ">
+
+    <div class="wrapper py-12 px-5 sm:grid sm:gap-16 sm:grid-cols-12" id="{{ post.slug }}-link">
+        {# <div class="lg:gap-16 items-start"> #}
+
+            {# ── LEFT — Product Gallery (Swiper carousel + thumbnails) ── #}
+            <div class="product-gallery sm:col-span-7 sticky top-0 max-h-max" data-component="product-gallery">
+
+                {# Main image carousel #}
+                <div class="relative">
+                    {% if is_new %}
+                        <div class="absolute left-4 top-4 z-2">
+                            <div class="flex gap-2">
+                                <span class="rounded-full font-medium uppercase tracking-wide px-3 py-1.5 text-sm bg-[rgb(var(--scheme-text))]">New</span>
+                            </div>
+                        </div>
+                    {% endif %}
+                    <swiper-container data-carousel-type="product-main" init="false">
+                        
+                        {% for image in gallery_images %}
+                            <swiper-slide>
+                                <img
+                                    src="{{ image.full }}"
+                                    alt="{{ image.alt }}"
+                                    class="w-full h-auto object-cover"
+                                >
+                            </swiper-slide>
+                        {% endfor %}
+                    </swiper-container>
+
+                    {% if gallery_images|length > 1 %}
+                        <button class="product-gallery-prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center bg-black/50 hover:bg-white hover:text-[rgb(var(--scheme-text))] cursor-pointer transition-colors" aria-label="Previous image">
+                            <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 1 2 8l7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button class="product-gallery-next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center bg-black/50 hover:bg-white hover:text-[rgb(var(--scheme-text))] cursor-pointer transition-colors" aria-label="Next image">
+                            <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    {% endif %}
+                </div>
+
+                {# Thumbnail strip — only shown when more than one image #}
+                {% if gallery_images|length > 1 %}
+                    <div class="product-gallery-thumbs flex gap-2 mt-3 overflow-x-auto">
+                        {% for image in gallery_images %}
+                            <button
+                                class="product-thumb-item flex-shrink-0 w-16 h-16 border-2 border-transparent transition-colors overflow-hidden"
+                                data-index="{{ loop.index0 }}"
+                                aria-label="View image {{ loop.index }}"
+                            >
+                                <img
+                                    src="{{ image.thumb }}"
+                                    alt="{{ image.alt }}"
+                                    class="w-full h-full object-cover"
+                                >
+                            </button>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+            </div>
+
+            {# ── RIGHT — Product Summary ────────────────────────────── #}
+            <div class="product-summary sm:col-span-5">
+
+                {# Title #}
+                <div class="flex items-start justify-between gap-4">
+                    <h2 class="text-[2.5rem] mt-[0.5em] mb-2 text-[rgb(var(--scheme-text))]"> {{ post.title }} </h2>
+                    {% include 'components/favorite-button.twig' with {
+                        product_id: post.ID,
+                        add_class: 'mt-[0.75em] flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full border border-[rgb(var(--scheme-border))] text-[rgb(var(--scheme-text))] hover:text-red-500 hover:border-red-300 transition-colors'
+                    } %}
+                </div>
+
+                <p>{{ post.excerpt }}</p>
+
+                
+                {% if show_no_return_message %}
+                    <div class="pt-10 text-[rgb(var(--scheme-text))]">
+                        <p class="text-body-md font-bold mb-1">While supplies last.</p>
+                        <div>
+                            <span >No returns—all sales are final.</span>
+                        </div>
+                    </div>
+                {% endif %}
+                
+                {# Price #}
+                <div class="pt-10">
+                    <span class="text-2xl font-bold text-[rgb(var(--scheme-text))]"> {{ regular_price|raw }} </span>
+                </div>
+
+                {# Affirm — per product, controlled by ACF toggle #}
+                {% if show_affirm_text %}
+                    <p id="affirmLearnMore" class="pb-10" data-page-type="product" >
+                        <span class="color-[#4242cf] bg-[#e2e2ff] h-[1.5em] inline-flex py-[.125em] px-[.5em] justify-center items-center gap-[.25em] rounded-[.5em] text-[1em]">0% APR </span>
+                        and as low as <span>$120</span>/mo with 
+                        <span class="text-[1.236em] text-[#060809] after:content-[''] after:text-[#4a4af4]">Affirm</span>. 
+                        <a class="underline" aria-label="See if you qualify - Learn more about Affirm Financing (opens in modal)" href="javascript:void(0)">See if you qualify</a></p>
+                {% endif %}
+
+                {% if show_compare_section %}
+                    {{ compare_section }}
+                {% endif %}
+
+                {# Short description #}
+                {{ function('woocommerce_template_single_excerpt') }}
+
+                {# YITH Add-Ons + Add to Cart button                          #}
+                {# Captured via ob_start in woocommerce.php so we can wrap   #}
+                {# it in our own markup and place it exactly where we need.   #}
+                <div class="single-product-yith">
+                    {{ add_to_cart_html|raw }}
+                </div>
+
+                {# HSA/FSA eligibility badge #}
+                {% if show_purchase_eligible %}
+                    <div class="pt-4">
+                        <div class="border-2 border-[rgb(17,221,196)] p-4 text-center">
+                            <h6 class="m-0 text-[rgb(var(--scheme-text))]">YOUR PURCHASE MAY BE HSA/FSA ELIGIBLE</h6>
+                            <p class="my-2">Save an average of 30% with Truemed</p>
+                            <a href="/pages/truemed-hsa-fsa" class="underline">Learn How</a>
+                        </div>
+                    </div>
+
+                    {# Trust badges #}
+                    <ul class="flex flex-col gap-2 text-sm pt-2 list-disc text-[rgb(var(--scheme-text))]">
+                        <li>
+                            2-year limited warranty included.
+                            <a href="/pages/warranty" class="underline" target="_blank">Learn more</a>
+                        </li>
+                        <li>30-day money back guarantee</li>
+                    </ul>
+                {% endif %}
+
+                {% if dropdowns %}
+                    <div class="crf-product-dropdowns pt-6">
+                        {% for item in dropdowns %}
+                            <div class="crf-dropdown-item border-t border-[rgb(var(--scheme-border))]">
+                                <button type="button" class="crf-dropdown-trigger w-full py-4  text-[rgb(var(--scheme-text))] flex justify-between items-center">
+                                    <h5 class="text-body-md text-left">{{ item.title }}</h5>
+                                    <svg class="crf-dropdown-icon w-4 h-4 shrink-0 transition-transform duration-300" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <div class="crf-dropdown-body overflow-hidden transition-[max-height] duration-300 ease-in-out" style="max-height:0">
+                                    <div class="pb-4 text-sm text-[rgb(var(--scheme-text))]">
+                                        {{ item.content|raw }}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <div class="border-t border-[rgb(var(--scheme-border))]"></div>
+                    </div>
+                {% endif %}
+
+                {# Product meta — SKU, categories, tags #}
+                {# {{ function('woocommerce_template_single_meta') }} #}
+
+            </div>{# end product-summary #}
+
+        {# </div> #}
+    </div>{# end wrapper #}
+
+</article>
+
+{# ── Related products carousel — accessories category only ───────────── #}
+{% if related_banner_cards %}
+
+    {% include 'components/row-banner-carousel.twig' with {
+        rct_title: 'Related Products',
+        banner_cards: related_banner_cards
+    } %}
+{% endif %}
+
+{# ── Product-specific sections ────────────────────────────────────────── #}
+{# If views/woocommerce/product-sections/{slug}.twig exists it is         #}
+{# included automatically. Missing files are silently ignored.            #}
+{% include 'woocommerce/product-sections/' ~ post.slug ~ '.twig' ignore missing %}
+
+{% endblock %}

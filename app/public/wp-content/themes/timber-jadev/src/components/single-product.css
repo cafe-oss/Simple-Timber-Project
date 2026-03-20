@@ -1,0 +1,166 @@
+.single-product-yith .yith-wapo-addon-type-checkbox {
+    border-top: 1px solid black !important;
+    
+}
+
+.single-product-yith .yith-wapo-addon {
+    color: rgb(28,28,26) !important;
+    padding-top: 2.5rem !important;
+}
+
+.single-product-yith .wapo-addon-title > span{
+    /* text-sm */
+    display: block !important;
+    font-size: .875rem !important;
+    line-height: 1.25rem !important;
+    margin-bottom: 1.25rem !important;
+    color: rgb(28,28,26) !important;
+}
+
+.single-product-yith .yith-wapo-block{
+    font-size: 16px !important;
+}
+
+.single-product-yith .yith-wapo-addon{
+    background-color: transparent !important;
+}
+
+.single-product-yith .yith-wapo-option{
+    font-size: 16px;
+    padding: 1rem !important;
+    padding-left: 2.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: .625rem !important;
+    cursor: pointer !important;
+    margin-bottom: .625rem !important;
+    position: relative !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #cbcccf !important;
+    border-radius: .5rem !important;
+    width: 100% !important;
+    position: relative !important;
+    
+}
+
+.single-product-yith .yith-wapo-option > ul{
+    list-style-type: disc !important;
+}
+
+.single-product-yith .yith-wapo-option.selected{
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgba(0, 0, 0, 1) !important;
+}
+
+.single-product-yith .radio-button-container{
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: .5rem !important;
+}
+
+.single-product-yith .label{
+    display: flex !important;
+    flex: 100% !important;
+    width: 100% !important;
+}
+
+.single-product-yith .option-container{
+    width: 100% !important;
+}
+
+.single-product-yith .yith-wapo-label,
+.single-product-yith .yith-wapo-addon-label{
+    width: 94% !important;
+    display: inline-flex !important;
+    justify-content: space-between;
+}
+
+.single-product-yith input[type=radio]:not(:disabled):checked,
+.single-product-yith input[type=checkbox]:not(:disabled):checked{
+    border-color: rgb(var(--scheme-text));
+    background-color: rgb(var(--scheme-accent));
+    background-clip: content-box;
+    padding: 2px;
+    background-image: radial-gradient(circle, rgb(var(--scheme-accent)) 0%, rgb(var(--scheme-accent)) 50%, transparent 60%, transparent 100%);
+}
+
+/* ── Info button tooltip ─────────────────────────────────────── */
+[data-tooltip] {
+    position: relative;
+}
+
+
+.icon-info {
+    -webkit-mask-image: var(--info);
+    mask-image: var(--info);
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    background-color: rgb(17,221,196);
+    cursor: pointer;
+}
+
+.icon-tooltip {
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(28, 28, 26);
+    color: rgb(244, 244, 244);
+    font-size: 0.75rem;
+    line-height: 1.4;
+    padding: 0.375rem 0.625rem;
+    border-radius: 0.25rem;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.icon-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: rgb(28, 28, 26);
+}
+
+.single-product-yith input[type=radio], input[type=checkbox] {
+    border-color: rgb(var(--scheme-text));
+    color: rgb(var(--scheme-accent));
+    box-sizing: border-box;
+    width: 1rem;
+    height: 1rem;
+    border-width: 2px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    outline: none;
+    border-radius: 50%;
+}
+
+#wapo-total-price-table{
+    background-color: transparent !important;
+}
+
+.quantity {
+    display: flex;
+}
+
+.quantity .qty{
+    width: 5em;
+    margin: 12px 0;
+}
+
+.single_add_to_cart_button{
+    width: 100%
+}

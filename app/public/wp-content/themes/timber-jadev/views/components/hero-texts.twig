@@ -1,0 +1,54 @@
+<section>
+  <div class="section-padding scroll-mt-header {{ rct_darkbg ? rct_darkbg : 'bg-[rgb(244,244,244)]' }}" 
+      style="
+        --scheme-disabled-accent: 73 73 72;
+        --scheme-disabled: 110 110 110;
+        --scheme-error: 189 32 32;
+        --scheme-approved: 94 199 98;
+        --scheme-on-accent: 28 28 26;
+        --scheme-accent: 17 221 196;
+        --scheme-border: 73 73 72;
+        --scheme-alternate-background: 246 246 241;
+        --scheme-background: {{ rct_darkbg ? "28 28 26" : "244 244 244" }};
+        --scheme-text: {{ rct_darkbg ? "244 244 244" : "28 28 26" }}; 
+        --section-spacing-sm: 0px;
+        --section-spacing-md: 0px;
+        --section-spacing-lg: 0px;
+        --section-padding-sm: 1.25rem;
+        --section-padding-md: 2rem;
+        --section-padding-lg: 2.5rem;" 
+        id=""
+      >
+    <div class=" wrapper sm:max-w-[80%] sm:mt-0 sm:mb-0 flex justify-center sm:justify-center ">
+      <div class="flex flex-col items-center sm:items-center w-full gap-6">
+        <animate-scroll class="text-center sm:text-center text-body-lg text-text prose" style="animation-delay: calc(0*100ms)">
+          <h1 class="my-2 text-heading-xl"> {{ title_row1|default('')|e }} </h1>
+        </animate-scroll>
+        <animate-scroll class="richtext-prose flex flex-col space-y-2 [&amp;_*]:my-0 items-center sm:items-center text-center sm:text-center text-text desktop" style="animation-delay: calc(1*100ms)">
+          {# <p class="text-[18px] md:text-body-lg lg:text-body-lg">{{ description_row1|default('')|e }}</p> #}
+          <p class="my-2">{{ description_row1|default('')|e }}</p>
+        </animate-scroll>
+        {% if button_text_row1 is not empty %}
+          <animate-scroll class="richtext-prose flex flex-col md:flex-row gap-5 space-y-2 [&amp;_*]:my-0 items-center sm:items-center text-center sm:text-center text-text desktop" style="animation-delay: calc(1*100ms)">
+            {% if button_text_row1 or button_text2_row1 is not empty %}
+              {% include "components/button.twig" with {
+                'label' : button_text_row1|default(''),
+                'link': button_url_row1|default('#'),
+                'add_class' : "",
+              } %}
+            {% endif %}
+
+            {% if button_text2_row1 is not empty %}
+              {% include "components/button.twig" with {
+                'label' : button_text2_row1|default(''),
+                'link': button_url2_row1|default('#'),
+                'add_class' : "",
+              } %}
+            {% endif %}
+          </animate-scroll>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</section>

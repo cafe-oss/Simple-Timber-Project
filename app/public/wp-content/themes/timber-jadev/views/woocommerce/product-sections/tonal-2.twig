@@ -1,0 +1,224 @@
+{# ============================================================
+   Tonal 2 — product-specific sections
+   Only included on /products/tonal-2 (matched by post slug).
+   Add content to each row below.
+   ============================================================ #}
+
+
+{# ── Row 1: Press carousel + testimonial card grid ─────────── #}
+
+{% include "components/row-border-carousel.twig" with {
+    rct_title:  'What Tonal members are saying',
+    rct_cards: [
+        {   
+            'card_image': "//tonal.com/cdn/shop/files/Home-S6-Quote1.png?v=1745963226&width=200",
+            'card_title': "Shawn H.",
+            'card_description': "“Tonal has been a life changer! Easily the single greatest investment I ever made.”",
+        },
+        {   
+            'card_image': "//tonal.com/cdn/shop/files/Parents-S5-Quote2-mobile.png?v=1745963685&width=200",
+            'card_title': "Hank A.",
+            'card_description': "“I've been using this machine consistently since I got it. There are many excuses to not work out, so it's nice to eliminate the convenience factor by having it in your house.”",
+        },
+        {   
+            'card_image': "//tonal.com/cdn/shop/files/Membership-S5-Quote2.png?v=1746042089&width=200",
+            'card_title': "Brian M.",
+            'card_description': "“It has always been my goal to workout regularly with a personal trainer. With Tonal, I feel like I’ve finally got my wish. A personal trainer on demand. Tonal, where have you been all my life?”",
+        },
+        {   
+            'card_image': "//tonal.com/cdn/shop/files/Testimonial_Kevin-Sha-KS.png?v=1770073983&width=200",
+            'card_title': "Kevin Sha",
+            'card_description': "“8 months in since I started with Tonal, I’m in my best shape of my whole life. It really makes working out a lot easier, especially as a newbie. Tonal is changing my life!”",
+        },
+
+    ]
+}%}
+
+
+{# ── Row 2: Text left + banner carousel ────────────────────── #}
+{% include 'components/row-text-left.twig' with {
+    rct_darkbg:      'bg-background',
+    rct_title:       'COMPACT DESIGN MEETS VERSATILITY',
+    rct_description: 'One sleek strength-training system packs the equipment of a full gym into the convenience of your home.',
+    rct_button: {
+        'rct_button_url': "#tonal-2-link",
+        'rct_button_text': "SHOP TONAL 2"
+    },
+    
+} %}
+
+{% include 'components/row-banner-carousel.twig' with {
+    rct_darkbg: 'bg-background',
+    banner_cards: [
+        {
+            card_title:               'Immersive Display',
+            card_description:         'A large, built-in screen lets you see your stats in real-time and makes our coaches feel like they’re right at home with you.',
+            card_image_src:           '//tonal.com/cdn/shop/files/PDP-S3-ImmersiveDisplay.png?v=1748646963&width=600',
+            card_image_alt_attribute: 'Immersive display on Tonal',
+        },
+        {
+            card_title:               'Adjustable arms',
+            card_description:         'Easily move Tonal’s arms to work for you and unlock 300+ moves.',
+            card_image_src:           '//tonal.com/cdn/shop/files/PDP-S3-AdjustableArms-M.png?v=1748646994&width=600',
+            card_image_alt_attribute: 'Adjustable arms',
+        },
+        {
+            card_title:               'Wall-mounted',
+            card_description:         'A space-saving design that is professionally mounted securely to your wall, similar to a TV wall mount.',
+            card_image_src:           '//tonal.com/cdn/shop/files/PDP-S3-WallMounted-M.png?v=1748647020&width=600',
+            card_image_alt_attribute: 'Wall-mounted hardware',
+        },
+        {
+            card_title:               'High-res camera',
+            card_description:         'The built-in Smart View camera allows Tonal to analyze your movement and provide coaching cues in real-time during workouts, or after with post-workout clips.',
+            card_image_src:           '//tonal.com/cdn/shop/files/SmartTechnology-S6-HighResolutionCamera.png?v=1748647044&width=600',
+            card_image_alt_attribute: 'Close-up of Tonal camera',
+        },
+    ]
+} %}
+
+{# ── Row 3: Vertical slider tabs ───────────────────────────── #}
+{% include 'components/vertical-slider-tabs.twig' with {
+    rct_darkbg:       '',
+    rct_title:        'Smart Accessories unlock the full Tonal experience',
+    rct_subtitle:     '',
+    rct_description:  '',
+    rct_tab_position: 'right',
+    rct_items: [
+        {
+            title:       'Smart Handles',
+            description: 'Turn adaptive weight on and off with the simple press of a button and unlock a range of single-arm and two-arm moves.',
+            media_type:  'image',
+            media_src:   '//tonal.com/cdn/shop/files/PDP-S4-SmartHandles.png?v=1746224657&width=3840',
+            media_alt:   '',
+        },
+        {
+            title:       'Smart Bar',
+            description: 'Access a range of bar-based moves like bench press and deadlifts.',
+            media_type:  'image',
+            media_src:   '//tonal.com/cdn/shop/files/PDP-S4-SmartBar.png?v=1746224657&width=3840',
+            media_alt:   '',
+        },
+        {
+            title:       'Control Module',
+            description: 'Attaches to your smart bar, so you can turn weight on and off with the simple press of a button.',
+            media_type:  'image',
+            media_src:   '//tonal.com/cdn/shop/files/PDP-S4-ControlModule.png?v=1746224657&width=3840',
+            media_alt:   '',
+        },
+        {
+            title:       'Rope',
+            description: 'Used for rope moves and required for Aero. This helps you add pushing and pulling variety to every workout, like tricep extensions or the Aero twist.',
+            media_type:  'image',
+            media_src:   '//tonal.com/cdn/shop/files/PDP-S4-Rope.png?v=1746224655&width=3840',
+            media_alt:   '',
+        },
+        {
+            title:       'Bench',
+            description: 'A padded bench to help you to do moves like bench press, lateral pull downs, and more.',
+            media_type:  'image',
+            media_src:   '//tonal.com/cdn/shop/files/PDP-S4-Bench.png?v=1746224657&width=3840',
+            media_alt:   '',
+        },
+        {
+            title:       'Workout Mat',
+            description: 'Enjoy more comfort for yoga, floor exercises, and stretching.',
+            media_type:  'image',
+            media_src:   '//tonal.com/cdn/shop/files/PDP-S4-WorkoutMat.png?v=1746224657&width=3840',
+            media_alt:   '',
+        },
+        {
+            title:       'Roller',
+            description: 'Perfect for active recovery and helping your muscles get ready for their next challenge.',
+            media_type:  'image',
+            media_src:   '//tonal.com/cdn/shop/files/PDP-S4-Roller.png?v=1746224657&width=3840',
+            media_alt:   '',
+        }
+    ]
+} %}
+
+{# ── Row 4: Comparison table ───────────────────────────────── #}
+{% include 'components/row-text-left.twig' with {
+    rct_id: "tonal-2-compare",
+    rct_title: 'How Tonal 2 Stacks Up',
+} %}
+
+{% include 'components/row-table.twig' with {
+    rct_darkbg:       '',
+    rct_table_heading: [
+        '',
+        '<span style="font-weight: 700; font-size: 20px; ">TONAL 1</span><br><span style="font-weight: 400; font-size: 14px; ">Certified Refurbished</span><img src="https://cdn.shopify.com/s/files/1/0879/3767/9642/files/CREFTNL1-mod04-01.png?v=1753925913" alt="Tonal 1" style="max-width: 75%; height: auto; margin: 0 auto;">',
+        '<span style="font-weight: 700; font-size: 20px; ">TONAL 2</span><img src="https://cdn.shopify.com/s/files/1/0879/3767/9642/files/CREFTNL1-mod04-02.png?v=1753925912" alt="Tonal 2" style="max-width: 75%; height: auto; margin: 0 auto;">'],
+    rct_table_data: [
+        ['PRICE', '$2,495.00', '$4,295.00'],
+        ['FINANCING OPTIONS', '36 months through Affirm', '36 months through Affirm'],
+        ['PERSONALIZED WEIGHT', 'Up to 200 lbs, starting at 5 lbs', 'Up to 250 lbs, starting at 5 lbs'],
+        ['MOVEMENTS', '310+', '315+'],
+        ['WORKOUT TYPES', '15', '16'],
+        ['AERO HIIT', '-', 'Only on Tonal 2'],
+        ['DESIGN', 'Classic', 'All-black with chrome accents'],
+        ['COACHING CUES WITH SMART VIEW', 'Via mobile device', "Via Tonal's built-in camera + mobile device for additional side angle"],
+        ['SOUND', 'Standard', 'Upgraded with embedded EQ optimization'],
+        ['MOTOR CONTROL BOARD', 'Gen 1', 'Gen 2'],
+        ['WIFI / BLUETOOTH', '802.11n 1x1 / Bluetooth v4.1', '802.11ac 2x2 MIMO / Bluetooth v5.1 aptX'],
+        ['WARRANTY', '2-Year manufacturer warranty included', '-Year manufacturer warranty included, with extended warranty options'],
+        ['WHITE GLOVE DELIVERY AND PROFESSIONAL INSTALLATION', 'Yes', 'Yes'],
+        ['SMART WATCH COMPATIBILITY', 'Yes', 'Yes'],
+    ],
+    rct_faqs: []
+} %}
+
+{# ── Row 5: Text left + 3-step grid + footer banner ────────── #}
+{% include 'components/row-text-left.twig' with {
+    rct_title:       'Tonal delivery & installation',
+    rct_description: "For your safety, we require your Tonal to be professionally installed by a member of our team. White-glove delivery and in-home installation is available in all 50 states.",
+} %}
+
+{% include 'components/footer-banner.twig' with {
+    rct_image: {
+        rct_image_url: '//tonal.com/cdn/shop/files/PDP-S5-TonalDeliveryandInstallation.png?v=1746229594&width=3840'
+    }
+} %}
+
+{% include 'components/steps-grid.twig' with {
+    rct_darkbg: '',
+    steps: [
+        { label: 'Step 1', title: 'Choose your space and make sure it meets this criteria:', description: '<ul style="list-style: disc !important;"><li>7 ft of unobstructed wall space</li><li>7 ft × 7 ft of floor space</li><li>7 feet, 10 inches of ceiling height</li><li>Continuous, Reliable WiFi connection</li><li>3-prong power outlet within 6 feet of installation location</li></ul>' },
+        { label: 'Step 2', title: 'Fill out a survey', description: 'After purchase, confirm your space details to ensure proper installation.' },
+        { label: 'Step 3', title: 'Schedule your installation', description: 'Schedule a time for our professional installers to get Tonal set up for you.' }
+    ],
+    additional_info: "<p><strong>Questions?</strong> Explore <a href='/pages/installation' title='Tonal Installation'>installation</a> information.</p>",
+} %}
+
+{# ── Row 6: Text left + banner carousel ────────────────────── #}
+{% include 'components/row-text-left.twig' with {
+    rct_darkbg:      'bg-background',
+    rct_title:       'One membership for the whole household',
+    rct_description: 'Each Tonal purchase requires a 12-month membership commitment with unlimited accounts and personalized training for everyone ($59.95/mo. + applicable taxes).',
+} %}
+
+{% include 'components/row-banner-carousel.twig' with {
+    rct_darkbg: 'bg-background',
+    banner_cards: [
+        {
+            card_title:               'Adapts As You Get Stronger',
+            card_description:         'After a quick strength assessment, Tonal sets and adjusts your weight automatically for every move.',
+            card_image_src:           '//tonal.com/cdn/shop/files/PDP-S6-TonalAdaptsAsYouGetStronger.png?v=1751479106&width=600',
+        },
+        {
+            card_title:               'Advanced Lifting at Home',
+            card_description:         'Dynamic weight modes like Chains and Eccentric add challenge you can’t get from free weights.',
+            card_image_src:           '//tonal.com/cdn/shop/files/PDP-S6-AccessAdvancedLiftingTechniques.png?v=1751479146&width=600',
+        },
+        {
+            card_title:               'No More Guesswork',
+            card_description:         'Set your goals and Tonal creates personalized workouts—strength, HIIT, yoga, and more.',
+            card_image_src:           '//tonal.com/cdn/shop/files/PDP-S6-TakeGuessworkOutOfWorkouts.png?v=1751479167&width=600',
+        },
+        {
+            card_title:               'Real-Time Coaching Cues',
+            card_description:         'On-screen guidance helps you move safely and effectively, just like a personal trainer would.',
+            card_image_src:           '//tonal.com/cdn/shop/files/PDP-S6-RealTimeGuidance.png?v=1751479188&width=600',
+        }
+    ]
+} %}

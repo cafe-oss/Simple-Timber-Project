@@ -1,0 +1,296 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+
+		{% include "components/hero-texts.twig" with {
+			'title_row1': post.meta('title_row1'),
+			'description_row1': post.meta('description_row1'),
+		}%}
+
+		{% include "components/row-equipment-card.twig" with {
+			equipments: [
+					{
+					'card_title': "WORKOUTS",
+					'card_button_title': "Learn",
+					'card_button_url': "https://tonal.com/pages/resource-hub-workouts",
+					'card_image_src': "//tonal.com/cdn/shop/files/SmartTechnology-S3-BuildMuscleUpTo2X_df6b8c44-78cc-4b73-84c5-b5ff070f6e08.png?v=1762012507&width=1000",
+				},
+				{
+					'card_title': "EXERCISES",
+					'card_button_title': "Learn",
+					'card_button_url': "https://tonal.com/pages/resource-hub-exercises",
+					'card_image_src': "//tonal.com/cdn/shop/files/SmartTechnology-S3-BreakThroughPlateaus_8e5f2f71-1706-4381-b9b6-4700135178ed.png?v=1762012726&width=1000",
+				},
+				{
+					'card_title': "AT HOME FITNESS",
+					'card_button_title': "Learn",
+					'card_button_url': "https://tonal.com/pages/resource-hub-at-home-workouts",
+					'card_image_src': "//tonal.com/cdn/shop/files/SmartTechnology-S3-StartWithYourOptimalWeight_a757d7d3-9016-4780-97b7-933da0cfa1d1.png?v=1762012135&width=1000",
+				}
+			]
+		} 
+		%}
+
+		{% include "components/row-text-left.twig" with {
+			'rct_title': "WORKOUTS",
+			'rct_button': {
+				'rct_button_url': "https://tonal.com/pages/resource-hub-workouts",
+				'rct_button_text': "EXPLORE ALL WORKOUTS"
+			},
+			'rct_darkbg': "bg-background"
+		}%}
+
+		{% include "components/row-banner-carousel.twig" with {
+			'rct_darkbg': "bg-background",
+			'banner_cards': [
+				{
+					'card_title': "HIIT Workouts For Beginners",
+					'card_description': "Start strong with these adaptable 10, 20, or 30-minute beginner HIIT routines. Build a routine safely and boost endurance on your fitness journey.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SEO-Content-Hub-HIIT-workouts-for-beginners-250722_Tonal_Track_1_Tim_KC_14423-1.jpg?v=1765394214&width=600",
+					'card_button': {
+						'card_button_text': "EXPLORE WORKOUT",
+						'card_button_url': "#"
+					}
+				},
+				{
+					'card_title': "Isometric Workout",
+					'card_description': "Strengthen your core, abs, and legs and more with isometric workouts: A routine type that develops strength without high-impact movement.",
+					'card_image_src': "//tonal.com/cdn/shop/files/Woody_16x9_38cc6a7e-7da5-4915-b923-364c6e1390a9.jpg?v=1763495598&width=600",
+					'card_button': {
+						'card_button_text': "EXPLORE WORKOUT",
+						'card_button_url': "#"
+					}
+				},
+				{
+					'card_title': "Deadlift Workout",
+					'card_description': "Improve strength and form with a deadlift workout routine. Explore deadlift back and squat workouts variations to build muscle and power.",
+					'card_image_src': "//tonal.com/cdn/shop/files/Kristina_16x9_699aadef-9499-4d00-b81e-575a16e4859f.png?v=1765396115&width=600",
+					'card_button': {
+						'card_button_text': "EXPLORE WORKOUT",
+						'card_button_url': "#"
+					}
+				},
+				{
+					'card_title': "Pull Day Workout",
+					'card_description': "Target your back, arms, and core with a best-fit pull day workout. Based on a structured split-style plan to avoid overtraining and keep the body balanced.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SEO-Resource-Hub-Pull-day-workout-250313_Tonal_FWFT_HW_ED_TANYSHA_5725-16x9.png?v=1765394760&width=600",
+					'card_button': {
+						'card_button_text': "EXPLORE WORKOUT",
+						'card_button_url': "#"
+					}
+				},
+				{
+					'card_title': "Yoga Workout",
+					'card_description': "Build strength and flexibility with yoga workouts. Try chair, ball, and ab yoga routines to improve balance and control.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SEO-Content-Hub-Yoga-Workout-200109_TonalYoga__Shot-1_0035x_2c8de24d-e289-4da2-8535-a648285eaef7.jpg?v=1765395653&width=600",
+					'card_button': {
+						'card_button_text': "EXPLORE WORKOUT",
+						'card_button_url': "#"
+					}
+				},
+				{
+					'card_title': "HIIT For Weight Loss",
+					'card_description': "Burn calories and develop strength with this multi-muscle targeting HIIT for weight loss session. ",
+					'card_image_src': "//tonal.com/cdn/shop/files/SEO-Content-Hub-HIIT-for-weight-loss-250313_Tonal_FWFT_HW_ED_ASH_5130-16x9.png?v=1765324990&width=600",
+					'card_button': {
+						'card_button_text': "EXPLORE WORKOUT",
+						'card_button_url': "#"
+					}
+				},
+				{
+					'card_title': "Basic HIIT Workout",
+					'card_description': "Rev up your fitness with the best HIIT workouts that burn calories and support endurance, whether brief 15 minute routines to full 60 minute workouts.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SEO-Content-Hub-Resistance-Training-Hero-16x9.png?v=1765331028&width=600",
+					'card_button': {
+						'card_button_text': "EXPLORE WORKOUT",
+						'card_button_url': "#"
+					}
+				},
+			],
+		}%}
+
+		{% include "components/row-text-left.twig" with {
+			'rct_title': "EXERCISES",
+			'rct_button': {
+				'rct_button_url': "https://tonal.com/pages/resource-hub-exercises",
+				'rct_button_text': "EXPLORE ALL EXERCISES"
+			}
+		}%}
+
+		{% include "components/row-banner-carousel.twig" with {
+			'banner_cards': [
+				{
+					'card_title': "Goblet Squat",
+					'card_description': "Support lower-body strength with this goblet squat guide. Learn proper heel and back form to target and help develop key muscles.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SEO-Resource-Hub-Exercises-20230411_TONAL_SCULPT-SHRED_DAY02_ASH-WILKING_1172-t.jpg?v=1765491937&width=600",
+					'card_image_alt_attribute': "Tonal Coach Ash Wilking performing a goblet squat.",
+					'card_button': {
+						'card_button_text': "LEARN MORE",
+						'card_button_url': "#"
+					}
+				},
+				{
+					'card_title': "Single Leg RDL s",
+					'card_description': "Boost balance, develop hamstring and glute strength with the single leg Romanian deadlift guide, with form tips and insights.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SEO-Resource-Hub-Exercises-20230411_TONAL_SCULPT-SHRED_DAY02_KENDALL-WOOD_2204.jpg?v=1765492021&width=600",
+					'card_image_alt_attribute': "Tonal Coach Kendall Woody perfoming a single leg RDL.",
+					'card_button': {
+						'card_button_text': "LEARN MORE",
+						'card_button_url': "#"
+					}
+				},
+				{
+					'card_title': "Barbell Bench Press",
+					'card_description': "Bust out a flat workout bench and pump out a proper barbell bench press. Build chest strength and power, and learn wide and alternative grip types..",
+					'card_image_src': "//tonal.com/cdn/shop/files/SEO-Resource-Hub-Movements-20230411_TONAL_SCULPT-SHRED_DAY02_TIM-LANDICHO_1200.jpg?v=1765491988&width=600",
+					'card_image_alt_attribute': "Tonal Coach Tim Landicho performing a barbell bench press.",
+					'card_button': {
+						'card_button_text': "LEARN MORE",
+						'card_button_url': "#"
+					}
+				},
+				{
+					'card_title': "Bent Over Barbell Row",
+					'card_description': "Execute a powerful bent over barbell row to create a stronger, wider back, with form tips, stance cues, and grip comparisons: wide, overhand, or supine.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SEO-Resource-Hub-Exercises-220929_Tonal_Daniel_BarbellBentOverRow_2156.jpg?v=1765492090&width=600",
+					'card_image_alt_attribute': "Tonal member performing Barbell Bent Over Rows",
+					'card_button': {
+						'card_button_text': "LEARN MORE",
+						'card_button_url': "#"
+					}
+				},
+				{
+					'card_title': "Resisted Glute Bridge",
+					'card_description': "Activate glutes with the resisted glute bridge. Learn how to push through your heels, add elevation, and flex at the top of this banded exercise.",
+					'card_image_src': "//tonal.com/cdn/shop/files/HP-Hero-TruemedLaunch.png?v=1765389545&width=600",
+					'card_button': {
+						'card_button_text': "LEARN MORE",
+						'card_button_url': "#"
+					}
+				},
+				
+			],
+		}%}
+
+		{% include "components/row-text-left.twig" with {
+			'rct_title': "AT-HOME WORKOUTS",
+			'rct_button': {
+				'rct_button_url': "https://tonal.com/pages/resource-hub-at-home-workouts",
+				'rct_button_text': "EXPLORE AT-Home Workouts"
+			},
+			'rct_darkbg': "bg-background"
+		}%}
+
+		{% include "components/row-banner-carousel.twig" with {
+			'rct_darkbg': "bg-background",
+			'banner_cards': [
+				{
+					'card_title': "Bicep Workout at Home",
+					'card_description': "Push yourself with this bicep workout at home using 4 simple, no-to-low equipment moves. Build control and strength with key exercises, plus a smart finisher.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SEO-Resource-Hub-At-Home-Bicep-Workout-At-Home-240611_Tonal_Coach_Joe_2_4651.jpg?v=1765391294&width=600",
+					'card_image_alt_attribute': "Tonal Coach Joe flexes his biceps",
+					'card_button': {
+						'card_button_text': "LEARN MORE",
+						'card_button_url': "#"
+					}
+				},
+				{
+					'card_title': "Oblique Workouts At Home",
+					'card_description': "An oblique workout at home made simple yet effective: This 10-minute routine targets the abs and obliques with 5 no-equipment exercises you can do anywhere.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SEO-Resource-Hub-At-Home-Oblique-Workouts-250722_Tonal_Joe_Copenhagen_plank_Off_15863.jpg?v=1765391579&width=600",
+					'card_image_alt_attribute': "Tonal Coach Joe performing a Copenhagen Plank, exercising his Oblique muscles",
+					'card_button': {
+						'card_button_text': "LEARN MORE",
+						'card_button_url': "#"
+					}
+				},
+				{
+					'card_title': "At Home Core Workouts",
+					'card_description': "A 360-degree at home core workout for beginners. Strengthen your obliques, pelvic floor, lower back, and deep stabilizers with this no-equipment routine.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SEO-Resource-Hub-At-Home-Core-Workouts-230821_Tonal_Woody_CPM_V2_2956.jpg?v=1765391423&width=600",
+					'card_image_alt_attribute': "Tonal Coach Woody performing a core exercise",
+					'card_button': {
+						'card_button_text': "LEARN MORE",
+						'card_button_url': "#"
+					}
+				},
+				{
+					'card_title': "Ab Workouts at Home",
+					'card_description': "A beginner-minded no equipment ab workout at home for men and women focused on the lower abs, rectus abdominis, and deep transverse core.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SEO-Resource-Hub-At-Home-Ab-Workouts-At-Home-250819-Tonal_MG_Off_Tonal_1678.jpg?v=1765391357&width=600",
+					'card_image_alt_attribute': "Tonal Coach Kristin McGee performing a boat pose",
+					'card_button': {
+						'card_button_text': "LEARN MORE",
+						'card_button_url': "#"
+					}
+				},
+				{
+					'card_title': "Leg Workouts at Home",
+					'card_description': "Leg workouts at home for beginners, men, and women, featuring the best bodyweight moves plus optional with-weights variations for more challenge.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SEO-Resource-Hub-At-Home-Leg-Workouts-230821_Tonal_TANYSHA_CPM_V2_2065.jpg?v=1765391579&width=600",
+					'card_image_alt_attribute': "Tonal Coach Tanysha performing a leg workout",
+					'card_button': {
+						'card_button_text': "LEARN MORE",
+						'card_button_url': "#"
+					}
+				},
+				
+			],
+		}%}
+
+		{% include "components/row-equipment-card.twig" with {
+			equipments: [
+					{
+					'card_title': "Start training with Tonal",
+					'card_description': "Everything you need to replace a full gym’s worth of equipment. Unlock new levels of building strength with 300+ moves across upper body, lower body, and core.",
+					'card_button_title': "DISCOVER TONAL TECHNOLOGY",
+					'card_button_url': "https://tonal.com/pages/equipment-overview",
+					'card_image_src': "//tonal.com/cdn/shop/files/LP-TRY-TONAL-CB-Equipment-S4-TrainSmarterWithTonal.png?v=1759530975&width=1000",
+					'card_image_alt_attribute': "Group of coaches walking towards camera"
+				},
+				{
+					'card_title': "Performance Shop",
+					'card_description': "Enhance your workouts with Tonal premium apparel, accessories and more.",
+					'card_button_title': "SHOP PERFORMANCE",
+					'card_button_url': "https://tonal.com/collections/performance-shop",
+					'card_image_src': "//tonal.com/cdn/shop/files/SEO-Resource-Hub-Footer-PerformanceShop.jpg?v=1765392872&width=1000",
+				}
+			]
+		} 
+		%}
+
+		{% include "components/row-equipment-card.twig" with {
+			'image_class': "w-[60px]! h-[90px]!",
+			'rct_darkbg': "bg-background",
+			equipments: [
+					{
+					'card_title': "book a demo today",
+					'card_description': "Experience training with Tonal in person or virtually, guided by one of our experts.",
+					'card_button_title': "BOOK ONLINE OR VIRTUAL",
+					'card_button_title_attribute': "BOOK ONLINE OR VIRTUAL",
+					'card_button_url': "https://tonal.com/pages/try-tonal",
+					'card_image_src': "//tonal.com/cdn/shop/files/ICON_Laptop.svg?v=1769110328&width=1000",
+				},
+				{
+					'card_title': "shop tonal now",
+					'card_description': "Start your fitness journey today with Tonal 2.",
+					'card_button_title': "SHOP NOW",
+					'card_button_title_attribute': "SHOP NOW",
+					'card_button_url': "https://tonal.com/products/tonal-2",
+					'card_image_src': "//tonal.com/cdn/shop/files/ICON-Book-Tonal-Now.svg?v=1761607886&width=1000",
+				},
+				{
+					'card_title': "Explore the Tonal app",
+					'card_description': "See how you can set, track, and crush goals on the Tonal app. Plus, browse thousands of on-demand workouts to do at home with Tonal, or on the go without it.",
+					'card_button_title': "DOWNLOAD THE APP",
+					'card_button_title_attribute': "DOWNLOAD THE APP",
+					'card_button_url': "https://tonal.com/pages/mobile",
+					'card_image_src': "//tonal.com/cdn/shop/files/ICON-mobile.svg?v=1761607885&width=1000",
+				}
+			]
+		} 
+		%}
+
+	</article>
+{% endblock %}

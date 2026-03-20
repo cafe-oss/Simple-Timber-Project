@@ -1,0 +1,35 @@
+<section class="video-section">
+  <div 
+  class="{{ rct_darkbg ? rct_darkbg : 'bg-[rgb(244,244,244)]' }} text-text section-padding mx-auto" 
+    style="
+      --scheme-background: {{ rct_darkbg ? "28 28 26" : "244 244 244" }}; 
+      --scheme-text: {{ rct_darkbg ? "244 244 244" : "28 28 26" }};
+    ">
+    <div class="relative wrapper h-[80vh] max-md:landscape:h-[100vh] ">
+      <div class="wrapper-fluid z-overlay absolute max-w-[706px] sm:top-1/2 sm:-translate-y-1/2 max-sm:top-1/2 max-sm:-translate-y-1/2 sm:text-center sm:left-1/2 sm:transform sm:-translate-x-1/2 max-sm:text-left max-sm:left-0">
+        <div class="flex flex-col gap-x-2 mt-4 sm:mt-6 sm:justify-center sm:items-center max-sm:justify-start max-sm:items-start">
+          <button class="order-2 mt-6 w-10 h-10 md:w-12 md:h-12" type="button" aria-label="Play the video">
+            <svg class="w-full h-full play-icon hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="16" r="15" stroke="white" stroke-width="1.5"/>
+              <path d="M13 11v10l8-5-8-5z" fill="white"/>
+            </svg>
+            <svg class="w-full h-full pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="16" r="15" stroke="white" stroke-width="1.5"/>
+              <rect x="11" y="10" width="3" height="12" fill="white"/>
+              <rect x="18" y="10" width="3" height="12" fill="white"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="relative h-full overflow-hidden">
+        <div class="absolute top-0 z-above w-full h-full"></div>
+        <div data-video-title="Tonal video" data-has-mobile-video="true" class="h-full">
+          <video playsinline="playsinline" autoplay="" loop="" class="w-full h-full object-cover" preload="metadata" poster="{{ video.video_poster|default('')|e }}" aria-label="Tonal video" muted="muted">
+              <source src="{{ video.video_src|default('')|e }}" type="video/mp4">
+              <img src="{{ video.video_poster|default('')|e }}" alt="Tonal video">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

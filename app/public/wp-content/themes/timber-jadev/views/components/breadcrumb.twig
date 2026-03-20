@@ -1,0 +1,45 @@
+<nav aria-label="Breadcrumb">
+  <div class="wrapper-fluid" style="--scheme-text: var(--scheme-on-accent)">
+    <ol class="text-text flex flex-wrap leading-8">
+      <li class="list-none">
+        <a href="/" class="text-text no-underline text-body-sm">
+          <span>Home</span>
+        </a>
+        <span class="pointer-events-none mx-6" aria-hidden="true">/</span>
+      </li>
+      {% if breadcrumb_ancestors %}
+        {% for ancestor in breadcrumb_ancestors %}
+          <li class="list-none">
+            <a href="{{ ancestor.link }}" class="text-text no-underline text-body-sm">
+              <span>{{ ancestor.title }}</span>
+            </a>
+            <span class="pointer-events-none mx-6" aria-hidden="true">/</span>
+          </li>
+        {% endfor %}
+      {% elseif breadcrumb_performance_shop %}
+        {% for ancestor in breadcrumb_performance_shop %}
+          <li class="list-none">
+            <a href="{{ ancestor.link }}" class="text-text no-underline text-body-sm">
+              <span>{{ ancestor.title }}</span>
+            </a>
+            <span class="pointer-events-none mx-6" aria-hidden="true">/</span>
+          </li>
+        {% endfor %}
+      {% elseif post.parent %}
+        {% for ancestor in post.ancestors|reverse %}
+          <li class="list-none">
+            <a href="{{ ancestor.link }}" class="text-text no-underline text-body-sm">
+              <span>{{ ancestor.title }}</span>
+            </a>
+            <span class="pointer-events-none mx-6" aria-hidden="true">/</span>
+          </li>
+        {% endfor %}
+      {% endif %}
+      <li class="list-none">
+        <a href="{{ post.link }}" class="text-text no-underline text-body-sm" aria-current="page">
+          <span>{{ post.title }}</span>
+        </a>
+      </li>
+    </ol>
+  </div>
+</nav>

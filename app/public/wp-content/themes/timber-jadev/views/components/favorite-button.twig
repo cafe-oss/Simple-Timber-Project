@@ -1,0 +1,21 @@
+{#
+  Component: favorite-button
+  Params:
+    product_id — WooCommerce product ID (required)
+    add_class  — additional CSS classes (optional)
+#}
+<button
+    class="favorite-btn {{ add_class|default('') }} cursor-pointer"
+    data-product-id="{{ product_id }}"
+    type="button"
+    aria-label="Add to favorites"
+    aria-pressed="false">
+    {# Outline heart — shown when not favorited #}
+    <svg class="fav-icon-outline w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    {# Filled heart — shown when favorited #}
+    <svg class="fav-icon-filled w-5 h-5 hidden" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+    </svg>
+</button>

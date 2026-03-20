@@ -1,0 +1,213 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+
+		{% include "components/hero-image-text.twig" with {
+			'title_row1': "One membership for the whole household",
+			'description_row1': "Unlimited training lets everyone in your home tap into a personalized experience to hit their goals.",
+			'add_class': {
+				'body_position_class': "justify-center sm:justify-center items-center md:items-start ",
+				'body_layout_class': "items:center md:items-start",
+				'p_align_class': "!text-start",
+			},
+			'rct_image': {
+				'rct_image_src': "//tonal.com/cdn/shop/files/LP-Membership-Hero.png?v=1761607886&width=3840"
+			},
+			'rct_darkbg': "bg-background",
+			'rct_style': {
+				'aspect_ratio': "2.4",
+				'mobile_aspect_ratio': "0.6702380952380952",
+			},
+		}%}
+
+		{% include "components/row-content-text.twig" with {
+			'rct_title': "invest in your health for under $2/day*",
+			'rct_description': "*$59.95/month plus applicable tax. 12-month initial commitment required.",
+			'rct_darkbg': "bg-background",
+		}%}
+
+		{% include "components/row-table.twig" with {
+			'rct_table_heading': [
+				"",
+				"Tonal Member",
+				"Non Member"
+			],
+			'rct_table_data': [
+				[
+					"<strong>A full gym of equipment</strong> in a compact design with 280+ full-body moves",
+					"✔️",
+					"✔️",
+				],
+				[
+					"<strong>Digital weight up to 250 pounds</strong>",
+					"✔️",
+					"✔️",
+				],
+				[
+					"<strong>Optimal weight for every move</strong>, adjusts in one-pound increments as you get stronger",
+					"✔️",
+					""
+				],
+				[
+					"<strong>Automatic progress tracking</strong> to help you visualize your performance over time",
+					"✔️",
+					""
+				],
+				[
+					"<strong>Thousands of live and on-demand classes</strong> across 15 workout types, refreshed weekly",
+					"✔️",
+					""
+				],
+				[
+					"<strong>Multi-week programs</strong> designed by experts to help you get specific results",
+					"✔️",
+					""
+				],
+				[
+					"<strong>Build custom workouts</strong> that you can save, share, and automatically track",
+					"✔️",
+					""
+				],
+				[
+					"<strong>Safety features</strong> like having a spotter with you for every workout",
+					"✔️",
+					""
+				],
+				[
+					"<strong>Personalized coaching cues</strong> to help you dial in your form for better results",
+					"✔️",
+					""
+				],
+				[
+					"<strong>Dynamic weight modes</strong> replicate advanced lifting techniques to break through plateaus",
+					"✔️",
+					""
+				],
+				[
+					"<strong>Drop sets</strong> help build muscle up to 2x faster by gradually lowering weight until failure",
+					"✔️",
+					""
+				],
+			]
+		}%}
+
+		{% include "components/row-testimonial-card.twig" with {
+			'rct_darkbg': "bg-background",
+			'rct_title': "why members love training with tonal",
+			testimonials: [
+				{
+					'testimonial_image_src': "//tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=1000",
+					'testimonial_image_srcset_attribute': "//tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=352 352w, //tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=832 832w, //tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=1000 1000w",
+					'testimonial_description': "The ROI in the form of my physical and mental health definitely has been worth it.",
+					'testimonial_name': "Arjabi Sarita T.",
+				},
+				{
+					'testimonial_image_src': "//tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=1000",
+					'testimonial_image_srcset_attribute': "//tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=352 352w, //tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=832 832w, //tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=1000 1000w",
+					'testimonial_description': "It has always been my goal to work out regularly with a personal trainer. With Tonal, I feel like I’ve finally got my wish. A personal trainer on demand. Tonal, where have you been all my life?",
+					'testimonial_name': "Brian M.",
+				},
+				{
+					'testimonial_image_src': "//tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=1000",
+					'testimonial_image_srcset_attribute': "//tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=352 352w, //tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=832 832w, //tonal.com/cdn/shop/files/ICON-Quote-Testimonials_75876310-9b9c-44ca-bdb2-26a5e701ecd5.svg?v=1761607885&width=1000 1000w",
+					'testimonial_description': "Happy to report that two of our teenagers are really loving the Tonal as well and it’s turned into an amazing family gym.",
+					'testimonial_name': "Marie J.",
+				}
+
+			]
+		}%}
+
+		{% include "components/image-text.twig" with {
+			'rct_title': "How Tonal Membership Stacks Up",
+			'rct_description': "Tonal membership does more than level up your routine—it delivers thousands of on-demand classes and the expertise of a personal trainer to everyone in your household for just $59.95*/month. 
+			<br><br><p style='font-size:12px; margin-bottom:30px'>*Plus applicable tax. 12-month initial commitment required.<br>**This annual calculation is based an estimated cost of attending two personal training sessions of $90/session and two studio classes at $55/class per week. </p>",
+			'rct_image': {
+				'rct_image_src': "//tonal.com/cdn/shop/files/MembershipChart_Export_1.svg?v=1761951680&width=3840",
+				'rct_image_class': "object-fit bg-[rgb(28,28,26)]"
+			},
+			'rct_row_reverse': true,
+		}%}
+
+		{% include "components/image-text.twig" with {
+			'rct_title': "3,000+ expert-designed workouts and counting",
+			'rct_description': "From strength to mobility to heart-pumping Aero, Tonal workouts span over 15 categories and offer thousands of live and on-demand classes to keep you coming back, week after week.
+			<br><br>Plus, explore programs designed to help you hit specific goals like Build Muscle, Get Lean, or Improve Fitness.",
+			'rct_image': {
+				'rct_image_src': "//tonal.com/cdn/shop/files/LP-Membership-CB3.png?v=1761607886&width=2160",
+			},
+			'rct_row_reverse': true,
+			'rct_darkbg': "bg-background"
+		}%}
+
+		{% include "components/row-content-text.twig" with {
+			'rct_title': "expert guidance for your fitness journey",
+			'rct_description': "Our coaches are here to help you focus on your goals, stay motivated, and push through even the toughest workouts.",
+		}%}
+
+		{% include "components/row-equipment-card.twig" with {
+			'image_class': "w-[60px]! h-[90px]!",
+			'rct_darkbg': "bg-background",
+			equipments: [
+					{
+					'card_title': "book a demo today",
+					'card_description': "Experience training with Tonal in person or virtually, guided by one of our experts.",
+					'card_button_title': "BOOK ONLINE OR VIRTUAL",
+					'card_button_title_attribute': "BOOK ONLINE OR VIRTUAL",
+					'card_button_url': "https://tonal.com/pages/try-tonal",
+					'card_image_src': "//tonal.com/cdn/shop/files/ICON_Laptop.svg?v=1769110328&width=1000",
+				},
+				{
+					'card_title': "shop tonal now",
+					'card_description': "Start your fitness journey today with Tonal 2.",
+					'card_button_title': "SHOP NOW",
+					'card_button_title_attribute': "SHOP NOW",
+					'card_button_url': "https://tonal.com/products/tonal-2",
+					'card_image_src': "//tonal.com/cdn/shop/files/ICON-Book-Tonal-Now.svg?v=1761607886&width=1000",
+				},
+				{
+					'card_title': "Explore the Tonal app",
+					'card_description': "See how you can set, track, and crush goals on the Tonal app. Plus, browse thousands of on-demand workouts to do at home with Tonal, or on the go without it.",
+					'card_button_title': "DOWNLOAD THE APP",
+					'card_button_title_attribute': "DOWNLOAD THE APP",
+					'card_button_url': "https://tonal.com/pages/mobile",
+					'card_image_src': "//tonal.com/cdn/shop/files/ICON-mobile.svg?v=1761607885&width=1000",
+				}
+			]
+		} 
+		%}
+
+		{% include "components/row-faq.twig" with {
+			'rct_title': "We've got answers.",
+			'rct_faqs': [
+				{
+					'title': "What is the membership commitment length?",
+					'texts': "All Tonal purchases require a 12-month initial commitment term. After the initial 12-month term, memberships become month-to-month and can be canceled or paused anytime. You can pause by contacting our support team at (855) 698-6625 or cancel through your Account on Tonal under Membership."
+				},
+				{
+					'title': "Can I pause my membership for months at a time?",
+					'texts': "After the initial 12-month commitment period, your membership goes month to month and you can pause or cancel it at any time."
+				},
+				{
+					'title': "Can you buy Tonal without membership?",
+					'texts': "Tonal Membership is required for the first 12 months. As a connected fitness system, Tonal is designed to be your intelligent home gym and the Tonal membership unlocks the personalization that is the key to Tonal's intelligence. It's essentially what makes Tonal more than just standard strength training equipment.<br><br>In addition to our ever growing workout library, the membership unlocks our intelligence features such as progress tracking, personalized weight suggestions, dynamic weight modes, the ability to design and save custom workouts, and so much more. It helps take the guesswork out of strength training by optimizing every workout for you!"
+				},
+				{
+					'title': "What will the Tonal be like if I cancel the membership?",
+					'texts': "If you cancel the membership after the initial 12-month commitment period, you will lose access to Tonal's intelligence and personalization features as well as the workout library, but you would still have access to basic Tonal features: <br><br><ul class='list-disc pl-[1.1rem]'><li>Basic Lift with the ability to increase/decrease the weight</li><li>Safety features such as turning the weight on/off via the Smart Handles and Smart Bar</li><li>WiFi settings for receiving software &amp; firmware updates</li></ul>"
+				},
+				{
+					'title': "If I have more than one Tonal, do I need a membership for both?",
+					'texts': "Your Tonal membership can only be active on one Tonal at a time. However, you can use the same membership if you live in multiple places throughout the year and want Tonal installed in each location. You will be prompted to deactivate your Tonal at your primary residence when you sign in to the Tonal at your secondary residence. If you want both Tonals active at the same time, you will need two separate memberships."
+				},
+				{
+					'title': "When does my Tonal membership activate?",
+					'texts': "After your Tonal is installed, you'll be prompted to create an account, enter your payment details, and agree to Tonal's Terms of Service to activate your membership."
+				},
+			]
+		}%}
+		
+
+	</article>
+
+{% endblock %}

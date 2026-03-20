@@ -1,0 +1,96 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<section
+    class="bg-[rgb(244,244,244)] text-[rgb(28,28,26)] section-spacing section-padding"
+    style="
+        --scheme-background: 244 244 244;
+        --scheme-text: 28 28 26;
+        --scheme-accent: 17 221 196;
+        --scheme-border: 164 164 163;
+        --section-padding-sm: 3rem;
+        --section-padding-md: 4rem;
+        --section-padding-lg: 5rem;
+    ">
+    <div class="wrapper px-5 py-12">
+
+        <h1 class="text-[2.5rem] mb-12">Your Favorites</h1>
+
+        {% if is_logged_in %}
+
+            {# Always in DOM — JS shows it when the grid is empty #}
+            <div id="favorites-empty" class="py-20 text-center hidden">
+                <p class="text-lg mb-6">You haven't saved any favorites yet.</p>
+                <a href="/shop" class="button">Browse Products</a>
+            </div>
+
+            {# Always rendered — JS hides it if there are no cards #}
+            <div id="favorites-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 pb-[50px]">
+                {% for product in favorites_products %}
+                    <div class="flex flex-col gap-4">
+
+                        <a href="{{ product.product_url|e }}" aria-label="View {{ product.card_title|e }}" class="w-full block">
+                            <div class="relative w-full" style="padding-bottom: 102.77%;">
+                                {% if product.is_new %}
+                                    <div class="absolute left-4 top-4 z-2">
+                                        <span class="rounded-full font-medium uppercase tracking-wide px-3 py-1.5 text-sm text-white bg-[rgb(28,28,26)]">New</span>
+                                    </div>
+                                {% endif %}
+                                <div class="absolute right-3 top-3 z-2">
+                                    {% include 'components/favorite-button.twig' with {
+                                        product_id: product.product_id,
+                                        add_class: 'w-9 h-9 flex items-center justify-center rounded-full bg-white/80 hover:bg-white text-gray-500 hover:text-red-500 transition-colors shadow-sm'
+                                    } %}
+                                </div>
+                                <img
+                                    src="{{ product.card_image_src|default('')|e }}"
+                                    alt="{{ product.card_image_alt_attribute|default('')|e }}"
+                                    width="1000" height="1034"
+                                    loading="lazy"
+                                    class="absolute inset-0 w-full h-full object-contain rounded-general"
+                                >
+                            </div>
+                        </a>
+
+                        <div class="flex flex-col gap-2">
+                            <div class="richtext-prose">
+                                <h4>{{ product.card_title|default('')|e }}</h4>
+                            </div>
+                            {% if product.price_html %}
+                                <div class="text-body2">{{ product.price_html|raw }}</div>
+                            {% endif %}
+                            {% if product.card_description %}
+                                <div class="richtext-prose text-eyebrow">
+                                    <p>{{ product.card_description|e }}</p>
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="flex flex-wrap gap-3 mt-auto">
+                            <a href="{{ product.product_url|e }}" class="button button--secondary" aria-label="See details for {{ product.card_title|e }}">See Details</a>
+                            <a href="{{ product.add_to_cart_url|e }}" class="button" aria-label="Add {{ product.card_title|e }} to cart">Add to Cart</a>
+                        </div>
+
+                    </div>
+                {% endfor %}
+            </div>
+
+        {% else %}
+
+            {# Guest — JS reads localStorage and fetches product data via AJAX #}
+            <div id="favorites-guest-container">
+                <div id="favorites-loading" class="py-20 text-center text-sm">
+                    Loading your favorites&hellip;
+                </div>
+                <div id="favorites-empty" class="py-20 text-center hidden">
+                    <p class="text-lg mb-6">You haven't saved any favorites yet.</p>
+                    <a href="/shop" class="button">Browse Products</a>
+                </div>
+                <div id="favorites-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 pb-[50px] hidden"></div>
+            </div>
+
+        {% endif %}
+
+    </div>
+</section>
+{% endblock %}

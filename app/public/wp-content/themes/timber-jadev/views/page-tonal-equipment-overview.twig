@@ -1,0 +1,173 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+
+		{% include "components/hero-texts.twig" with {
+			'title_row1': post.meta('title_row1'),
+			'description_row1': post.meta('description_row1'),
+		
+		}%}
+
+		{% include "components/row-media.twig" with {
+			'title_row2': post.meta('title_row2'),
+			'description_row2': post.meta('description_row2'),
+			'video': {
+				'video_src': "//tonal.com/cdn/shop/videos/c/vp/d4a33af7f01c49a0b166205b756d2b27/d4a33af7f01c49a0b166205b756d2b27.HD-1080p-2.5Mbps-61032614.mp4?v=0",
+				'video_poster': "//tonal.com/cdn/shop/files/preview_images/d4a33af7f01c49a0b166205b756d2b27.thumbnail.0000000000_3840x.jpg?v=1761623325",
+			},
+		}%}
+
+		{% include "components/row-content-text.twig" with {
+			'rct_title': "EXPERT GUIDANCE FOR YOUR FITNESS JOURNEY",
+			'rct_description': "Our coaches are here to help you focus on your goals, stay motivated, and push through even the toughest workouts.",
+		}%}
+
+		{% include "components/row-banner-carousel.twig" with {
+			'banner_cards': [
+				{
+					'card_title': "Immersive Display",
+					'card_description': "A large, built-in screen lets you see your stats in real-time and makes our coaches feel like they’re right at home with you.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SmartTechnology-S6-ImmersiveDisplay-M.png?v=1749089572&amp;width=1000",
+					'card_image_alt_attribute': "Smart Technology immersive display",
+				},
+				{
+					'card_title': "Adjustable Arms",
+					'card_description': "Easily move the arms to fit your workout style and body type, ensuring proper form and maximizing effectiveness.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SmartTechnology-S6-AdjustableArms-4x3.png?v=1749085192&width=1000",
+					'card_image_alt_attribute': "Smart Technology adjustable arms",
+				},
+				{
+					'card_title': "Wall-Mounted",
+					'card_description': "A space-saving design that is professionally mounted securely to your wall, similar to a TV wall mount.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SmartTechnology-S6-WallMounted-M-4x3.png?v=1746236072&width=1000",
+					'card_image_alt_attribute': "Smart Technology wall-mounted",
+				},
+				{
+					'card_title': "Smart Handles",
+					'card_description': "The handles are designed to be more comfortable and secure, with smart sensors that track your grip strength and movement.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SmartTechnology-S6-SmartHandles-M-4x3.png?v=1746236072&width=1000",
+					'card_image_alt_attribute': "Smart Technology smart handles",
+				},
+				{
+					'card_title': "High-Resolution Camera",
+					'card_description': "Enables real-time form feedback and virtual personal training sessions, ensuring you get the most out of every workout.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SmartTechnology-S6-HighResolutionCamera-M.png?v=1749089722&width=1000",
+					'card_image_alt_attribute': "Smart Technology high-resolution camera",
+				},
+				{
+					'card_title': "Smart Bar + Control Module",
+					'card_description': "Easily control your workout settings and track your progress with the intuitive smart bar and control module.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SmartTechnology-S6-SmartBar_ControlModule-M-4x3.png?v=1746236072&width=1000",
+					'card_image_alt_attribute': "Smart Technology smart bar and control module",
+				},
+				{
+					'card_title': "Rope",
+					'card_description': "Perfect for a variety of exercises, the rope attachment allows for dynamic movements that engage multiple muscle groups.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SmartTechnology-S6-Rope-M-4x3.png?v=1746236072&width=1000",
+					'card_image_alt_attribute': "Smart Technology rope attachment",	
+				},
+				{
+					'card_title': "More accessories to level up",
+					'card_description': "Unlock more from each workout with accessories like the bench, workout mat, and roller.",
+					'card_image_src': "//tonal.com/cdn/shop/files/SmartTechnology-S6-MoreAccessoriesToLevelUp-M.png?v=1749089787&width=1000",
+					'card_image_alt_attribute': "Smart Technology accessories",
+				}
+			],
+		}%}
+
+		{% include "components/row-content-text.twig" with {
+			'rct_title': "discover the full potential of tonal",
+			'rct_darkbg': "bg-background",
+		}%}
+
+		{% include "components/image-text.twig" with {
+			'rct_title': "Intelligence behind the strength",
+			'rct_description': "Tonal is all-in-one home gym equipment that tailors your training and helps you maximize your effort to break through plateaus.",
+			'rct_button': {
+				'rct_button_text': "Explore the technology",
+				'rct_button_url': "https://tonal.com/pages/technology",
+				'rct_button_arialabel': "Explore the technology",
+			},
+			'rct_image': {
+				'rct_image_src': "//tonal.com/cdn/shop/files/SmartTechnology-S1-Hero.png?v=1745963501&amp;width=2160",
+				'rct_image_srcset': "//tonal.com/cdn/shop/files/SmartTechnology-S1-Hero.png?v=1745963501&amp;width=360 360w, //tonal.com/cdn/shop/files/SmartTechnology-S1-Hero.png?v=1745963501&amp;width=480 480w, //tonal.com/cdn/shop/files/SmartTechnology-S1-Hero.png?v=1745963501&amp;width=720 720w, //tonal.com/cdn/shop/files/SmartTechnology-S1-Hero.png?v=1745963501&amp;width=960 960w, //tonal.com/cdn/shop/files/SmartTechnology-S1-Hero.png?v=1745963501&amp;width=1200 1200w, //tonal.com/cdn/shop/files/SmartTechnology-S1-Hero.png?v=1745963501&amp;width=1440 1440w, //tonal.com/cdn/shop/files/SmartTechnology-S1-Hero.png?v=1745963501&amp;width=1620 1620w, //tonal.com/cdn/shop/files/SmartTechnology-S1-Hero.png?v=1745963501&amp;width=1980 1980w, //tonal.com/cdn/shop/files/SmartTechnology-S1-Hero.png?v=1745963501&amp;width=2160 2160w",
+				'rct_image_alt': "Man looking past camera doing resisted lateral lunge",
+			},
+			'rct_darkbg': "bg-background"
+		}%}
+
+		{% include "components/row-content-text.twig" with {
+			'rct_title': "replaces a full gym of equipment",
+			'rct_description': "No more jumping from machine to machine or re-racking weights. Tonal delivers over 300 moves that challenge every muscle and build strength like never before.",
+			'rct_cta_button': {
+				'rct_cta_button_text': "Explore 300+ Movements",
+				'rct_cta_button_url': "https://tonal.com/blogs/movements",
+			},
+		}%}
+
+		{% include "components/row-media.twig" with {
+			'video': {
+				'video_src': "//tonal.com/cdn/shop/videos/c/vp/c8aa6e7dda744e9e9abb3cf68d6ca075/c8aa6e7dda744e9e9abb3cf68d6ca075.HD-1080p-2.5Mbps-47466413.mp4?v=0",
+				'video_poster': "//tonal.com/cdn/shop/files/preview_images/c8aa6e7dda744e9e9abb3cf68d6ca075.thumbnail.0000000000_3840x.jpg?v=1747095748",
+			},
+		}%}
+
+		{% include "components/image-text.twig" with {
+			'rct_title': "PERSONALIZED TRAINING FOR REAL PROGRESS",
+			'rct_description': "Experience workouts that dynamically adapt to your goals and progress. Tonal personalizes every aspect of your training plan, whether you are aiming to build muscle, enhance endurance, or improve mobility.",
+			'rct_button': {
+				'rct_button_text': "See How it Works",
+				'rct_button_url': "https://tonal.com/pages/personalized-training",
+				'rct_button_arialabel': "See How it Works",
+			},
+			'rct_image': {
+				'rct_image_src': "//tonal.com/cdn/shop/files/personalized-img-mobile.png?v=1746053717&width=2160",
+				'rct_image_srcset': "//tonal.com/cdn/shop/files/personalized-img-mobile.png?v=1746053717&width=360 360w, //tonal.com/cdn/shop/files/personalized-img-mobile.png?v=1746053717&width=480 480w, //tonal.com/cdn/shop/files/personalized-img-mobile.png?v=1746053717&width=720 720w, //tonal.com/cdn/shop/files/personalized-img-mobile.png?v=1746053717&width=960 960w, //tonal.com/cdn/shop/files/personalized-img-mobile.png?v=1746053717&width=1200 1200w, //tonal.com/cdn/shop/files/personalized-img-mobile.png?v=1746053717&width=1440 1440w, //tonal.com/cdn/shop/files/personalized-img-mobile.png?v=1746053717&width=1620 1620w, //tonal.com/cdn/shop/files/personalized-img-mobile.png?v=1746053717&width=1980 1980w, //tonal.com/cdn/shop/files/personalized-img-mobile.png?v=1746053717&width=2160 2160w",
+				'rct_image_alt': "Man in front of Tonal system showing personalized stats",
+			},
+			'rct_darkbg': "bg-background"
+		}%}
+
+		{% include "components/row-equipment-card.twig" with {
+			'image_class': "w-[60px]! h-[90px]!",
+			equipments: [
+					{
+					'card_title': "book a demo today",
+					'card_description': "Experience training with Tonal in person or virtually, guided by one of our experts.",
+					'card_button_title': "BOOK ONLINE OR VIRTUAL",
+					'card_button_title_attribute': "BOOK ONLINE OR VIRTUAL",
+					'card_button_url': "https://tonal.com/pages/try-tonal",
+					'card_image_src': "//tonal.com/cdn/shop/files/ICON-laptop-inverted.svg?v=1761621556&width=1000",
+				},
+				{
+					'card_title': "shop tonal now",
+					'card_description': "Start your fitness journey today with Tonal 2.",
+					'card_button_title': "SHOP NOW",
+					'card_button_title_attribute': "SHOP NOW",
+					'card_button_url': "https://tonal.com/products/tonal-2",
+					'card_image_src': "//tonal.com/cdn/shop/files/icon-phone-inverted.svg?v=1761621556&width=1000",
+				},
+				{
+					'card_title': "Explore the Tonal app",
+					'card_description': "See how you can set, track, and crush goals on the Tonal app. Plus, browse thousands of on-demand workouts to do at home with Tonal, or on the go without it.",
+					'card_button_title': "DOWNLOAD THE APP",
+					'card_button_title_attribute': "DOWNLOAD THE APP",
+					'card_button_url': "https://tonal.com/pages/mobile",
+					'card_image_src': "//tonal.com/cdn/shop/files/ICON-mobile-inverted.svg?v=1761621550&width=1000",
+				}
+			]
+		} 
+		%}
+
+		{# Default WordPress content (from the editor) #}
+		{# {% if post.content %}
+			<section class="article-content">
+				<div class="article-body">
+					{{ post.content }}
+				</div>
+			</section>
+		{% endif %} #}
+
+	</article>
+{% endblock %}

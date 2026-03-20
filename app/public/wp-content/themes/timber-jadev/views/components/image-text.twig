@@ -1,0 +1,57 @@
+<section class="section-padding text-text" 
+    style="
+        --scheme-disabled-accent: 73 73 72;
+        --scheme-disabled: 210 210 209;
+        --scheme-error: 189 32 32;
+        --scheme-approved: 94 199 98;
+        --scheme-on-accent: 28 28 26;
+        --scheme-accent: 244 244 244;
+        --scheme-border: 244 244 244;
+        --scheme-alternate-background: 73 73 72;
+        --scheme-background: {{ rct_darkbg ? "28 28 26" : "244 244 244" }};
+        --scheme-text: {{ rct_darkbg ? "244 244 244" : "28 28 26" }};
+        --section-spacing-sm: 1.25rem;
+        --section-spacing-md: 2rem;
+        --section-spacing-lg: 2.5rem;
+        --section-padding-sm: 0px;
+        --section-padding-md: 0px;
+        --section-padding-lg: 0px;
+    ">
+    <div class="flex justify-center flex-col rounded-general mx-auto items-center {{ rct_darkbg ? rct_darkbg : 'bg-[rgb(244,244,244)]' }} {{ rct_row_reverse ? 'lg:flex-row-reverse' : 'lg:flex-row' }} " id="">
+        <div class="w-full max-w-full sm:w-3/5 2xl:w-[calc(((3/5)_*_var(--max-w))_+_(100vw_-_var(--max-w))/2)] aspect-4/3 none">
+            <img 
+            src="{{rct_image.rct_image_src|default('')}}" 
+            alt="{{rct_image.rct_image_alt|default('')}}"
+            srcset="{{rct_image.rct_image_srcset|default('')}}" 
+            width="2160" 
+            height="1409" 
+            loading="lazy" 
+            sizes="(max-width: 720px) 100vw, (max-width: 960px) 550px, (max-width: 1200px) 650px, 700px" 
+            class="w-full h-full {{ rct_image.rct_image_class ? rct_image.rct_image_class : 'object-cover' }} rounded-general" 
+            fetchpriority="auto"
+            />
+        </div>
+        <div class="wrapper bg-background prose text-left items-start border-border ">
+            <div class="w-full md:w-[508.8px] flex flex-col py-4 gap-y-2 sm:gap-y-4">
+                <div class="prose mt-3 text-text ">
+                    <h3 class="text-eyebrow md:text-heading-md my-2 mb-[20px]">{{rct_title|default('')|e}}</h3>
+                    {% if rct_subtitle %}
+                        <span class="text-[20px]">{{rct_subtitle}}</span>
+                    {% endif %}
+                    <div class="my-2">{{rct_description|default('')|raw}}</div>
+                </div>
+                {% if rct_button %}
+                    <div class="text-text mb-3">
+                        <a 
+                            href="{{rct_button.rct_button_url|default('/')|e}}"
+                            class="link " 
+                            aria-label="{{rct_button.rct_button_arialabel|default('')|e}}" 
+                            data-marketing-cta="">
+                            {{rct_button.rct_button_text|default('')|e}}
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
